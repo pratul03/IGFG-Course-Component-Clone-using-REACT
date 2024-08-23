@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 import React from "react";
 
 const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
@@ -27,7 +28,9 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
               <span className="text-white truncate text-base">
                 {item.label}
               </span>
-              <span className="text-white ml-2">→</span>
+              <span className="text-white ml-2">
+                <ArrowRightIcon className="w-5 h-5" />
+              </span>
             </div>
           ))}
         </div>
