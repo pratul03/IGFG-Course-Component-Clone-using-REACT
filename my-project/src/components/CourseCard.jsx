@@ -4,8 +4,8 @@ import React from "react";
 const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
   return (
     <div className="p-6 rounded-lg max-w-[1060px] overflow-hidden">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-white text-2xl font-semibold">{title}</h2>
+      <div className="flex justify-between items-center">
+        <h2 className="text-white text-2xl font-semibold mb-7 mt-2">{title}</h2>
         <button
           onClick={onViewAll}
           className="text-sm hover:text-emerald-600 text-white focus:outline-none border-slate-300/65 border border-1 hover:border-emerald-600 px-3 rounded-2xl leading-8 w-20 h-8"
@@ -25,7 +25,7 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
               key={index}
               className={`${backgroundColor} p-4 rounded-xl flex flex-col justify-center flex-shrink-0 w-[200px] h-[100px] group lg:w-[240px]`}
             >
-              <span className="text-white truncate text-lg lg:text-xl font-medium lg:font-semibold tracking-wide  ml-1">
+              <span className="text-white truncate text-lg lg:text-xl font-medium lg:font-semibold tracking-wide">
                 {item.label}
               </span>
               <span className="lg:w-[30px]  lg:h-[30px] w-[26px] h-[26px]">
