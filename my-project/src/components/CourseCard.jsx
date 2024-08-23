@@ -23,13 +23,13 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
           {items.map((item, index) => (
             <div
               key={index}
-              className={`${backgroundColor} p-4 rounded-lg flex flex-col justify-center items-center flex-shrink-0 w-[240px] h-[100px]`}
+              className={`${backgroundColor} p-4 rounded-lg flex flex-col justify-center flex-shrink-0 w-[240px] h-[100px] group`}
             >
-              <span className="text-white truncate text-base">
+              <span className="text-white truncate text-xl font-semibold tracking-wide  ml-1">
                 {item.label}
               </span>
-              <span className="text-white ml-2">
-                <ArrowRightIcon className="w-5 h-5" />
+              <span className="text-white ml-[170px] mt-1 ">
+                <ArrowRightIcon className="w-[30px] h-[30px] group-hover:bg-slate-50 group-hover:rounded-full group-hover:text-black transition-all ease-in duration-200" />
               </span>
             </div>
           ))}
