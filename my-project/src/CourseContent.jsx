@@ -102,12 +102,10 @@ const CourseContent = () => {
   ];
 
   const gfgSchool = [
-    { label: "Class 8 Study Material" },
     { label: "Class 9 Study Material" },
     { label: "Class 10 Study Material" },
     { label: "Class 11 Study Material" },
     { label: "Class 12 Study Material" },
-    { label: "Class 8 Notes" },
     { label: "Class 9 Notes" },
     { label: "Class 10 Notes" },
     { label: "Class 11 Notes" },
@@ -139,6 +137,48 @@ const CourseContent = () => {
           items={aiMlDataScience}
           onViewAll={handleViewAll}
           backgroundColor={"bg-[#d5a05a]"}
+        />
+        <CourseCard
+          title="Programming Languages"
+          items={programmingLanguages}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#cc8f8e]"}
+        />
+        <CourseCard
+          title="Interview Preparation"
+          items={interviewPreparation}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#79abb6]"}
+        />
+        <CourseCard
+          title="CS Subjects"
+          items={csSubjects}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#8591cc]"}
+        />
+        <CourseCard
+          title="Databases"
+          items={databases}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#a0b783]"}
+        />
+        <CourseCard
+          title="DevOps"
+          items={devOps}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#6a93b1]"}
+        />
+        <CourseCard
+          title="Tutorials"
+          items={tutorials}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#5486bd]"}
+        />
+        <CourseCard
+          title="GFG School"
+          items={gfgSchool}
+          onViewAll={handleViewAll}
+          backgroundColor={"bg-[#ae84d1]"}
         />
       </div>
     </div>
