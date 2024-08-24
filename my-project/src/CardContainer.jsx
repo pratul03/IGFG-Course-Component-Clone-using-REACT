@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import Card from "./components/Card";
 
@@ -58,7 +58,7 @@ function CardContainer() {
 
           {/* On large screens, showing all cards */}
           <div className="hidden lg:grid max-w-[1024px] grid-cols-2 gap-6 mx-auto mt-16">
-            {cards.map((card, index) => (
+            {cards.map((card) => (
               <Card
                 key={card.title}
                 title={card.title}
@@ -70,7 +70,7 @@ function CardContainer() {
 
           {/* On small screens, showing the View More button and only the first 4 cards initially */}
           <div className="grid grid-cols-1 gap-6 mx-4 mt-3 lg:hidden">
-            {(showMore ? cards : cards.slice(0, 4)).map((card, index) => (
+            {(showMore ? cards : cards.slice(0, 4)).map((card) => (
               <Card
                 key={card.title}
                 title={card.title}
@@ -80,13 +80,13 @@ function CardContainer() {
             ))}
 
             <button
-              className="px-4 py-2 text-sm font-medium mt-4 mx-auto flex items-center justify-center gap-1 text-green-700"
-              onClick={() => setShowMore(!showMore)}
+              className="px-4 py-2 text-sm font-medium mt-4 mx-auto flex items-center justify-center gap-1 text-green-700 cursor-pointer"
+              onClick={() => setShowMore((prevShowMore) => !prevShowMore)}
             >
               {showMore ? (
                 <>
                   View Less
-                  <ChevronDownIcon className="h-5 w-5" />
+                  <ChevronUpIcon className="h-5 w-5" />
                 </>
               ) : (
                 <>
@@ -95,6 +95,7 @@ function CardContainer() {
                 </>
               )}
             </button>
+            
           </div>
         </div>
       </div>

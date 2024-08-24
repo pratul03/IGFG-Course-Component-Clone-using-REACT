@@ -117,7 +117,7 @@ const CourseContent = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mt-[-70px]">
+    <div className="flex items-center justify-center mt-[-40px] lg:mt-[-60px]">
       <div className="w-full max-w-[1060px]">
         <CourseCard
           title="DSA"
