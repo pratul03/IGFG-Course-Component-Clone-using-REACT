@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import CourseCard from "./components/CourseCard";
 
 const CourseContent = () => {
+  const navigate = useNavigate(); // Hook to handle navigation
+
   const dsa = [
     { label: "Analysis of Algorithms" },
     { label: "Array" },
@@ -112,8 +115,9 @@ const CourseContent = () => {
     { label: "Class 12 Notes" },
   ];
 
-  const handleViewAll = () => {
-    console.log("View All Clicked");
+  // Function to handle "View All" button click
+  const handleViewAll = (category) => {
+    navigate(`/courses/${category.toLowerCase().replace(/ /g, "-")}`); // Navigate to the specific category route
   };
 
   return (
@@ -122,63 +126,62 @@ const CourseContent = () => {
         <CourseCard
           title="DSA"
           items={dsa}
-          onViewAll={handleViewAll}
+          onViewAll={() => handleViewAll("DSA")}
           backgroundColor="bg-[#5486bd]"
         />
-
         <CourseCard
           title="Web Development"
           items={webDevelopment}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#ae84d1]"}
+          onViewAll={() => handleViewAll("Web Development")}
+          backgroundColor="bg-[#ae84d1]"
         />
         <CourseCard
           title="AI ML & Data Science"
           items={aiMlDataScience}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#d5a05a]"}
+          onViewAll={() => handleViewAll("AI ML & Data Science")}
+          backgroundColor="bg-[#d5a05a]"
         />
         <CourseCard
           title="Programming Languages"
           items={programmingLanguages}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#cc8f8e]"}
+          onViewAll={() => handleViewAll("Programming Languages")}
+          backgroundColor="bg-[#cc8f8e]"
         />
         <CourseCard
           title="Interview Preparation"
           items={interviewPreparation}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#79abb6]"}
+          onViewAll={() => handleViewAll("Interview Preparation")}
+          backgroundColor="bg-[#79abb6]"
         />
         <CourseCard
           title="CS Subjects"
           items={csSubjects}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#8591cc]"}
+          onViewAll={() => handleViewAll("CS Subjects")}
+          backgroundColor="bg-[#8591cc]"
         />
         <CourseCard
           title="Databases"
           items={databases}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#a0b783]"}
+          onViewAll={() => handleViewAll("Databases")}
+          backgroundColor="bg-[#a0b783]"
         />
         <CourseCard
           title="DevOps"
           items={devOps}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#6a93b1]"}
+          onViewAll={() => handleViewAll("DevOps")}
+          backgroundColor="bg-[#6a93b1]"
         />
         <CourseCard
           title="Tutorials"
           items={tutorials}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#5486bd]"}
+          onViewAll={() => handleViewAll("Tutorials")}
+          backgroundColor="bg-[#5486bd]"
         />
         <CourseCard
           title="GFG School"
           items={gfgSchool}
-          onViewAll={handleViewAll}
-          backgroundColor={"bg-[#ae84d1]"}
+          onViewAll={() => handleViewAll("GFG School")}
+          backgroundColor="bg-[#ae84d1]"
         />
       </div>
     </div>

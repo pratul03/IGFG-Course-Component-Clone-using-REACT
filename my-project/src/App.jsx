@@ -1,12 +1,13 @@
-import CardContainer from "./CardContainer";
-import CourseContent from "./CourseContent";
+import React from "react";
+import { Route, Routes } from "react-router-dom"; // Use updated Routes component
+import HomePageLayout from "./HomePageLayout";
 
 function App() {
   return (
-    <>
-      <CardContainer />
-      <CourseContent />
-    </>
+    <Routes>
+      {/* Define routes using Route elements */}
+      <Route path="/" element={<HomePageLayout />} />
+    </Routes>
   );
 }
 
