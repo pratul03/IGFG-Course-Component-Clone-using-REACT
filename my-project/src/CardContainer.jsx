@@ -1,52 +1,10 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
+import { cardData } from "../public/data/data.js"; // Import card data from cardData.js
 import Card from "./components/Card";
 
 function CardContainer() {
   const [showMore, setShowMore] = useState(false);
-
-  const cards = [
-    {
-      title: "Data Structure and Algorithm",
-      backgroundColor: "bg-gradient-to-t from-green-300/80 to-emerald-500/90",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "Practice DSA",
-      backgroundColor: "bg-[#6b70df]",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "Web Development",
-      backgroundColor: "bg-[#b36766]",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "AI ML & Data Science",
-      backgroundColor: "bg-[#6a4e9a]",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "Python",
-      backgroundColor: "bg-[#2e93a8]",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "Machine Learning",
-      backgroundColor: "bg-[#527dbf]",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "System Design",
-      backgroundColor: "bg-[#d07a47]",
-      textColor: "text-[#fcfcfc]",
-    },
-    {
-      title: "DevOps",
-      backgroundColor: "bg-[#ee6d84]",
-      textColor: "text-[#fcfcfc]",
-    },
-  ];
 
   return (
     <section className="py-10 sm:py-16 lg:py-24">
@@ -58,7 +16,7 @@ function CardContainer() {
 
           {/* On large screens, showing all cards */}
           <div className="hidden lg:grid max-w-[1024px] grid-cols-2 gap-6 mx-auto mt-16">
-            {cards.map((card) => (
+            {cardData.map((card) => (
               <Card
                 key={card.title}
                 title={card.title}
@@ -70,7 +28,7 @@ function CardContainer() {
 
           {/* On small screens, showing the View More button and only the first 4 cards initially */}
           <div className="grid grid-cols-1 gap-6 mx-4 mt-3 lg:hidden">
-            {(showMore ? cards : cards.slice(0, 4)).map((card) => (
+            {(showMore ? cardData : cardData.slice(0, 4)).map((card) => (
               <Card
                 key={card.title}
                 title={card.title}
@@ -95,7 +53,6 @@ function CardContainer() {
                 </>
               )}
             </button>
-            
           </div>
         </div>
       </div>

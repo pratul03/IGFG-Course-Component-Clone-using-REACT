@@ -109,3 +109,48 @@ export const gfgSchool = [
   { label: "Class 11 Notes" },
   { label: "Class 12 Notes" },
 ];
+
+// cardData.js
+
+export const cardData = [
+  {
+    title: "Data Structure and Algorithm",
+    backgroundColor: "bg-gradient-to-t from-green-300/80 to-emerald-500/90",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "Practice DSA",
+    backgroundColor: "bg-[#6b70df]",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "Web Development",
+    backgroundColor: "bg-[#b36766]",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "AI ML & Data Science",
+    backgroundColor: "bg-[#6a4e9a]",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "Python",
+    backgroundColor: "bg-[#2e93a8]",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "Machine Learning",
+    backgroundColor: "bg-[#527dbf]",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "System Design",
+    backgroundColor: "bg-[#d07a47]",
+    textColor: "text-[#fcfcfc]",
+  },
+  {
+    title: "DevOps",
+    backgroundColor: "bg-[#ee6d84]",
+    textColor: "text-[#fcfcfc]",
+  },
+];
