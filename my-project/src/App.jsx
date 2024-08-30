@@ -1,13 +1,25 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom"; // Use updated Routes component
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom"; // Use BrowserRouter for full navigation context
 import HomePageLayout from "./HomePageLayout";
+import CoursePageLayout from "./CoursePageLayout.jsx";
+// Reusable layout for course content
+import MainContent from "./sidebar/MainContent.jsx";
 
 function App() {
   return (
-    <Routes>
-      {/* Define routes using Route elements */}
-      <Route path="/" element={<HomePageLayout />} />
-    </Routes>
+    <Router>
+      <Routes>
+        {/* Main Home Layout */}
+        <Route path="/" element={<HomePageLayout />} />
+
+        {/* Dynamic Course Page */}
+        <Route path="courses/:courseId" element={<CoursePageLayout />} />
+        <Route
+          path="courses/:courseId/topics/:topicId"
+          element={<MainContent />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
