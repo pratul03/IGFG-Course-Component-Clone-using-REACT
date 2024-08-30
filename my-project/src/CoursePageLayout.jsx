@@ -1,9 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { allCoursesData } from "../public/data/data.js";
-import MainContent from "./sidebar/MainContent"; // Ensure the path is correct
-import Sidebar from "./sidebar/SideBar.jsx"; // Ensure the path is correct
-
+import MainContent from "./sidebar/MainContent";
 const CoursePageLayout = () => {
   const { courseId } = useParams();
 
@@ -19,8 +17,6 @@ const CoursePageLayout = () => {
 
   return (
     <div className="flex">
-      {/* Sidebar to navigate between topics */}
-      <Sidebar courseId={courseId} topics={course.topics} />
 
       {/* Main content section */}
       <MainContent topics={course.topics} />
