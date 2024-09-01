@@ -19,7 +19,11 @@ const CourseContent = () => {
 
   // Function to handle "View All" button click
   const handleViewAll = (category) => {
-    navigate(`/courses/${category.toLowerCase().replace(/ /g, "-")}`);
+    if (!category || category.toLowerCase() === "dsa") {
+      navigate(`/courses/dsa/topics/analysis-of-algorithms`);
+    } else {
+      navigate(`/courses/${category.toLowerCase().replace(/ /g, "-")}`);
+    }
   };
 
   return (

@@ -118,9 +118,11 @@ export const allCoursesData = [
     topics: [
       {
         label: "Analysis of Algorithms",
+        heading: "Learn Data Structures and Algorithms | DSA Tutorial",
+        updateTime:"",
         description: "Description for Analysis of Algorithms",
         image:
-          "https://images.pexels.com/photos/16346886/pexels-photo-16346886/free-photo-of-a-woman-standing-on-a-basketball-court-wearing-black-pants.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230807133054/Data-structure-algorithm.png",
       },
       {
         label: "Array",
