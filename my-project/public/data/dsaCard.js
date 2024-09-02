@@ -13,27 +13,31 @@ export const allCoursesData = [
           "The analysis of algorithms is a crucial step in the design process, allowing us to predict the performance of algorithms and optimize them for efficiency. This topic includes Big O notation, time complexity, space complexity, and best, average, and worst-case analysis.",
         image:
           "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230807133054/Data-structure-algorithm.png",
+        imgDescription: "Data Structure & Algorithm Tutorial",
         sections: [
           {
-            heading: "Understanding Complexity",
-            subSections: [
-              {
-                title: "Time Complexity",
-                content:
-                  "Time complexity is a computational concept that estimates the time an algorithm takes to run as a function of the size of the input. It is usually expressed using Big O notation, which provides an upper bound on the running time.",
-              },
-              {
-                title: "Space Complexity",
-                content:
-                  "Space complexity measures the amount of memory an algorithm uses in relation to the input size. Like time complexity, it is often expressed in Big O notation.",
-              },
+            heading: "DSA Full Form",
+            subHeading:
+              "The term DSA stands for Data Structures and Algorithms, in the context of Computer Science.",
+            linkHead: "What is DSA?",
+            answerHead:
+              "refer to the study of methods for organizing and storing data and the design of procedures (algorithms) for solving problems, which operate on these data structures.",
+            linkHead2: "How to learn DSA?",
+            answerHead2:
+              "The first and foremost thing is dividing the total procedure into little pieces which need to be done sequentially. The complete process to learn DSA from scratch can be broken into 5 parts:",
+            answerLists: [
+              "Learn at least one programming language (We leave this to your choice.)",
+              "Learn Data Structures",
+              "Learn Algorithms",
+              "Learn about Time and Space complexities",
+              "Practice Problems on DSA",
             ],
-          },
-          {
-            heading: "Asymptotic Analysis",
-            content:
-              "Asymptotic analysis helps in comparing algorithms' efficiency as the input size grows. The most common asymptotic notations are Big O, Big Theta (Θ), and Big Omega (Ω), representing upper, tight, and lower bounds, respectively.",
-          },
+            sectionImg:
+              "https://media.geeksforgeeks.org/wp-content/uploads/20220602151616/5StepstolearnDSA.jpg",
+            sectionImgAlt: "How to learn DSA?",
+            extraText1:
+              "Hoping you have learned a programming language of your choice, let us move forward with the next step to learn DSA in this DSA tutorial.",
+          }
         ],
       },
       {

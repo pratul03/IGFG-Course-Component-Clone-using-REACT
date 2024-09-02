@@ -5,7 +5,7 @@ const Sidebar = ({ courseId, topics }) => {
   const location = useLocation();
 
   return (
-    <div className="w-[300px] overflow-y-auto  scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-700 bg-gray-500/10">
+    <div className="w-[260px] overflow-y-auto  scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-700 bg-gray-500/10">
       <ul>
         {topics.map((topic, index) => {
           const topicPath = `/courses/${courseId}/topics/${topic.label

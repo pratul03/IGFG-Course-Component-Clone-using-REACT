@@ -1,6 +1,6 @@
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { allCoursesData } from "../../public/data/dsaCard.js";
 import Sidebar from "./SideBar.jsx";
 
@@ -86,33 +86,86 @@ const MainContent = () => {
               <span className="font-bold mr-2">{topic.boldText}</span>
               {topic.description}
             </p>
-            <span className="flex justify-center content-center items-center">
+            <span className="flex flex-col justify-center content-center items-center">
               <img
                 src={topic.image}
                 alt={topic.label}
                 className="mt-4 rounded-lg w-[600px] h-[40vh]"
               />
+              <p className="text-stone-500/70 italic text-xs font-normal">
+                {" "}
+                {topic.imgDescription}
+              </p>
             </span>
 
             {/* Display sections and sub-sections */}
             <div className="mt-6">
               {topic.sections.map((section, index) => (
                 <div key={index} className="mb-6">
-                  <h2 className="text-2xl font-semibold mb-2">
-                    {section.heading}
-                  </h2>
-                  <p className="text-base text-white">{section.content}</p>
-                  {section.subSections &&
-                    section.subSections.map((subSection, subIndex) => (
-                      <div key={subIndex} className="ml-4 mt-4">
-                        <h3 className="text-xl font-medium mb-1">
-                          {subSection.title}
-                        </h3>
-                        <p className="text-base text-white">
-                          {subSection.content}
-                        </p>
-                      </div>
-                    ))}
+                  <h2 className="text-2xl font-bold mb-2">{section.heading}</h2>
+                  <p className="text-xl font-medium">{section.subHeading}</p>
+                  <p className="text-sm text-white mb-4">{section.content}</p>
+                  <span className="flex flex-col gap-y-2 mb-2">
+                    <Link
+                      to={"#"}
+                      className="text-green-600 underline text-2xl font-normal tracking-wide"
+                    >
+                      {section.linkHead}
+                    </Link>
+                    <p className="text-lg font-normal tracking-normal">
+                      <span className="font-bold mr-2">{topic.boldText}</span>
+                      {section.answerHead}
+                    </p>
+                  </span>
+                  <span className="flex flex-col gap-y-2 mb-2">
+                    <Link
+                      to={"#"}
+                      className="text-green-600 underline text-2xl font-normal tracking-wide"
+                    >
+                      {section.linkHead2}
+                    </Link>
+                    <p className="text-lg font-normal tracking-normal">
+                      {section.answerHead2}
+                    </p>
+                    <ol className="list-decimal ml-5 space-y-2 font-normal">
+                      {section.answerLists?.map((step, index) => {
+                        // Check if it's the last item in the array
+                        const isLastItem =
+                          index === section.answerLists.length - 1;
+
+                        return (
+                          <li key={index} className="text-xl">
+                            {isLastItem ? (
+                              <Link
+                                to={"#"}
+                                className="text-green-600 underline"
+                              >
+                                {step}
+                              </Link>
+                            ) : (
+                              step
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </span>
+                  <span className="flex flex-col justify-center content-center items-center">
+                    {section.sectionImg && (
+                      <>
+                        <img
+                          src={section.sectionImg}
+                          alt={section.sectionImgAlt || "Section image"}
+                          className="mt-4 rounded-lg w-[400px] h-[40vh]"
+                        />
+                        {section.sectionImgAlt && (
+                          <p className="text-stone-500/70 italic text-xs font-normal">
+                            {section.sectionImgAlt}
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </span>
                 </div>
               ))}
             </div>
