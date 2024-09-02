@@ -1,7 +1,7 @@
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { allCoursesData } from "../../public/data/data.js";
+import { allCoursesData } from "../../public/data/dsaCard.js";
 import Sidebar from "./SideBar.jsx";
 
 const MainContent = () => {
@@ -45,6 +45,7 @@ const MainContent = () => {
   return (
     <div className="flex w-full">
       {/* Sidebar to navigate between topics */}
+
       <Sidebar courseId={courseId} topics={course.topics} />
 
       <div className="left-0 flex flex-col w-3/4 max-w-4xl mr-auto p-6 text-white shadow-lg mt-3">
@@ -79,14 +80,42 @@ const MainContent = () => {
               </div>
             </p>
             <hr className="border-t border-gray-200/30 my-2" />
-            {/* Display update time */}
-            <pre className="text-xl mt-4 text-white">{topic.label}</pre>
-            <p className="mt-2 text-base text-white">{topic.description}</p>
-            <img
-              src={topic.image}
-              alt={topic.label}
-              className="mt-4 rounded-lg max-w-full h-auto"
-            />
+            {/* Display topic content */}
+
+            <p className="text-lg text-slate-200">
+              <span className="font-bold mr-2">{topic.boldText}</span>
+              {topic.description}
+            </p>
+            <span className="flex justify-center content-center items-center">
+              <img
+                src={topic.image}
+                alt={topic.label}
+                className="mt-4 rounded-lg w-[600px] h-[40vh]"
+              />
+            </span>
+
+            {/* Display sections and sub-sections */}
+            <div className="mt-6">
+              {topic.sections.map((section, index) => (
+                <div key={index} className="mb-6">
+                  <h2 className="text-2xl font-semibold mb-2">
+                    {section.heading}
+                  </h2>
+                  <p className="text-base text-white">{section.content}</p>
+                  {section.subSections &&
+                    section.subSections.map((subSection, subIndex) => (
+                      <div key={subIndex} className="ml-4 mt-4">
+                        <h3 className="text-xl font-medium mb-1">
+                          {subSection.title}
+                        </h3>
+                        <p className="text-base text-white">
+                          {subSection.content}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
           </>
         ) : (
           <p>Topic Not Found</p>
