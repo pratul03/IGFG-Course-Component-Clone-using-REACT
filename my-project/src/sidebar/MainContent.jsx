@@ -166,6 +166,18 @@ const MainContent = () => {
                       </>
                     )}
                   </span>
+                  <span className="flex flex-col gap-y-3">
+                    <p className="text-lg font-normal">{section.extraText1}</p>
+
+                    <p className="text-lg font-normal">{section.extraText1}</p>
+
+                    <p className="text-lg font-normal">{section.extraText3}</p>
+                    <ul className="list-disc font-bold ml-5 space-y-2 text-lg tracking-wide">
+                      {section.extraText3SubParts?.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      )) || ""}
+                    </ul>
+                  </span>
                 </div>
               ))}
             </div>

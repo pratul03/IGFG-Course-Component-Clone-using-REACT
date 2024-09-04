@@ -37,7 +37,11 @@ export const allCoursesData = [
             sectionImgAlt: "How to learn DSA?",
             extraText1:
               "Hoping you have learned a programming language of your choice, let us move forward with the next step to learn DSA in this DSA tutorial.",
-          }
+            extraText2:
+              "Here comes the most important and the most awaited stage of the roadmap for learning data structure and algorithm – the stage where you start learning about DSA.",
+            extraText3: "The topic of DSA consists of two parts",
+            extraText3SubParts: ["Data Structures", "Algorithms "],
+          },
         ],
       },
       {
