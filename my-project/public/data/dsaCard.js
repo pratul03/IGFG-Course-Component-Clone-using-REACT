@@ -45,6 +45,8 @@ export const allCoursesData = [
               "Though they are two different things, they are highly interrelated, and it is very important to follow the right track to learn them most efficiently. If you are confused about which one to learn first, we recommend you to go through our detailed analysis on the topic:",
             extraText4Sub:
               " What should I learn first- Data Structures or Algorithms?",
+            extraText5:
+              "Here we have followed the flow of learning a data structure and then the most related and important algorithms used by that data structure.",
           },
         ],
       },

@@ -2,6 +2,7 @@ import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { allCoursesData } from "../../public/data/dsaCard.js";
+import DataStructure from "../components/DataStructure.jsx";
 import Sidebar from "./SideBar.jsx";
 
 const MainContent = () => {
@@ -177,6 +178,21 @@ const MainContent = () => {
                         <li key={idx}>{item}</li>
                       )) || ""}
                     </ul>
+                    <p className="text-lg font-normal">
+                      {section.extraText4}
+                      <Link
+                        to={"#"}
+                        className="text-green-600 underline font-semibold"
+                      >
+                        {section.extraText4Sub}
+                      </Link>
+                    </p>
+                    <p className="text-lg font-normal">{section.extraText5}</p>
+                    <span className="text-lg font-normal">
+                      <>
+                        <DataStructure />
+                      </>
+                    </span>
                   </span>
                 </div>
               ))}
