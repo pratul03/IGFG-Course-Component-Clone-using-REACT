@@ -41,6 +41,10 @@ export const allCoursesData = [
               "Here comes the most important and the most awaited stage of the roadmap for learning data structure and algorithm – the stage where you start learning about DSA.",
             extraText3: "The topic of DSA consists of two parts",
             extraText3SubParts: ["Data Structures", "Algorithms "],
+            extraText4:
+              "Though they are two different things, they are highly interrelated, and it is very important to follow the right track to learn them most efficiently. If you are confused about which one to learn first, we recommend you to go through our detailed analysis on the topic:",
+            extraText4Sub:
+              " What should I learn first- Data Structures or Algorithms?",
           },
         ],
       },

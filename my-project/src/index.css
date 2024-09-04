@@ -8,7 +8,20 @@ body {
     left: 0px;
     background-color: #0e0e12;
     font-family: 'Inter', sans-serif;
+
+    img:hover {
+        cursor: zoom-in;
+        /* or cursor: zoom-out; */
+    }
 }
+
+::selection {
+    background-color: #2ab045;
+    /* Change to your desired color */
+    color: #ffffff;
+    /* Optional: Change text color */
+}
+
 
 ::-webkit-scrollbar {
     width: 8px;
