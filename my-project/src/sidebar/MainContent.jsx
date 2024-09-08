@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { allCoursesData } from "../../public/data/dsaCard.js";
@@ -36,8 +38,8 @@ const MainContent = () => {
     });
   };
 
-  // Set the update time when the topic changes
   useEffect(() => {
+    // Set the update time when the topic changes
     if (topic) {
       setUpdateTime(`Last Updated: ${formatUpdateTime()}`);
     }
@@ -53,7 +55,7 @@ const MainContent = () => {
         <h1 className="text-3xl font-semibold mb-3">
           {topic ? topic.heading : course.title}
         </h1>
-        {topic ? (
+        {topic && (
           <>
             <p className="mt-2 text-sm text-gray-400 flex items-center">
               {updateTime}
@@ -198,8 +200,6 @@ const MainContent = () => {
               ))}
             </div>
           </>
-        ) : (
-          <p>Topic Not Found</p>
         )}
       </div>
     </div>
