@@ -190,7 +190,7 @@ const MainContent = () => {
                       </Link>
                     </p>
                     <p className="text-lg font-normal">{section.extraText5}</p>
-                    <span className="text-lg font-normal">
+                    <span className="ml-[-20px] text-lg font-normal">
                       <>
                         <DataStructure />
                       </>

@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { dataStructures } from "../../public/data/dataStructure";
 
 const DataStructure = () => {
   return (
     <div className="flex flex-col w-full max-w-4xl p-6 text-white shadow-lg mt-3">
-      <h1 className="text-4xl font-bold mb-6">{dataStructures.title}</h1>
+      <h1 className="text-2xl font-medium text-green-600 underline hover:cursor-pointer mb-6">{dataStructures.title}</h1>
       <p className="text-lg mb-8">{dataStructures.description}</p>
 
       {dataStructures.topics.map((topic, index) => (
