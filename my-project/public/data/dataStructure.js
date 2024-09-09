@@ -147,13 +147,11 @@ export const dataStructures = {
       sections: [
         {
           heading: "Operations on Stack:",
-          subHeading:
-            "A Stack is a linear data structure that follows the LIFO (Last In First Out) principle.",
           answerLists: [
-            "Push: Adds an element to the top.",
-            "Pop: Removes and returns the top element.",
-            "Peek: Returns the top element without removing it.",
-            "Size: Gets the number of elements.",
+            "Push: Adds an element to the top of the stack.",
+            "Pop: Removes and returns the element at the top of the stack.",
+            "Peek: Returns the element at the top of the stack without removing it.",
+            "Size: Returns the number of elements in the stack.",
             "IsEmpty: Checks if the stack is empty.",
           ],
           applicationsHeading: "Applications of Stacks:",
@@ -174,21 +172,30 @@ export const dataStructures = {
     {
       heading: "Queue",
       description:
-        "A Queue is a linear data structure that follows the FIFO (First In First Out) principle. Queues are used in job scheduling, message queuing, and data buffering.",
+        "A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of “First in, First out” (FIFO), where the first element added to the queue is the first one to be removed.",
       sections: [
         {
           heading: "Operations on Queue:",
-          subHeading:
-            "A Queue is a linear data structure that follows the FIFO (First In First Out) principle.",
           answerLists: [
-            "Enqueue: Adds an element to the rear.",
-            "Dequeue: Removes and returns the front element.",
-            "Front: Returns the front element without removing it.",
-            "Size: Gets the number of elements.",
+            "Enqueue: Adds an element to the rear of the queue.",
+            "Dequeue: Removes an element from the front of the queue.",
+            "Peek: Retrieves the front element without removing it.",
             "IsEmpty: Checks if the queue is empty.",
+            "IsFull: Checks if the queue is full.",
+          ],
+          heading1: "Types of Queue:",
+          answerLists1: [
+            "Circular Queue: Last element connects to the first element.",
+            "Double-Ended Queue (Deque): Operations can be performed from both ends.",
+            "Priority Queue: Elements are arranged based on priority.",
           ],
           applicationsHeading: "Applications of Queues:",
-          applications: ["Job scheduling", "Message queuing", "Data buffering"],
+          applications: [
+            "Job scheduling,",
+            "Message queuing,",
+            "Simulation modeling,",
+            "Data buffering.",
+          ],
           relatedTopics: [
             "Queue Tutorial",
             "Top 50 Problems on Queue for Interviews",
@@ -198,28 +205,30 @@ export const dataStructures = {
       ],
     },
     {
-      heading: "Graph",
+      heading: "Heap",
       description:
-        "A graph is a non-linear data structure consisting of nodes (vertices) connected by edges. Graphs represent relationships between objects, enabling complex algorithms like shortest path finding and network analysis.",
+        "A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement",
+      greenText: "priority queues",
+      afterGreenText:
+        ", where the smallest(or largest) element is always at the root of the tree.",
       sections: [
         {
           heading: "Operations on Graph:",
-          subHeading:
-            "A graph is a non-linear data structure consisting of nodes (vertices) connected by edges.",
           answerLists: [
-            "Nodes: The entities or objects.",
-            "Edges: Connections between nodes.",
-            "Adjacency Matrix: A 2D array representation.",
-            "Adjacency List: A list-based representation.",
-            "BFS: Breadth-first search.",
-            "DFS: Depth-first search.",
+            "Insert: Adds a new element to the heap while maintaining heap properties.",
+            "Extract-Max/Extract-Min: Removes the root element and restructures the heap.",
+            "Increase/Decrease-Key: Updates the value of a node and restructures the heap.",
+          ],
+          heading1: "Types of Heap:",
+          answerLists1: [
+            "Max-Heap: Root node has the maximum value among its children.",
+            "Min-Heap: Root node has the minimum value among its children.",
           ],
           applicationsHeading: "Applications of Graphs:",
           applications: [
-            "Social networks",
-            "Routing algorithms",
-            "Recommendation systems",
-            "Network analysis",
+            "Priority queues",
+            "Sorting",
+            "Graph algorithms (e.g., Dijkstra’s algorithm)",
           ],
           relatedTopics: [
             "Graph Tutorial",
@@ -230,45 +239,49 @@ export const dataStructures = {
       ],
     },
     {
-      heading: "Tree",
+      heading: "Hash",
       description:
-        "A tree is a hierarchical data structure consisting of nodes, with a root node and child nodes forming a parent-child relationship. Trees are used in various applications like database indexing, hierarchical data representation, and binary search.",
+        "Hashing is a technique that generates a fixed-size output (hash value) from an input of variable size using mathematical formulas called hash functions. Hashing is used to determine an index or location for storing an item in a data structure, allowing for efficient retrieval and insertion.",
       sections: [
         {
-          heading: "Operations on Tree:",
-          subHeading:
-            "A tree is a hierarchical data structure consisting of nodes, with a root node and child nodes forming a parent-child relationship.",
-          answerLists: [
-            "Root: The topmost node.",
-            "Child: A node connected to another node (parent).",
-            "Leaf: A node without children.",
-            "Binary Tree: A tree with at most two children per node.",
-            "Binary Search Tree: A binary tree with ordered nodes.",
-            "AVL Tree: A balanced binary search tree.",
+          characteristics: "Key Concepts:",
+          characteristics1: [
+            "Hash Function: A mathematical function that maps an input to a hash value.",
+            "Hash Table: A data structure that stores key-value pairs, where the key is a hash value and the value is the actual data.",
+            "Collision: When two different keys produce the same hash value.",
+          ],
+          heading1: "Types of Hash Functions:",
+          answerLists2: [
+            "Division Method: Divides the input by a constant and uses the remainder as the hash value.",
+            "Mid Square Method: Squares the input and takes the middle digits as the hash value.",
+            "Folding Method: Divides the input into equal-sized blocks and adds them together to get the hash value.",
+            "Multiplication Method: Multiplies the input by a constant and takes the fractional part as the hash value.",
+          ],
+          heading3: "Collision Resolution Techniques:",
+          answerLists3: [
+            "Separate Chaining (Open Hashing): Stores colliding elements in a linked list at the corresponding hash value.",
+            "Open Addressing (Closed Hashing): Uses various strategies to find an alternative location for colliding elements within the hash table.",
           ],
           applicationsHeading: "Applications of Trees:",
           applications: [
-            "Database indexing",
-            "Hierarchical data representation",
-            "Binary search",
+            "Efficiently storing and retrieving data in databases and file systems.",
+            "Verifying passwords and digital signatures.",
+            "Distributing requests across multiple servers.",
+            "Generating secure hashes for data integrity and authentication.",
           ],
-          relatedTopics: [
-            "Tree Tutorial",
-            "Top 50 Problems on Tree for Interviews",
-            "Practice problems on Tree",
-          ],
+          relatedTopics: ["Hash Tutorial", "Practice Problems on Hashing"],
         },
       ],
     },
     {
-      heading: "Hashing",
+      heading: "Tree",
       description:
-        "Hashing is a technique used to map data to a fixed-size array or table through a hash function. Hashing enables fast data retrieval through direct access, commonly used in hash tables, dictionaries, and caches.",
+        "A tree is a non-linear hierarchical data structure consisting of nodes connected by edges, with a top node called the root and nodes having child nodes. It is used in computer science for organizing data efficiently.",
       sections: [
         {
-          heading: "Operations on Hashing:",
-          subHeading:
-            "Hashing is a technique used to map data to a fixed-size array or table through a hash function.",
+          heading: "Traversal of Tree:",
+          headingDescription:
+            "Tree traversal methods are used to visit and process nodes in a tree data structure. The three common traversal methods are:",
           answerLists: [
             "Hash Function: A function that maps data to a specific index.",
             "Collision: When two different inputs produce the same output.",

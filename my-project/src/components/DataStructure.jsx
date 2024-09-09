@@ -19,9 +19,18 @@ const DataStructure = () => {
             <h2 className="text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3">
               {topic.heading}
             </h2>
-            <p className="mt-2 text-lg font-medium text-gray-100">
-              {topic.description}
-            </p>
+            {topic.description && (
+              <p className="mt-2 text-lg font-medium text-gray-100">
+                {topic.description}{" "}
+                {topic.greenText && (
+                  <Link to={"#"} className="text-green-600 underline">
+                    {" "}
+                    {topic.greenText}
+                  </Link>
+                )}
+                {topic.afterGreenText && ` ${topic.afterGreenText}`}
+              </p>
+            )}
 
             <ul className="list-disc ml-2">
               {topic.sections.map((section, idx) => (
@@ -32,17 +41,38 @@ const DataStructure = () => {
                         <p>{section.characteristics}</p>
                       </li>
                     )}
-                    <span>
-                      {section.characteristicsList?.map((item, listIdx) => {
-                        const [firstWord, ...rest] = item.split(": ");
-                        return (
-                          <li key={listIdx} className="ml-16 list-[circle]">
-                            <span className="font-semibold">{firstWord}:</span>{" "}
-                            {rest.join(": ")}
-                          </li>
-                        );
-                      })}
-                    </span>
+                    {section.characteristicsList &&
+                      section.characteristicsList.length > 0 && (
+                        <span>
+                          {section.characteristicsList?.map((item, listIdx) => {
+                            const [firstWord, ...rest] = item.split(": ");
+                            return (
+                              <li key={listIdx} className="ml-16 list-[circle]">
+                                <span className="font-semibold">
+                                  {firstWord}:
+                                </span>{" "}
+                                {rest.join(": ")}
+                              </li>
+                            );
+                          })}
+                        </span>
+                      )}
+                    {section.characteristics1 &&
+                      section.characteristics1.length > 0 && (
+                        <span>
+                          {section.characteristics1?.map((item, listIdx) => {
+                            const [firstWord, ...rest] = item.split(": ");
+                            return (
+                              <li key={listIdx} className="ml-16 list-[circle]">
+                                <Link className="font-medium text-green-600 underline">
+                                  {firstWord}:
+                                </Link>{" "}
+                                {rest.join(": ")}
+                              </li>
+                            );
+                          })}
+                        </span>
+                      )}
                   </div>
 
                   {section.operations && (
@@ -68,16 +98,20 @@ const DataStructure = () => {
                         )}
                     </div>
                   )}
-                  {section.heading && (
-                    <li>
-                      <Link
-                        className="text-xl font-medium text-green-600 mb-2 underline"
-                        to="#"
-                      >
-                        {section.heading}
-                      </Link>
-                    </li>
-                  )}
+                  <li>
+                    <Link
+                      className="text-xl font-medium text-green-600 mb-2 underline"
+                      to="#"
+                    >
+                      {section.heading}
+                    </Link>
+                    {section.headingDescription && (
+                      <p className="text-lg text-gray-100">
+                        {section.headingDescription}
+                      </p>
+                    )}
+                  </li>
+
                   {section.answerLists && section.answerLists.length > 0 && (
                     <div className="mt-4">
                       <ul className="list-[circle] ml-16 space-y-1 mt-3">
@@ -95,6 +129,16 @@ const DataStructure = () => {
                       </ul>
                     </div>
                   )}
+                  {section.heading1 && (
+                    <li className="mt-4">
+                      <Link
+                        className="text-xl font-medium text-green-600 mb-4 underline"
+                        to="#"
+                      >
+                        {section.heading1}
+                      </Link>
+                    </li>
+                  )}
                   {section.answerLists1 && section.answerLists1.length > 0 && (
                     <div className="mt-4">
                       <ul className="list-[circle] ml-16 space-y-1 mt-3">
@@ -102,7 +146,7 @@ const DataStructure = () => {
                           const [firstWord, ...rest] = item.split(": ");
                           return (
                             <li key={listIdx}>
-                              <Link className="font-semibold text-green-600 underline">
+                              <Link className="font-medium text-green-600 underline">
                                 {firstWord}:
                               </Link>{" "}
                               {rest.join(": ")}
@@ -112,7 +156,50 @@ const DataStructure = () => {
                       </ul>
                     </div>
                   )}
-
+                  {section.answerLists2 && section.answerLists2.length > 0 && (
+                    <div className="mt-4">
+                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
+                        {section.answerLists2?.map((item, listIdx) => {
+                          const [firstWord, ...rest] = item.split(": ");
+                          return (
+                            <li key={listIdx}>
+                              <Link className="font-bold text-base">
+                                {firstWord}:
+                              </Link>{" "}
+                              {rest.join(": ")}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                  {section.heading3 && (
+                    <li>
+                      <Link
+                        className="
+          text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3"
+                      >
+                        {section.heading3}
+                      </Link>
+                    </li>
+                  )}
+                  {section.answerLists3 && section.answerLists3.length > 0 && (
+                    <div className="mt-4">
+                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
+                        {section.answerLists3?.map((item, listIdx) => {
+                          const [firstWord, ...rest] = item.split(": ");
+                          return (
+                            <li key={listIdx}>
+                              <Link className="font-medium text-green-600 underline text-lg">
+                                {firstWord}:
+                              </Link>{" "}
+                              {rest.join(": ")}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
                   <div className="mt-4">
                     {section.heading2 && (
                       <li>
