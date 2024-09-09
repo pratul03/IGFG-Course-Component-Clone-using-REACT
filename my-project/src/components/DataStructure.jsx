@@ -35,7 +35,7 @@ const DataStructure = () => {
 
                   <div className="mt-4">
                     <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                      {section.answerLists.map((item, listIdx) => {
+                      {section.answerLists?.map((item, listIdx) => {
                         const [firstWord, ...rest] = item.split(": ");
                         return (
                           <li key={listIdx}>
@@ -48,25 +48,31 @@ const DataStructure = () => {
                   </div>
 
                   <div className="mt-4">
-                    <li>
-                      <Link
-                        className="
-                  text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3"
-                      >
-                        {section.heading2}
-                      </Link>
-                    </li>
-                    <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                      {section.headSub?.map((item, listIdx) => {
-                        const [firstWord, ...rest] = item.split(": ");
-                        return (
-                          <li key={listIdx}>
-                            <span className="font-semibold">{firstWord}:</span>{" "}
-                            {rest.join(": ")}{" "}
-                          </li>
-                        );
-                      })}
-                    </ul>
+                    {section.heading2 && (
+                      <li>
+                        <Link
+                          className="
+          text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3"
+                        >
+                          {section.heading2}
+                        </Link>
+                      </li>
+                    )}
+                    {section.headSub && section.headSub.length > 0 && (
+                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
+                        {section.headSub.map((item, listIdx) => {
+                          const [firstWord, ...rest] = item.split(": ");
+                          return (
+                            <li key={listIdx}>
+                              <span className="font-semibold">
+                                {firstWord}:
+                              </span>{" "}
+                              {rest.join(": ")}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
                   </div>
 
                   <div className="mt-4">
@@ -75,11 +81,11 @@ const DataStructure = () => {
                         to="#"
                         className="text-xl text-green-600 underline font-medium"
                       >
-                        {section.applicationsHeading}
+                        {section?.applicationsHeading}
                       </Link>
                     </li>
                     <ul className="list-[circle] ml-16 space-y-1">
-                      {section.applications.map((app, appIdx) => (
+                      {section.applications?.map((app, appIdx) => (
                         <li key={appIdx}>{app}</li>
                       ))}
                     </ul>
@@ -90,7 +96,7 @@ const DataStructure = () => {
                       <h4 className="text-lg font-semibold">Related Topics:</h4>
                     </li>
                     <ul className="list-[circle] ml-16 space-y-1">
-                      {section.relatedTopics.map((topic, topicIdx) => (
+                      {section.relatedTopics?.map((topic, topicIdx) => (
                         <li key={topicIdx}>
                           <Link
                             className="text-green-600 underline font-medium"

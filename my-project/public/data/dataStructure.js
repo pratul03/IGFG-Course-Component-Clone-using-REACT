@@ -43,7 +43,7 @@ export const dataStructures = {
     {
       heading: "String",
       description:
-        "A string is a sequence of characters, typically used to represent text in computer programs. Strings allow for the manipulation and processing of textual data, including operations like concatenation, comparison, and substring extraction.",
+        "A string is a sequence of characters, typically used to represent text. It is considered a data type that allows for the manipulation and processing of textual data in computer programs.",
       sections: [
         {
           heading: "Operations on String:",
