@@ -72,27 +72,38 @@ export const dataStructures = {
       ],
     },
     {
-      heading: "Linked List",
+      heading: "Linked Lists",
       description:
-        "A linked list is a linear data structure that stores data in nodes connected by pointers. Linked lists allow for dynamic resizing and efficient insertion or deletion of nodes at any position.",
+        "A linked list is a linear data structure that stores data in nodes, which are connected by pointers. Unlike arrays, linked lists are not stored in contiguous memory locations.",
       sections: [
         {
-          heading: "Operations on Linked List:",
-          subHeading:
-            "A linked list is a linear data structure that stores data in nodes connected by pointers.",
-          answerLists: [
-            "Creation: Creating or adding nodes.",
-            "Traversal: Accessing nodes sequentially.",
-            "Insertion: Adding nodes at specific positions.",
-            "Deletion: Removing nodes from the list.",
-            "Search: Finding nodes by value.",
+          characteristics: "Characteristics of Linked List:",
+          characteristicsList: [
+            "Dynamic: Linked lists can be easily resized by adding or removing nodes.",
+            "Non-contiguous: Nodes are stored in random memory locations and connected by pointers.",
+            "Sequential access: Nodes can only be accessed sequentially, starting from the head of the list.",
+          ],
+          operations: "Operations on Linked List:",
+          operationsList: [
+            "Creation: Creating a new linked list or adding a new node to an existing list.",
+            "Traversal: Iterating through the list and accessing each node.",
+            "Insertion: Adding a new node at a specific position in the list.",
+            "Deletion: Removing a node from the list.",
+            "Search: Finding a node with a specific value in the list.",
+          ],
+          heading: "Types of Linked List:",
+          answerLists1: [
+            "Singly Linked List: Each node points to the next node in the list.",
+            "Doubly Linked List: Each node points to both the next and previous nodes in the list.",
+            "Circular Linked List: The last node points back to the first node, forming a circular loop.",
           ],
           applicationsHeading: "Applications of Linked Lists:",
           applications: [
-            "Implementing queues and stacks",
-            "Representing graphs and trees",
-            "Maintaining ordered data",
-            "Memory management",
+            "Linked lists are used in various applications, including:",
+            "Implementing queues and stacks,",
+            "Representing graphs and trees,",
+            "Maintaining ordered data,",
+            "Memory management.",
           ],
           relatedTopics: [
             "Linked List Tutorial",
@@ -103,15 +114,13 @@ export const dataStructures = {
       ],
     },
     {
-      heading: "Matrix",
+      heading: "Matrix/Grid",
       description:
-        "A matrix is a two-dimensional array of elements arranged in rows and columns. Matrices represent data in a grid format, useful in various applications like image processing and data analysis.",
+        "A matrix is a two-dimensional array of elements, arranged in rows and columns. It is represented as a rectangular grid, with each element at the intersection of a row and column.",
       sections: [
         {
-          heading: "Operations on Matrix:",
-          subHeading:
-            "A matrix is a two-dimensional array of elements arranged in rows and columns.",
-          answerLists: [
+          characteristics: "Operations on Matrix:",
+          characteristicsList: [
             "Rows: Horizontal lines of elements.",
             "Columns: Vertical lines of elements.",
             "Dimensions: The size of the matrix in rows and columns.",

@@ -26,26 +26,92 @@ const DataStructure = () => {
             <ul className="list-disc ml-2">
               {topic.sections.map((section, idx) => (
                 <li key={idx} className="mt-6 mb-6">
-                  <Link
-                    className="text-xl font-medium text-green-600 mb-2 underline"
-                    to="#"
-                  >
-                    {section.heading}
-                  </Link>
-
-                  <div className="mt-4">
-                    <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                      {section.answerLists?.map((item, listIdx) => {
+                  <div className="mb-5">
+                    {section.characteristics && (
+                      <li className="mb-2 font-semibold">
+                        <p>{section.characteristics}</p>
+                      </li>
+                    )}
+                    <span>
+                      {section.characteristicsList?.map((item, listIdx) => {
                         const [firstWord, ...rest] = item.split(": ");
                         return (
-                          <li key={listIdx}>
+                          <li key={listIdx} className="ml-16 list-[circle]">
                             <span className="font-semibold">{firstWord}:</span>{" "}
                             {rest.join(": ")}
                           </li>
                         );
                       })}
-                    </ul>
+                    </span>
                   </div>
+
+                  {section.operations && (
+                    <div>
+                      <li className="mb-2 font-semibold">
+                        <p>{section.operations}</p>
+                      </li>
+                      {section.operationsList &&
+                        section.operationsList.length > 0 && (
+                          <ul className="ml-16 list-[circle]">
+                            {section.operationsList.map((item, listIdx) => {
+                              const [firstWord, ...rest] = item.split(": ");
+                              return (
+                                <li key={listIdx}>
+                                  <span className="font-semibold">
+                                    {firstWord}:
+                                  </span>{" "}
+                                  {rest.join(": ")}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                    </div>
+                  )}
+                  {section.heading && (
+                    <li>
+                      <Link
+                        className="text-xl font-medium text-green-600 mb-2 underline"
+                        to="#"
+                      >
+                        {section.heading}
+                      </Link>
+                    </li>
+                  )}
+                  {section.answerLists && section.answerLists.length > 0 && (
+                    <div className="mt-4">
+                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
+                        {section.answerLists?.map((item, listIdx) => {
+                          const [firstWord, ...rest] = item.split(": ");
+                          return (
+                            <li key={listIdx}>
+                              <Link className="font-semibold ">
+                                {firstWord}:
+                              </Link>{" "}
+                              {rest.join(": ")}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                  {section.answerLists1 && section.answerLists1.length > 0 && (
+                    <div className="mt-4">
+                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
+                        {section.answerLists1?.map((item, listIdx) => {
+                          const [firstWord, ...rest] = item.split(": ");
+                          return (
+                            <li key={listIdx}>
+                              <Link className="font-semibold text-green-600 underline">
+                                {firstWord}:
+                              </Link>{" "}
+                              {rest.join(": ")}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
 
                   <div className="mt-4">
                     {section.heading2 && (
