@@ -282,12 +282,14 @@ export const dataStructures = {
           heading: "Traversal of Tree:",
           headingDescription:
             "Tree traversal methods are used to visit and process nodes in a tree data structure. The three common traversal methods are:",
-          answerLists: [
-            "Hash Function: A function that maps data to a specific index.",
-            "Collision: When two different inputs produce the same output.",
-            "Chaining: A technique to handle collisions by linking entries.",
-            "Open Addressing: A technique to handle collisions by probing.",
+          answerLists1: [
+            "In-Order: Visit left subtree, current node, then right subtree.",
+            "Pre-Order: Visit current node, left subtree, then right subtree.",
+            "Post-Order: Visit left subtree, right subtree, then current node.",
           ],
+          classification: "Classifications of Trees:",
+          classificationData:
+            "Classifications of Trees refer to grouping trees based on certain characteristics or criteria. This can involve categorizing trees based on their balance factor, degree of nodes, ordering properties, etc. Below are some important classification of Tree.",
           applicationsHeading: "Applications of Hashing:",
           applications: ["Hash tables", "Dictionaries", "Caches"],
           relatedTopics: [

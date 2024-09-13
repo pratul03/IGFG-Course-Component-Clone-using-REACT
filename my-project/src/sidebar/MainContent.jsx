@@ -5,6 +5,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { allCoursesData } from "../../public/data/dsaCard.js";
 import DataStructure from "../components/DataStructure.jsx";
+import ArrayComponent from "../components/ArrayComponent.jsx";
+import LinkedListComponent from "../components/LinkedListComponent.jsx";
+import SearchingAlgorithmsComponent from "../components/SearchingAlgorithmsComponent.jsx";
+import StackComponent from "../components/StackComponent.jsx";
+import SortingAlgorithmsComponent from "../components/SortingAlgorithmsComponent.jsx";
+import QueueComponent from "../components/QueueComponent.jsx";
+import TreeComponent from "../components/TreeComponent.jsx";
+import GraphComponent from "../components/GraphComponent.jsx";
 import Sidebar from "./SideBar.jsx";
 
 const MainContent = () => {
@@ -45,10 +53,35 @@ const MainContent = () => {
     }
   }, [topic]);
 
+  // Function to render the appropriate component based on the topicId
+  const renderComponent = () => {
+    switch (topicId) {
+      case "analysis-of-algorithms":
+        return <DataStructure />;
+      case "array":
+        return <ArrayComponent />;
+      case "linked-list":
+        return <LinkedListComponent />;
+      case "searching-algorithms":
+        return <SearchingAlgorithmsComponent />;
+      case "stack":
+        return <StackComponent />;
+      case "sorting-algorithms":
+        return <SortingAlgorithmsComponent />;
+      case "queue":
+        return <QueueComponent />;
+      case "tree":
+        return <TreeComponent />;
+      case "graph":
+        return <GraphComponent />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="flex w-full">
       {/* Sidebar to navigate between topics */}
-
       <Sidebar courseId={courseId} topics={course.topics} />
 
       <div className="left-0 flex flex-col w-3/4 max-w-4xl mr-auto p-6 text-white shadow-lg mt-3">
@@ -84,7 +117,6 @@ const MainContent = () => {
             </p>
             <hr className="border-t border-gray-200/30 my-2" />
             {/* Display topic content */}
-
             <p className="text-lg text-slate-200">
               <span className="font-bold mr-2">{topic.boldText}</span>
               {topic.description}
@@ -172,7 +204,7 @@ const MainContent = () => {
                   <span className="flex flex-col gap-y-3">
                     <p className="text-lg font-normal">{section.extraText1}</p>
 
-                    <p className="text-lg font-normal">{section.extraText1}</p>
+                    <p className="text-lg font-normal">{section.extraText2}</p>
 
                     <p className="text-lg font-normal">{section.extraText3}</p>
                     <ul className="list-disc font-bold ml-5 space-y-2 text-lg tracking-wide">
@@ -190,10 +222,9 @@ const MainContent = () => {
                       </Link>
                     </p>
                     <p className="text-lg font-normal">{section.extraText5}</p>
+                    {/* Render the appropriate component based on the topic */}
                     <span className="ml-[-20px] text-lg font-normal">
-                      <>
-                        <DataStructure />
-                      </>
+                      {renderComponent()}
                     </span>
                   </span>
                 </div>

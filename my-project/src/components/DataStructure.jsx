@@ -2,6 +2,7 @@
 import React from "react";
 import { dataStructures } from "../../public/data/dataStructure";
 import { Link } from "react-router-dom";
+import TreeClassificationTable from "./TreeClassificationTable";
 
 const DataStructure = () => {
   return (
@@ -156,6 +157,21 @@ const DataStructure = () => {
                       </ul>
                     </div>
                   )}
+                  {section.classification && (
+                    <li className="my-4 font-semibold">
+                      <p>{section.classification}</p>
+                      {section.classificationData && (
+                        <li className="list-[circle] font-normal ml-16 space-y-1 mt-3">
+                          {section.classificationData}
+                        </li>
+                      )}
+                    </li>
+                  )}
+                  {topic.heading === "Tree" ? (
+                    <TreeClassificationTable />
+                  ) : (
+                    <p>No Tree Classification Available</p>
+                  )}
                   {section.answerLists2 && section.answerLists2.length > 0 && (
                     <div className="mt-4">
                       <ul className="list-[circle] ml-16 space-y-1 mt-3">
@@ -227,7 +243,6 @@ const DataStructure = () => {
                       </ul>
                     )}
                   </div>
-
                   <div className="mt-4">
                     <li>
                       <Link

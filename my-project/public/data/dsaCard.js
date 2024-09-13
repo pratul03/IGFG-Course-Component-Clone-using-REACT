@@ -52,19 +52,19 @@ export const allCoursesData = [
       },
       {
         label: "Array",
-        heading: "Learn Array | DSA Tutorial",
+        heading: "Array Data Structure Guide",
         lastUpdated: "01 Sep, 2024",
         description:
-          "An array is a linear data structure that stores elements of the same type in contiguous memory locations. Arrays allow for constant-time access to elements and are widely used in programming for various applications.",
+          "An array data structure is a fundamental concept in computer science that stores a collection of elements in a contiguous block of memory. It allows for efficient access to elements using indices and is widely used in programming for organizing and manipulating data.",
         content:
           "Arrays are one of the simplest and most commonly used data structures. They provide a way to store multiple items of the same type together, making them ideal for situations where you need to perform bulk operations. This section covers array operations, types, and applications.",
         image:
-          "https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726162247/Array-data-structure.png",
         sections: [
           {
-            heading: "Array Operations",
+            heading: "What is an Array?",
             content:
-              "Array operations include traversal, insertion, deletion, searching, and sorting. Understanding these operations is fundamental for working with arrays effectively.",
+              "An array is a collection of items of the same variable type that are stored at contiguous memory locations. It’s one of the most popular and simple data structures and is often used to implement other data structures. Each item in an array is indexed starting with 0 . Each element in an array is accessed through its index.",
           },
           {
             heading: "Types of Arrays",
