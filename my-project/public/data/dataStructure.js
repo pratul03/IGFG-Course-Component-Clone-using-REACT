@@ -1,32 +1,107 @@
 export const dataStructures = {
-  title: "Learn Data Structures",
-  description:
-    "Data structures are essential components that help organize and store data efficiently in computer memory. They provide a way to manage and manipulate data effectively, enabling faster access, insertion, and deletion operations.",
-  description1:
-    " Common data structures include arrays, linked lists, stacks, queues, trees, and graphs, each serving specific purposes based on the requirements of the problem at hand. Understanding data structures is fundamental for designing efficient algorithms and optimizing software performance.",
-  heading: "Common Data Structures to learn : ",
+  topic: [
+    {
+      label: "Analysis of Algorithms",
+      heading: "Learn Data Structures and Algorithms | DSA Tutorial",
+      lastUpdated: "01 Sep, 2024",
+      boldText: "Data Structures and Algorithms (DSA)",
+      description:
+        "refer to the study of methods for organizing and storing data and the design of procedures (algorithms) for solving problems, which operate on these data structures. DSA is one of the most important skills that every computer science student must have. It is often seen that people with good knowledge of these technologies are better programmers than others and thus, crack the interviews of almost every tech giant, including companies like Google, Microsoft, Amazon, and Facebook (now Meta). This DSA tutorial aims to help you learn Data Structures and Algorithms (DSA) quickly and easily.",
+      content:
+        "The analysis of algorithms is a crucial step in the design process, allowing us to predict the performance of algorithms and optimize them for efficiency. This topic includes Big O notation, time complexity, space complexity, and best, average, and worst-case analysis.",
+      image:
+        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230807133054/Data-structure-algorithm.png",
+      imgDescription: "Data Structure & Algorithm Tutorial",
+      sections: [
+        {
+          heading: "DSA Full Form",
+          subHeading:
+            "The term DSA stands for Data Structures and Algorithms, in the context of Computer Science.",
+          linkHead: "What is DSA?",
+          linkAns: "Data Structures and Algorithms (DSA)",
+          answerHead:
+            "refer to the study of methods for organizing and storing data and the design of procedures (algorithms) for solving problems, which operate on these data structures.",
+          linkHead2: "How to learn DSA?",
+          answerHead2:
+            "The first and foremost thing is dividing the total procedure into little pieces which need to be done sequentially. The complete process to learn DSA from scratch can be broken into 5 parts:",
+          answerLists: [
+            "Learn at least one programming language (We leave this to your choice.)",
+            "Learn Data Structures",
+            "Learn Algorithms",
+            "Learn about Time and Space complexities",
+            "Practice Problems on DSA",
+          ],
+          sectionImg:
+            "https://media.geeksforgeeks.org/wp-content/uploads/20220602151616/5StepstolearnDSA.jpg",
+          sectionImgAlt: "How to learn DSA?",
+          extraText1:
+            "Hoping you have learned a programming language of your choice, let us move forward with the next step to learn DSA in this DSA tutorial.",
+          extraText2:
+            "Here comes the most important and the most awaited stage of the roadmap for learning data structure and algorithm – the stage where you start learning about DSA.",
+          extraText3: "The topic of DSA consists of two parts",
+          extraText3SubParts: ["Data Structures", "Algorithms "],
+          extraText4:
+            "Though they are two different things, they are highly interrelated, and it is very important to follow the right track to learn them most efficiently. If you are confused about which one to learn first, we recommend you to go through our detailed analysis on the topic:",
+          extraText4Sub:
+            "What should I learn first- Data Structures or Algorithms?",
+        },
+      ],
+    },
+  ],
   topics: [
+    {
+      heading: "Learn about Complexities",
+      description:
+        "In Data Structures and Algorithms (DSA), the main goal is to solve problems effectively and efficiently. To determine the efficiency of a program, we look at two types of complexities:",
+      topicList: [
+        "Time Complexity: This tells us how much time our code takes to run.",
+        "Space Complexity: This tells us how much memory our code uses.",
+      ],
+      notation: "Asymptotic Notation",
+      notationDescription:
+        "To compare efficiencies of algorithms, we use asymptotic notation, a mathematical tool that estimates time based on input size without running the code. It focuses on the number of basic operations in the program.",
+      complexityData: [
+        {
+          notation: "Big-O (O)",
+          description:
+            "Describes the worst-case scenario, providing an upper time bound of algorithm.",
+          link: "#",
+        },
+        {
+          notation: "Omega (Ω)",
+          description:
+            "Describes the best-case scenario, offering a lower time bound of algorithm.",
+          link: "#",
+        },
+        {
+          notation: "Theta (θ)",
+          description:
+            "Represents the average complexity of an algorithm of algorithm.",
+          link: "#",
+        },
+      ],
+    },
     {
       heading: "Array",
       description:
-        "Array is a linear data structure that stores a collection of elements of the same data type. Elements are allocated contiguous memory, allowing for constant-time access. Each element has a unique index number.",
+        "An array is a linear data structure that stores a collection of elements of the same data type. Elements are allocated contiguous memory, allowing for constant-time access. Each element has a unique index number.",
       sections: [
         {
-          heading: "Operations on Array:",
+          heading: "Operations on Array",
           subHeading:
-            "An Array is a linear data structure that stores a collection of elements of the same data type in contiguous memory locations.",
+            "An array is a linear data structure that stores a collection of elements of the same data type in contiguous memory locations.",
           answerLists: [
             "Traversal: Iterating through the elements of an array.",
             "Insertion: Adding an element to the array at a specific index.",
             "Deletion: Removing an element from the array at a specific index.",
             "Searching: Finding an element in the array by its value or index.",
           ],
-          heading2: "Types of Arrays:",
+          heading2: "Types of Arrays",
           headSub: [
             "One-dimensional array: A simple array with a single dimension.",
             "Multidimensional array: An array with multiple dimensions, such as a matrix.",
           ],
-          applicationsHeading: "Applications of Arrays:",
+          applicationsHeading: "Applications of Arrays",
           applications: [
             "Storing data in a sequential manner",
             "Implementing queues, stacks, and other data structures",
@@ -46,7 +121,7 @@ export const dataStructures = {
         "A string is a sequence of characters, typically used to represent text. It is considered a data type that allows for the manipulation and processing of textual data in computer programs.",
       sections: [
         {
-          heading: "Operations on String:",
+          heading: "Operations on String",
           subHeading:
             "A string is a sequence of characters, typically used to represent text in computer programs.",
           answerLists: [
@@ -56,7 +131,7 @@ export const dataStructures = {
             "Search: Finding a substring within a string.",
             "Modification: Changing or replacing characters.",
           ],
-          applicationsHeading: "Applications of Strings:",
+          applicationsHeading: "Applications of Strings",
           applications: [
             "Text processing",
             "Pattern matching",
@@ -77,13 +152,13 @@ export const dataStructures = {
         "A linked list is a linear data structure that stores data in nodes, which are connected by pointers. Unlike arrays, linked lists are not stored in contiguous memory locations.",
       sections: [
         {
-          characteristics: "Characteristics of Linked List:",
+          characteristics: "Characteristics of Linked List",
           characteristicsList: [
             "Dynamic: Linked lists can be easily resized by adding or removing nodes.",
             "Non-contiguous: Nodes are stored in random memory locations and connected by pointers.",
             "Sequential access: Nodes can only be accessed sequentially, starting from the head of the list.",
           ],
-          operations: "Operations on Linked List:",
+          operations: "Operations on Linked List",
           operationsList: [
             "Creation: Creating a new linked list or adding a new node to an existing list.",
             "Traversal: Iterating through the list and accessing each node.",
@@ -91,19 +166,18 @@ export const dataStructures = {
             "Deletion: Removing a node from the list.",
             "Search: Finding a node with a specific value in the list.",
           ],
-          heading: "Types of Linked List:",
+          heading: "Types of Linked List",
           answerLists1: [
             "Singly Linked List: Each node points to the next node in the list.",
             "Doubly Linked List: Each node points to both the next and previous nodes in the list.",
             "Circular Linked List: The last node points back to the first node, forming a circular loop.",
           ],
-          applicationsHeading: "Applications of Linked Lists:",
+          applicationsHeading: "Applications of Linked Lists",
           applications: [
-            "Linked lists are used in various applications, including:",
-            "Implementing queues and stacks,",
-            "Representing graphs and trees,",
-            "Maintaining ordered data,",
-            "Memory management.",
+            "Implementing queues and stacks",
+            "Representing graphs and trees",
+            "Maintaining ordered data",
+            "Memory management",
           ],
           relatedTopics: [
             "Linked List Tutorial",
@@ -119,14 +193,14 @@ export const dataStructures = {
         "A matrix is a two-dimensional array of elements, arranged in rows and columns. It is represented as a rectangular grid, with each element at the intersection of a row and column.",
       sections: [
         {
-          characteristics: "Operations on Matrix:",
+          characteristics: "Operations on Matrix",
           characteristicsList: [
             "Rows: Horizontal lines of elements.",
             "Columns: Vertical lines of elements.",
             "Dimensions: The size of the matrix in rows and columns.",
             "Element Access: Accessing elements using row and column indices.",
           ],
-          applicationsHeading: "Applications of Matrices:",
+          applicationsHeading: "Applications of Matrices",
           applications: [
             "Image processing",
             "Data analysis",
@@ -146,25 +220,24 @@ export const dataStructures = {
         "A Stack is a linear data structure that follows the LIFO (Last In First Out) principle. Stacks are used for operations like function calls, expression evaluation, and undo/redo operations.",
       sections: [
         {
-          heading: "Operations on Stack:",
+          heading: "Operations on Stack",
           answerLists: [
             "Push: Adds an element to the top of the stack.",
             "Pop: Removes and returns the element at the top of the stack.",
-            "Peek: Returns the element at the top of the stack without removing it.",
-            "Size: Returns the number of elements in the stack.",
+            "Peek/Top: Returns the element at the top of the stack without removing it.",
             "IsEmpty: Checks if the stack is empty.",
           ],
-          applicationsHeading: "Applications of Stacks:",
+          applicationsHeading: "Applications of Stacks",
           applications: [
-            "Function calls",
             "Expression evaluation",
             "Backtracking",
-            "Undo/redo operations",
+            "Function call management",
+            "Parsing and syntax checking",
           ],
           relatedTopics: [
             "Stack Tutorial",
             "Top 50 Problems on Stack for Interviews",
-            "Practice problems on Stack",
+            "Practice Problems on Stack",
           ],
         },
       ],
@@ -175,7 +248,7 @@ export const dataStructures = {
         "A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of “First in, First out” (FIFO), where the first element added to the queue is the first one to be removed.",
       sections: [
         {
-          heading: "Operations on Queue:",
+          heading: "Operations on Queue",
           answerLists: [
             "Enqueue: Adds an element to the rear of the queue.",
             "Dequeue: Removes an element from the front of the queue.",
@@ -183,18 +256,18 @@ export const dataStructures = {
             "IsEmpty: Checks if the queue is empty.",
             "IsFull: Checks if the queue is full.",
           ],
-          heading1: "Types of Queue:",
+          heading1: "Types of Queue",
           answerLists1: [
             "Circular Queue: Last element connects to the first element.",
             "Double-Ended Queue (Deque): Operations can be performed from both ends.",
             "Priority Queue: Elements are arranged based on priority.",
           ],
-          applicationsHeading: "Applications of Queues:",
+          applicationsHeading: "Applications of Queues",
           applications: [
-            "Job scheduling,",
-            "Message queuing,",
-            "Simulation modeling,",
-            "Data buffering.",
+            "Job scheduling",
+            "Message queuing",
+            "Simulation modeling",
+            "Data buffering",
           ],
           relatedTopics: [
             "Queue Tutorial",
@@ -207,33 +280,30 @@ export const dataStructures = {
     {
       heading: "Heap",
       description:
-        "A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement",
-      greenText: "priority queues",
-      afterGreenText:
-        ", where the smallest(or largest) element is always at the root of the tree.",
+        "A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.",
       sections: [
         {
-          heading: "Operations on Graph:",
+          heading: "Operations on Heap",
           answerLists: [
             "Insert: Adds a new element to the heap while maintaining heap properties.",
             "Extract-Max/Extract-Min: Removes the root element and restructures the heap.",
             "Increase/Decrease-Key: Updates the value of a node and restructures the heap.",
           ],
-          heading1: "Types of Heap:",
+          heading1: "Types of Heap",
           answerLists1: [
             "Max-Heap: Root node has the maximum value among its children.",
             "Min-Heap: Root node has the minimum value among its children.",
           ],
-          applicationsHeading: "Applications of Graphs:",
+          applicationsHeading: "Applications of Heaps",
           applications: [
             "Priority queues",
             "Sorting",
             "Graph algorithms (e.g., Dijkstra’s algorithm)",
           ],
           relatedTopics: [
-            "Graph Tutorial",
-            "Top 50 Problems on Graph for Interviews",
-            "Practice problems on Graph",
+            "Heap Tutorial",
+            "Top 50 Problems on Heap for Interviews",
+            "Practice problems on Heap",
           ],
         },
       ],
@@ -241,28 +311,28 @@ export const dataStructures = {
     {
       heading: "Hash",
       description:
-        "Hashing is a technique that generates a fixed-size output (hash value) from an input of variable size using mathematical formulas called hash functions. Hashing is used to determine an index or location for storing an item in a data structure, allowing for efficient retrieval and insertion.",
+        "Hashing is a technique that generates a fixed-size output (hash value) from an input of variable size using mathematical formulas called hash functions. Hashing is used to determine an index or location for storing an item in a data structure, often a hash table.",
       sections: [
         {
-          characteristics: "Key Concepts:",
-          characteristics1: [
+          characteristics: "Key Concepts",
+          characteristicsList: [
             "Hash Function: A mathematical function that maps an input to a hash value.",
             "Hash Table: A data structure that stores key-value pairs, where the key is a hash value and the value is the actual data.",
             "Collision: When two different keys produce the same hash value.",
           ],
-          heading1: "Types of Hash Functions:",
+          heading1: "Types of Hash Functions",
           answerLists2: [
             "Division Method: Divides the input by a constant and uses the remainder as the hash value.",
             "Mid Square Method: Squares the input and takes the middle digits as the hash value.",
             "Folding Method: Divides the input into equal-sized blocks and adds them together to get the hash value.",
             "Multiplication Method: Multiplies the input by a constant and takes the fractional part as the hash value.",
           ],
-          heading3: "Collision Resolution Techniques:",
+          heading3: "Collision Resolution Techniques",
           answerLists3: [
             "Separate Chaining (Open Hashing): Stores colliding elements in a linked list at the corresponding hash value.",
             "Open Addressing (Closed Hashing): Uses various strategies to find an alternative location for colliding elements within the hash table.",
           ],
-          applicationsHeading: "Applications of Trees:",
+          applicationsHeading: "Applications of Hashing",
           applications: [
             "Efficiently storing and retrieving data in databases and file systems.",
             "Verifying passwords and digital signatures.",
@@ -279,7 +349,7 @@ export const dataStructures = {
         "A tree is a non-linear hierarchical data structure consisting of nodes connected by edges, with a top node called the root and nodes having child nodes. It is used in computer science for organizing data efficiently.",
       sections: [
         {
-          heading: "Traversal of Tree:",
+          heading: "Traversal of Tree",
           headingDescription:
             "Tree traversal methods are used to visit and process nodes in a tree data structure. The three common traversal methods are:",
           answerLists1: [
@@ -287,15 +357,19 @@ export const dataStructures = {
             "Pre-Order: Visit current node, left subtree, then right subtree.",
             "Post-Order: Visit left subtree, right subtree, then current node.",
           ],
-          classification: "Classifications of Trees:",
+          classification: "Classifications of Trees",
           classificationData:
-            "Classifications of Trees refer to grouping trees based on certain characteristics or criteria. This can involve categorizing trees based on their balance factor, degree of nodes, ordering properties, etc. Below are some important classification of Tree.",
-          applicationsHeading: "Applications of Hashing:",
-          applications: ["Hash tables", "Dictionaries", "Caches"],
+            "Classifications of Trees refer to grouping trees based on certain characteristics or criteria. This can involve categorizing trees based on their balance factor, degree of nodes, ordering properties, etc. Below are some important classifications of trees.",
+          applicationsHeading: "Applications of Trees",
+          applications: [
+            "Hierarchical data representation",
+            "Efficient searching and sorting",
+            "Database indexing",
+          ],
           relatedTopics: [
-            "Hashing Tutorial",
-            "Top 50 Problems on Hashing for Interviews",
-            "Practice problems on Hashing",
+            "Tree Tutorial",
+            "Top 50 Problems on Trees for Interviews",
+            "Practice problems on Trees",
           ],
         },
       ],

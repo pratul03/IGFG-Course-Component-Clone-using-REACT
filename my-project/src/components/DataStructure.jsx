@@ -1,287 +1,749 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+// import React, { useEffect, useState } from "react";
+// import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
+// import { dataStructures } from "../../public/data/dataStructure";
+// import { Link } from "react-router-dom";
+// import TreeClassificationTable from "./TreeClassificationTable";
+
+// const DataStructure = () => {
+//   const [updateTime, setUpdateTime] = useState("");
+
+//   const formatUpdateTime = () => {
+//     const now = new Date();
+//     const day = now.getDate();
+//     const month = now.toLocaleString("en-US", { month: "short" });
+//     const year = now.getFullYear();
+//     return `${day} ${month}, ${year}`; // Format it as "14 Sep, 2024"
+//   };
+
+//   useEffect(() => {
+//     setUpdateTime(`Last Updated: ${formatUpdateTime()}`);
+//   }, []);
+
+//   return (
+//     <div className="flex w-full mt-[-20px]">
+//       <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
+//         {dataStructures.topic?.map((item, index) => (
+//           <div key={index}>
+//             <h1 className="text-2xl font-semibold mb-3">{item.heading}</h1>
+//             <p className="mt-2 text-sm text-gray-200 flex items-center">
+//               {updateTime}
+//               <div className="flex ml-[450px] gap-3 text-white relative">
+//                 {/* MessageCircle Icon */}
+//                 <div className="relative group">
+//                   <MessageCircle className="h-5 cursor-pointer hover:text-gray-500" />
+//                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+//                     comments
+//                   </div>
+//                 </div>
+
+//                 {/* Pencil Icon */}
+//                 <div className="relative group">
+//                   <Pencil className="h-5 cursor-pointer hover:text-gray-500" />
+//                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+//                     improve
+//                   </div>
+//                 </div>
+
+//                 {/* Ellipsis Icon */}
+//                 <div className="relative group">
+//                   <Ellipsis className="rotate-[90deg] h-5 cursor-pointer hover:text-gray-500" />
+//                 </div>
+//               </div>
+//             </p>
+//             <hr className="border-t border-gray-200/30 my-2" />
+//             <span className="text-lg text-slate-200 tracking-normal">
+//               {item.boldText && (
+//                 <span className="font-bold mr-2">{item.boldText}</span>
+//               )}
+//               {item.description}
+//             </span>
+//             <span className="flex flex-col justify-center content-center items-center">
+//               {item.image && (
+//                 <img
+//                   src={item.image}
+//                   alt={item.label}
+//                   className="mt-4 rounded-lg w-[600px] h-[40vh]"
+//                 />
+//               )}
+//               {item.imgDescription && (
+//                 <p className="text-stone-500/70 italic text-xs font-normal mt-[0.5px] ">
+//                   {item.imgDescription}
+//                 </p>
+//               )}
+//             </span>
+//             <div className="mt-6">
+//               {topic.sections &&
+//                 topic.sections.map((section, index) => (
+//                   <div key={index} className="mb-6">
+//                     {section.heading && (
+//                       <h2 className="text-2xl font-bold mb-2">
+//                         {section.heading}
+//                       </h2>
+//                     )}
+//                     {section.subHeading && (
+//                       <p className="text-xl font-medium">
+//                         {section.subHeading}
+//                       </p>
+//                     )}
+//                     {section.content && (
+//                       <p className="text-lg text-white mb-4">
+//                         {section.content}
+//                       </p>
+//                     )}
+//                     <span className="flex flex-col gap-y-2 mb-2">
+//                       {section.linkHead && (
+//                         <Link
+//                           to={"#"}
+//                           className="text-green-600 underline text-2xl font-normal tracking-wide"
+//                         >
+//                           {section.linkHead}
+//                         </Link>
+//                       )}
+//                       {section.answerHead && (
+//                         <p className="text-lg font-normal tracking-normal">
+//                           {section.answerHead}
+//                         </p>
+//                       )}
+//                     </span>
+//                     <span className="flex flex-col gap-y-2 mb-2">
+//                       {section.linkHead2 && (
+//                         <Link
+//                           to={"#"}
+//                           className="text-green-600 underline text-2xl font-normal tracking-wide"
+//                         >
+//                           {section.linkHead2}
+//                         </Link>
+//                       )}
+//                       {section.answerHead2 && (
+//                         <p className="text-lg font-normal tracking-normal">
+//                           {section.answerHead2}
+//                         </p>
+//                       )}
+//                       {section.answerLists && (
+//                         <ol className="list-decimal ml-5 space-y-2 font-normal">
+//                           {section.answerLists.map((step, idx) => {
+//                             const isLastItem =
+//                               idx === section.answerLists.length - 1;
+
+//                             return (
+//                               <li key={idx} className="text-xl">
+//                                 {isLastItem ? (
+//                                   <Link
+//                                     to={"#"}
+//                                     className="text-green-600 underline"
+//                                   >
+//                                     {step}
+//                                   </Link>
+//                                 ) : (
+//                                   step
+//                                 )}
+//                               </li>
+//                             );
+//                           })}
+//                         </ol>
+//                       )}
+//                     </span>
+//                     {section.sectionImg && (
+//                       <span className="flex flex-col justify-center content-center items-center">
+//                         <img
+//                           src={section.sectionImg}
+//                           alt={section.sectionImgAlt || "Section image"}
+//                           className="mt-4 rounded-lg w-[400px] h-[40vh]"
+//                         />
+//                         {section.sectionImgAlt && (
+//                           <p className="text-stone-500/70 italic text-xs font-normal">
+//                             {section.sectionImgAlt}
+//                           </p>
+//                         )}
+//                       </span>
+//                     )}
+//                     <span className="flex flex-col gap-y-3">
+//                       {section.extraText1 && (
+//                         <p className="text-lg font-normal">
+//                           {section.extraText1}
+//                         </p>
+//                       )}
+//                       {section.extraText2 && (
+//                         <p className="text-lg font-normal">
+//                           {section.extraText2}
+//                         </p>
+//                       )}
+//                       {section.extraText3 && (
+//                         <>
+//                           <p className="text-lg font-normal">
+//                             {section.extraText3}
+//                           </p>
+//                           <ul className="list-disc font-bold ml-5 space-y-2 text-lg tracking-wide">
+//                             {section.extraText3SubParts &&
+//                               section.extraText3SubParts.map((item, idx) => (
+//                                 <li key={idx}>{item}</li>
+//                               ))}
+//                           </ul>
+//                         </>
+//                       )}
+//                       {section.extraText4 && (
+//                         <p className="text-lg font-normal">
+//                           {section.extraText4}
+//                           <Link
+//                             to={"#"}
+//                             className="text-green-600 underline font-semibold"
+//                           >
+//                             {section.extraText4Sub}
+//                           </Link>
+//                         </p>
+//                       )}
+//                       {section.extraText5 && (
+//                         <p className="text-lg font-normal">
+//                           {section.extraText5}
+//                         </p>
+//                       )}
+//                     </span>
+//                   </div>
+//                 ))}
+//             </div>
+//         ))}
+
+//             <div className="flex flex-col w-3/4 max-w-4xl p-6 text-white shadow-lg mt-3">
+//               {/* Main Title */}
+//               <h1 className="text-2xl font-medium text-green-600 underline hover:cursor-pointer mb-6">
+//                 {dataStructures.title}
+//               </h1>
+
+//               {/* Descriptions */}
+//               <p className="text-lg mb-4">{dataStructures.description}</p>
+//               <p className="text-lg mb-8">{dataStructures.description1}</p>
+//               <p className="text-xl font-semibold mb-8">{dataStructures.heading}</p>
+
+//               {/* Topics List */}
+//               <ol className="list-decimal ml-2">
+//                 {dataStructures.topics.map((topic, index) => (
+//                   <li key={index} className="mb-10">
+//                     <h2 className="text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3">
+//                       {topic.heading}
+//                     </h2>
+
+//                     {/* Topic Description */}
+//                     {topic.description && (
+//                       <p className="mt-2 text-lg font-medium text-gray-100">
+//                         {topic.description}
+//                         {topic.greenText && (
+//                           <Link to={"#"} className="text-green-600 underline">
+//                             {topic.greenText}
+//                           </Link>
+//                         )}
+//                         {topic.afterGreenText && ` ${topic.afterGreenText}`}
+//                       </p>
+//                     )}
+
+//                     {/* Topic Sections */}
+//                     <ul className="list-disc ml-2">
+//                       {topic.sections.map((section, idx) => (
+//                         <li key={idx} className="mt-6 mb-6">
+//                           {/* Section Characteristics */}
+//                           {section.characteristics && (
+//                             <li className="mb-2 font-semibold">
+//                               <p>{section.characteristics}</p>
+//                             </li>
+//                           )}
+//                           {section.characteristicsList && (
+//                             <ul className="ml-16 list-[circle]">
+//                               {section.characteristicsList.map((item, listIdx) => {
+//                                 const [firstWord, ...rest] = item.split(": ");
+//                                 return (
+//                                   <li key={listIdx}>
+//                                     <span className="font-semibold">
+//                                       {firstWord}:
+//                                     </span>{" "}
+//                                     {rest.join(": ")}
+//                                   </li>
+//                                 );
+//                               })}
+//                             </ul>
+//                           )}
+//                           {section.characteristics1 && (
+//                             <ul className="ml-16 list-[circle]">
+//                               {section.characteristics1.map((item, listIdx) => {
+//                                 const [firstWord, ...rest] = item.split(": ");
+//                                 return (
+//                                   <li key={listIdx}>
+//                                     <Link className="font-medium text-green-600 underline">
+//                                       {firstWord}:
+//                                     </Link>{" "}
+//                                     {rest.join(": ")}
+//                                   </li>
+//                                 );
+//                               })}
+//                             </ul>
+//                           )}
+
+//                           {/* Section Operations */}
+//                           {section.operations && (
+//                             <div>
+//                               <li className="mb-2 font-semibold">
+//                                 <p>{section.operations}</p>
+//                               </li>
+//                               {section.operationsList && (
+//                                 <ul className="ml-16 list-[circle]">
+//                                   {section.operationsList.map((item, listIdx) => {
+//                                     const [firstWord, ...rest] = item.split(": ");
+//                                     return (
+//                                       <li key={listIdx}>
+//                                         <span className="font-semibold">
+//                                           {firstWord}:
+//                                         </span>{" "}
+//                                         {rest.join(": ")}
+//                                       </li>
+//                                     );
+//                                   })}
+//                                 </ul>
+//                               )}
+//                             </div>
+//                           )}
+
+//                           {/* Section Headings and Links */}
+//                           <li>
+//                             <Link
+//                               className="text-xl font-medium text-green-600 mb-2 underline"
+//                               to="#"
+//                             >
+//                               {section.heading}
+//                             </Link>
+//                             {section.headingDescription && (
+//                               <p className="text-lg text-gray-100">
+//                                 {section.headingDescription}
+//                               </p>
+//                             )}
+//                           </li>
+
+//                           {/* Answer Lists */}
+//                           {section.answerLists && (
+//                             <ul className="ml-16 list-[circle] space-y-1 mt-3">
+//                               {section.answerLists.map((item, listIdx) => {
+//                                 const [firstWord, ...rest] = item.split(": ");
+//                                 return (
+//                                   <li key={listIdx}>
+//                                     <Link className="font-semibold">
+//                                       {firstWord}:
+//                                     </Link>{" "}
+//                                     {rest.join(": ")}
+//                                   </li>
+//                                 );
+//                               })}
+//                             </ul>
+//                           )}
+
+//                           {/* Tree Classification */}
+//                           {topic.heading === "Tree" ? (
+//                             <TreeClassificationTable />
+//                           ) : (
+//                             <p>No Tree Classification Available</p>
+//                           )}
+
+//                           {/* Section Images */}
+//                           {section.sectionImg && (
+//                             <span className="flex flex-col justify-center items-center">
+//                               <img
+//                                 src={section.sectionImg}
+//                                 alt={section.sectionImgAlt || "Section image"}
+//                                 className="mt-4 rounded-lg w-[400px] h-[40vh]"
+//                               />
+//                               {section.sectionImgAlt && (
+//                                 <p className="text-stone-500/70 italic text-xs font-normal">
+//                                   {section.sectionImgAlt}
+//                                 </p>
+//                               )}
+//                             </span>
+//                           )}
+
+//                           {/* Additional Headings and Subsections */}
+//                           {section.heading2 && (
+//                             <li className="mt-4">
+//                               <Link className="text-xl font-medium text-green-600 underline">
+//                                 {section.heading2}
+//                               </Link>
+//                             </li>
+//                           )}
+//                           {section.headSub && (
+//                             <ul className="ml-16 list-[circle] space-y-1 mt-3">
+//                               {section.headSub.map((item, listIdx) => (
+//                                 <li key={listIdx}>
+//                                   <span className="font-semibold">
+//                                     {item.split(": ")[0]}:
+//                                   </span>{" "}
+//                                   {item.split(": ")[1]}
+//                                 </li>
+//                               ))}
+//                             </ul>
+//                           )}
+
+//                           {/* Applications */}
+//                           {section.applicationsHeading && (
+//                             <div className="mt-4">
+//                               <li>
+//                                 <Link
+//                                   className="text-xl text-green-600 underline font-medium"
+//                                   to="#"
+//                                 >
+//                                   {section.applicationsHeading}
+//                                 </Link>
+//                               </li>
+//                               <ul className="ml-16 list-[circle] space-y-1">
+//                                 {section.applications.map((app, appIdx) => (
+//                                   <li key={appIdx}>{app}</li>
+//                                 ))}
+//                               </ul>
+//                             </div>
+//                           )}
+
+//                           {/* Related Topics */}
+//                           <div className="mt-4">
+//                             <li>
+//                               <h4 className="text-lg font-semibold">
+//                                 Related Topics:
+//                               </h4>
+//                             </li>
+//                             <ul className="ml-16 list-[circle] space-y-1">
+//                               {section.relatedTopics.map((topic, topicIdx) => (
+//                                 <li key={topicIdx}>
+//                                   <Link
+//                                     className="text-green-600 underline font-medium"
+//                                     to="#"
+//                                   >
+//                                     {topic}
+//                                   </Link>
+//                                 </li>
+//                               ))}
+//                             </ul>
+//                           </div>
+//                         </li>
+//                       ))}
+//                     </ul>
+//                   </li>
+//                 ))}
+//               </ol>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//   );
+// };
+
+// export default DataStructure;
+
+import React, { useEffect, useState } from "react";
+import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { dataStructures } from "../../public/data/dataStructure";
 import { Link } from "react-router-dom";
 import TreeClassificationTable from "./TreeClassificationTable";
 
 const DataStructure = () => {
+  const [updateTime, setUpdateTime] = useState("");
+
+  const formatUpdateTime = () => {
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.toLocaleString("en-US", { month: "short" });
+    const year = now.getFullYear();
+    return `${day} ${month}, ${year}`; // Format it as "14 Sep, 2024"
+  };
+
+  useEffect(() => {
+    setUpdateTime(`Last Updated: ${formatUpdateTime()}`);
+  }, []);
+
   return (
-    <div className="flex flex-col w-full max-w-4xl p-6 text-white shadow-lg mt-3">
-      <h1 className="text-2xl font-medium text-green-600 underline hover:cursor-pointer mb-6">
-        {dataStructures.title}
-      </h1>
-      <p className="text-lg mb-4">{dataStructures.description}</p>
-      <p className="text-lg mb-8">{dataStructures.description1}</p>
-      <p className="text-xl font-semibold mb-8">{dataStructures.heading}</p>
-
-      <ol className="list-decimal ml-2">
-        {dataStructures.topics.map((topic, index) => (
-          <li key={index} className="mb-10">
-            <h2 className="text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3">
-              {topic.heading}
-            </h2>
-            {topic.description && (
-              <p className="mt-2 text-lg font-medium text-gray-100">
-                {topic.description}{" "}
-                {topic.greenText && (
-                  <Link to={"#"} className="text-green-600 underline">
-                    {" "}
-                    {topic.greenText}
-                  </Link>
-                )}
-                {topic.afterGreenText && ` ${topic.afterGreenText}`}
-              </p>
-            )}
-
-            <ul className="list-disc ml-2">
-              {topic.sections.map((section, idx) => (
-                <li key={idx} className="mt-6 mb-6">
-                  <div className="mb-5">
-                    {section.characteristics && (
-                      <li className="mb-2 font-semibold">
-                        <p>{section.characteristics}</p>
-                      </li>
-                    )}
-                    {section.characteristicsList &&
-                      section.characteristicsList.length > 0 && (
-                        <span>
-                          {section.characteristicsList?.map((item, listIdx) => {
-                            const [firstWord, ...rest] = item.split(": ");
-                            return (
-                              <li key={listIdx} className="ml-16 list-[circle]">
-                                <span className="font-semibold">
-                                  {firstWord}:
-                                </span>{" "}
-                                {rest.join(": ")}
-                              </li>
-                            );
-                          })}
-                        </span>
-                      )}
-                    {section.characteristics1 &&
-                      section.characteristics1.length > 0 && (
-                        <span>
-                          {section.characteristics1?.map((item, listIdx) => {
-                            const [firstWord, ...rest] = item.split(": ");
-                            return (
-                              <li key={listIdx} className="ml-16 list-[circle]">
-                                <Link className="font-medium text-green-600 underline">
-                                  {firstWord}:
-                                </Link>{" "}
-                                {rest.join(": ")}
-                              </li>
-                            );
-                          })}
-                        </span>
-                      )}
+    <div className="flex w-full mt-[-20px]">
+      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
+        {dataStructures.topic?.map((item, index) => (
+          <div key={index}>
+            <h1 className="text-2xl font-semibold mb-3">{item.heading}</h1>
+            <p className="mt-2 text-sm text-gray-200 flex items-center">
+              {updateTime}
+              <div className="flex ml-[450px] gap-3 text-white relative">
+                {/* MessageCircle Icon */}
+                <div className="relative group">
+                  <MessageCircle className="h-5 cursor-pointer hover:text-gray-500" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                    comments
                   </div>
+                </div>
 
-                  {section.operations && (
-                    <div>
-                      <li className="mb-2 font-semibold">
-                        <p>{section.operations}</p>
-                      </li>
-                      {section.operationsList &&
-                        section.operationsList.length > 0 && (
-                          <ul className="ml-16 list-[circle]">
-                            {section.operationsList.map((item, listIdx) => {
-                              const [firstWord, ...rest] = item.split(": ");
-                              return (
-                                <li key={listIdx}>
-                                  <span className="font-semibold">
-                                    {firstWord}:
-                                  </span>{" "}
-                                  {rest.join(": ")}
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        )}
-                    </div>
-                  )}
-                  <li>
-                    <Link
-                      className="text-xl font-medium text-green-600 mb-2 underline"
-                      to="#"
-                    >
-                      {section.heading}
-                    </Link>
-                    {section.headingDescription && (
-                      <p className="text-lg text-gray-100">
-                        {section.headingDescription}
+                {/* Pencil Icon */}
+                <div className="relative group">
+                  <Pencil className="h-5 cursor-pointer hover:text-gray-500" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                    improve
+                  </div>
+                </div>
+
+                {/* Ellipsis Icon */}
+                <div className="relative group">
+                  <Ellipsis className="rotate-[90deg] h-5 cursor-pointer hover:text-gray-500" />
+                </div>
+              </div>
+            </p>
+            <hr className="border-t border-gray-200/30 my-2" />
+            <span className="text-lg text-slate-200 tracking-normal">
+              {item.boldText && (
+                <span className="font-bold mr-2">{item.boldText}</span>
+              )}
+              {item.description}
+            </span>
+            <span className="flex flex-col justify-center content-center items-center">
+              {item.image && (
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  className="mt-4 rounded-lg w-[600px] h-[40vh]"
+                />
+              )}
+              {item.imgDescription && (
+                <p className="text-stone-500/70 italic text-xs font-normal mt-[0.5px] ">
+                  {item.imgDescription}
+                </p>
+              )}
+            </span>
+            <div className="mt-6">
+              {item.sections &&
+                item.sections.map((section, index) => (
+                  <div key={index} className="mb-6">
+                    {section.heading && (
+                      <h2 className="text-xl font-bold my-2">
+                        {section.heading}
+                      </h2>
+                    )}
+                    {section.subHeading && (
+                      <p className="text-lg font-medium my-2">
+                        {section.subHeading}
                       </p>
                     )}
-                  </li>
-
-                  {section.answerLists && section.answerLists.length > 0 && (
-                    <div className="mt-4">
-                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                        {section.answerLists?.map((item, listIdx) => {
-                          const [firstWord, ...rest] = item.split(": ");
-                          return (
-                            <li key={listIdx}>
-                              <Link className="font-semibold ">
-                                {firstWord}:
-                              </Link>{" "}
-                              {rest.join(": ")}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
-                  {section.heading1 && (
-                    <li className="mt-4">
-                      <Link
-                        className="text-xl font-medium text-green-600 mb-4 underline"
-                        to="#"
-                      >
-                        {section.heading1}
-                      </Link>
-                    </li>
-                  )}
-                  {section.answerLists1 && section.answerLists1.length > 0 && (
-                    <div className="mt-4">
-                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                        {section.answerLists1?.map((item, listIdx) => {
-                          const [firstWord, ...rest] = item.split(": ");
-                          return (
-                            <li key={listIdx}>
-                              <Link className="font-medium text-green-600 underline">
-                                {firstWord}:
-                              </Link>{" "}
-                              {rest.join(": ")}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
-                  {section.classification && (
-                    <li className="my-4 font-semibold">
-                      <p>{section.classification}</p>
-                      {section.classificationData && (
-                        <li className="list-[circle] font-normal ml-16 space-y-1 mt-3">
-                          {section.classificationData}
-                        </li>
-                      )}
-                    </li>
-                  )}
-                  {topic.heading === "Tree" ? (
-                    <TreeClassificationTable />
-                  ) : (
-                    <p>No Tree Classification Available</p>
-                  )}
-                  {section.answerLists2 && section.answerLists2.length > 0 && (
-                    <div className="mt-4">
-                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                        {section.answerLists2?.map((item, listIdx) => {
-                          const [firstWord, ...rest] = item.split(": ");
-                          return (
-                            <li key={listIdx}>
-                              <Link className="font-bold text-base">
-                                {firstWord}:
-                              </Link>{" "}
-                              {rest.join(": ")}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
-                  {section.heading3 && (
-                    <li>
-                      <Link
-                        className="
-          text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3"
-                      >
-                        {section.heading3}
-                      </Link>
-                    </li>
-                  )}
-                  {section.answerLists3 && section.answerLists3.length > 0 && (
-                    <div className="mt-4">
-                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                        {section.answerLists3?.map((item, listIdx) => {
-                          const [firstWord, ...rest] = item.split(": ");
-                          return (
-                            <li key={listIdx}>
-                              <Link className="font-medium text-green-600 underline text-lg">
-                                {firstWord}:
-                              </Link>{" "}
-                              {rest.join(": ")}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
-                  <div className="mt-4">
-                    {section.heading2 && (
-                      <li>
+                    <span className="flex flex-col gap-y-2 my-2">
+                      {section.linkHead && (
                         <Link
-                          className="
-          text-xl font-medium text-green-600 underline hover:cursor-pointer mb-3"
+                          to={"#"}
+                          className="text-green-600 underline text-2xl font-normal tracking-wide"
                         >
-                          {section.heading2}
+                          {section.linkHead}
                         </Link>
-                      </li>
-                    )}
-                    {section.headSub && section.headSub.length > 0 && (
-                      <ul className="list-[circle] ml-16 space-y-1 mt-3">
-                        {section.headSub.map((item, listIdx) => {
-                          const [firstWord, ...rest] = item.split(": ");
-                          return (
-                            <li key={listIdx}>
-                              <span className="font-semibold">
-                                {firstWord}:
-                              </span>{" "}
-                              {rest.join(": ")}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                  </div>
-                  <div className="mt-4">
-                    <li>
-                      <Link
-                        to="#"
-                        className="text-xl text-green-600 underline font-medium"
-                      >
-                        {section?.applicationsHeading}
-                      </Link>
-                    </li>
-                    <ul className="list-[circle] ml-16 space-y-1">
-                      {section.applications?.map((app, appIdx) => (
-                        <li key={appIdx}>{app}</li>
-                      ))}
-                    </ul>
-                  </div>
+                      )}
+                      {section.answerHead && (
+                        <p className="text-lg font-normal tracking-normal">
+                          {section.linkAns && (
+                            <p>
+                              <span className="font-bold mr-1">
+                                {section.linkAns}
+                              </span>
+                              {section.answerHead}
+                            </p>
+                          )}
+                        </p>
+                      )}
+                    </span>
+                    <span className="flex flex-col gap-y-2 mb-2">
+                      {section.linkHead2 && (
+                        <Link
+                          to={"#"}
+                          className="text-green-600 underline text-2xl font-normal tracking-wide"
+                        >
+                          {section.linkHead2}
+                        </Link>
+                      )}
+                      {section.answerHead2 && (
+                        <p className="text-lg font-normal tracking-normal">
+                          {section.answerHead2}
+                        </p>
+                      )}
+                      {section.answerLists && (
+                        <ol className="list-decimal ml-5 space-y-2 font-normal">
+                          {section.answerLists.map((step, idx) => {
+                            const isLastItem =
+                              idx === section.answerLists.length - 1;
 
-                  <div className="mt-4">
-                    <li>
-                      <h4 className="text-lg font-semibold">Related Topics:</h4>
-                    </li>
-                    <ul className="list-[circle] ml-16 space-y-1">
-                      {section.relatedTopics?.map((topic, topicIdx) => (
-                        <li key={topicIdx}>
+                            return (
+                              <li key={idx} className="text-xl">
+                                {isLastItem ? (
+                                  <Link
+                                    to={"#"}
+                                    className="text-green-600 underline"
+                                  >
+                                    {step}
+                                  </Link>
+                                ) : (
+                                  step
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ol>
+                      )}
+                    </span>
+                    {section.sectionImg && (
+                      <span className="flex flex-col justify-center content-center items-center">
+                        <img
+                          src={section.sectionImg}
+                          alt={section.sectionImgAlt || "Section image"}
+                          className="mt-4 rounded-lg w-[400px] h-[40vh]"
+                        />
+                        {section.sectionImgAlt && (
+                          <p className="text-stone-500/70 italic text-xs font-normal">
+                            {section.sectionImgAlt}
+                          </p>
+                        )}
+                      </span>
+                    )}
+                    <span className="flex flex-col gap-y-3">
+                      {section.extraText1 && (
+                        <p className="text-lg font-normal">
+                          {section.extraText1}
+                        </p>
+                      )}
+                      {section.extraText2 && (
+                        <p className="text-lg font-normal">
+                          {section.extraText2}
+                        </p>
+                      )}
+                      {section.extraText3 && (
+                        <>
+                          <p className="text-lg font-normal">
+                            {section.extraText3}
+                          </p>
+                          <ul className="list-disc font-semibold ml-5 space-y-2 text-lg tracking-wide">
+                            {section.extraText3SubParts &&
+                              section.extraText3SubParts.map((item, idx) => (
+                                <li key={idx}>
+                                  <Link className="text-green-600 underline">
+                                    {item}
+                                  </Link>
+                                </li>
+                              ))}
+                          </ul>
+                        </>
+                      )}
+                      {section.extraText4 && (
+                        <p className="text-lg font-normal">
+                          {section.extraText4}
                           <Link
-                            className="text-green-600 underline font-medium"
-                            to="#"
+                            to={"#"}
+                            className="text-green-600 underline font-semibold"
                           >
-                            {topic}
+                            {section.extraText4Sub}
                           </Link>
+                        </p>
+                      )}
+                    </span>
+                  </div>
+                ))}
+            </div>
+          </div>
+        ))}
+
+        <div className="flex flex-col w-full p-6 text-white shadow-lg mt-[-20px] ml-[-20px]">
+          {/* Topics List */}
+          {Array.isArray(dataStructures.topics) && (
+            <ol className="list-decimal ml-2 font-bold text-xl">
+              {dataStructures.topics.map((topic, index) => (
+                <li key={index} className="mb-10">
+                  <Link className="font-normal text-2xl text-green-600 underline mb-3">
+                    {topic.heading}
+                  </Link>
+
+                  {/* Topic Description */}
+                  {topic.description && (
+                    <p className="mt-2 text-lg font-medium text-gray-100">
+                      {topic.description}
+                      <ol className="list-decimal mt-1 mb-4 font-normal">
+                        {topic.topicList &&
+                          topic.topicList.map((topic, index) => {
+                            const [boldText, normalText] = topic.split(":");
+                            return (
+                              <li key={index}>
+                                <Link className="text-green-600 underline">
+                                  {boldText}
+                                </Link>
+                                :{normalText}
+                              </li>
+                            );
+                          })}
+                      </ol>
+                    </p>
+                  )}
+                  {topic.notation && (
+                    <Link className="mt-2 text-lg font-medium text-green-600 ml-[-10px] underline">
+                      {topic.notation}
+                    </Link>
+                  )}
+                  {topic.notationDescription && (
+                    <p className="ml-[-10px] text-lg font-normal text-gray-100 mt-6">
+                      {topic.notationDescription}
+                    </p>
+                  )}
+                  {topic.complexityData && (
+                    <div className="overflow-x-auto my-6">
+                      <table className="min-w-full border border-gray-800  text-white">
+                        <thead>
+                          <tr>
+                            <th className="px-6 py-3 border border-gray-400 text-left text-xl font-bold bg-stone-600/70">
+                              Notation
+                            </th>
+                            <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-600/70">
+                              Description
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {topic.complexityData.map((item, index) => (
+                            <tr key={index}>
+                              <td className="px-8 py-4 border border-gray-400 font-medium text-base">
+                                <Link
+                                  to={item.link}
+                                  className="text-green-600 underline"
+                                >
+                                  {item.notation}
+                                </Link>
+                              </td>
+                              <td className="px-6 py-4 border border-gray-400 font-normal text-base text-center">
+                                {item.description}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                  {/* Topic Sections */}
+                  <ul className="list-disc ml-2">
+                    {Array.isArray(topic.sections) &&
+                      topic.sections.map((section, idx) => (
+                        <li key={idx} className="mt-6 mb-6">
+                          {/* Section Characteristics */}
+                          {section.characteristics && (
+                            <div className="mb-2">
+                              <strong>{section.characteristics}</strong>
+                              {section.details && (
+                                <ul className="list-disc ml-5">
+                                  {section.details.map((detail, idx) => (
+                                    <li key={idx} className="mb-2">
+                                      {detail}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          )}
                         </li>
                       ))}
-                    </ul>
-                  </div>
+                  </ul>
                 </li>
               ))}
-            </ul>
-          </li>
-        ))}
-      </ol>
+            </ol>
+          )}
+        </div>
+
+        <div className="w-full flex flex-col p-6 text-white shadow-lg mt-8">
+          <TreeClassificationTable />
+        </div>
+      </div>
     </div>
   );
 };
