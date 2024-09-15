@@ -683,10 +683,10 @@ const DataStructure = () => {
                       <table className="min-w-full border border-gray-800  text-white">
                         <thead>
                           <tr>
-                            <th className="px-6 py-3 border border-gray-400 text-left text-xl font-bold bg-stone-600/70">
+                            <th className="px-6 py-3 border border-gray-400 text-left text-xl font-bold bg-stone-700/50">
                               Notation
                             </th>
-                            <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-600/70">
+                            <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-700/50">
                               Description
                             </th>
                           </tr>
@@ -711,6 +711,12 @@ const DataStructure = () => {
                       </table>
                     </div>
                   )}
+                  {topic.afterDescription && (
+                    <p className="mt-6 text-lg font-normal text-gray-100">
+                      {topic.afterDescription}
+                    </p>
+                  )}
+
                   {/* Topic Sections */}
                   <ul className="list-disc ml-2">
                     {Array.isArray(topic.sections) &&

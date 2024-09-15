@@ -80,6 +80,8 @@ export const dataStructures = {
           link: "#",
         },
       ],
+      afterDescription:
+        "The most commonly used notation for code analysis is Big O Notation, providing an upper limit on the running time or memory usage concerning the input size.",
     },
     {
       heading: "Array",
