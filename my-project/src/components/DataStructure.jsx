@@ -233,12 +233,28 @@ const DataStructure = () => {
                     {topic.heading}
                   </Link>
                   {topic.topicsFr && (
-                    <span className="text-lg font-normal text-gray-100">
-                      {topic.topicsFr.map((topic, index) => (
-                        <Link key={index}>{topic.topicsFr}</Link>
-                      ))}
-                    </span>
+                    <div className="text-lg font-normal text-gray-100">
+                      {/* Wrap the topic headings in a single <ol> */}
+                      <ol className="list-decimal pl-5 text-xl font-normal text-white">
+                        {topic.topicsFr.map((topicItem, index) => (
+                          <div key={index} className="mb-6">
+                            {/* Render the topic heading inside the <li> */}
+                            <li className="my-4">
+                              <Link className="text-green-600 underline">
+                                {topicItem.topicHeading}
+                              </Link>
+                            </li>
+
+                            {/* Render the topic heading description */}
+                            <p className="mb-4 text-lg">
+                              {topicItem.topicHeadingDescription}
+                            </p>
+                          </div>
+                        ))}
+                      </ol>
+                    </div>
                   )}
+
                   {/* Topic Description */}
                   {topic.description && (
                     <p className="mt-2 text-lg font-medium text-gray-100">
