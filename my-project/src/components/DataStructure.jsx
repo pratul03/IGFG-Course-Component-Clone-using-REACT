@@ -232,7 +232,13 @@ const DataStructure = () => {
                   <Link className="font-normal text-2xl text-green-600 underline mb-3">
                     {topic.heading}
                   </Link>
-
+                  {topic.topicsFr && (
+                    <span className="text-lg font-normal text-gray-100">
+                      {topic.topicsFr.map((topic, index) => (
+                        <Link key={index}>{topic.topicsFr}</Link>
+                      ))}
+                    </span>
+                  )}
                   {/* Topic Description */}
                   {topic.description && (
                     <p className="mt-2 text-lg font-medium text-gray-100">
@@ -301,7 +307,24 @@ const DataStructure = () => {
                       {topic.afterDescription}
                     </p>
                   )}
-
+                  {topic.related && (
+                    <ul className="font-semibold text-lg my-4">
+                      <p>{topic.related} :</p>
+                      <span>
+                        {topic.relatedTopics && (
+                          <ul className="list-disc ml-5">
+                            {topic.relatedTopics.map((topic, index) => (
+                              <li key={index}>
+                                <Link className="text-green-600 underline text-lg font-normal tracking-wide">
+                                  {topic}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </span>
+                    </ul>
+                  )}
                   {/* Topic Sections */}
                   <ul className="list-disc ml-2">
                     {Array.isArray(topic.sections) &&

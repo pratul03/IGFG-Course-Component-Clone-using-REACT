@@ -86,6 +86,72 @@ export const dataStructures = {
       ],
       afterDescription:
         "The most commonly used notation for code analysis is Big O Notation, providing an upper limit on the running time or memory usage concerning the input size.",
+      related: "Related Articles",
+      relatedTopics: [
+        "Understanding Time Complexity with Simple Examples",
+        "Time complexities of different data structures",
+        "How to Analyse Loops for Complexity Analysis of Algorithms",
+        "Practice Questions on Time Complexity Analysis",
+      ],
+    },
+    {
+      heading: "Mathematical and Bitwise Algorithms",
+      topicsFr: [
+        {
+          topicHeading: "Mathematical Algorithms",
+          topicHeadingDescription:
+            "Mathematical algorithms are a class of algorithms that solve problems related to mathematical concepts. They are widely used in various fields, including Computer graphics, Numerical analysis, Optimization and Cryptography.",
+          AlgoMathData: [
+            {
+              algo: `GCD and LCM`,
+              description:
+                "Find the greatest common divisor and least common multiple of two numbers.",
+              link: "#",
+            },
+            {
+              algo: "Prime Factorization",
+              description: "Decompose a number into its prime factors.",
+              link: "#",
+            },
+            {
+              algo: "Fibonacci Numbers",
+              description:
+                "Generate the Fibonacci sequence, where each number is the sum of the two preceding ones.",
+              link: "#",
+            },
+            {
+              algo: "Modular Arithmetic",
+              description:
+                "Perform arithmetic operations on numbers modulo a given value.",
+              link: "#",
+            },
+            {
+              algo: "Euler Totient Function",
+              description:
+                "Count the number of positive integers less than a given number that are relatively prime to it.",
+              link: "#",
+            },
+            {
+              algo: "nCr Computations",
+              description:
+                "Calculate the binomial coefficient, which represents the number of ways to choose r elements from a set of n elements.",
+              link: "#",
+            },
+            {
+              algo: "Prime Numbers and Primality Tests",
+              description:
+                "Determine whether a given number is prime and find prime numbers efficiently.",
+              link: "#",
+            },
+            {
+              algo: "Sieve Algorithms",
+              description: "Find all prime numbers up to a given limit.",
+              link: "#",
+            },
+          ],
+        },
+        {},
+      ],
     },
     {
       heading: "Array",
