@@ -14,13 +14,17 @@ export const dataStructures = {
       imgDescription: "Data Structure & Algorithm Tutorial",
       sections: [
         {
-          heading: "DSA Full Form",
+          heading: "Introduction to DSA",
           subHeading:
-            "The term DSA stands for Data Structures and Algorithms, in the context of Computer Science.",
-          linkHead: "What is DSA?",
+            "Data Structures and Algorithms (DSA) are fundamental in computer science that help us to organize and process data efficiently. They are used in solving common software challenges, from managing large data sets to optimizing the speed of tasks. Here’s why DSA is essential:",
+          subHeadingLists: [
+            "DSA helps in storing and managing data efficiently, making it easier to retrieve and use when needed.",
+            "Whether it’s finding the shortest path in a GPS system or optimizing search results in a search engine, DSA play an important role to solve such problems.",
+            "By understanding DSA, you can design systems more efficiently, which is very important in areas like web applications, databases, and machine learning etc.",
+          ],
+          underSub:
+            "Mastering DSA is not only important for developing high-quality software but also for career growth. Top Companies like Google, Microsoft, Amazon, Apple, Meta and many other companies heavily focus on data structures and algorithms during interviews. Learning DSA will boost your problem-solving abilities and make you a stronger programmer in today’s competitive tech world.",
           linkAns: "Data Structures and Algorithms (DSA)",
-          answerHead:
-            "refer to the study of methods for organizing and storing data and the design of procedures (algorithms) for solving problems, which operate on these data structures.",
           linkHead2: "How to learn DSA?",
           answerHead2:
             "The first and foremost thing is dividing the total procedure into little pieces which need to be done sequentially. The complete process to learn DSA from scratch can be broken into 5 parts:",
@@ -32,7 +36,7 @@ export const dataStructures = {
             "Practice Problems on DSA",
           ],
           sectionImg:
-            "https://media.geeksforgeeks.org/wp-content/uploads/20220602151616/5StepstolearnDSA.jpg",
+            "https://media.geeksforgeeks.org/wp-content/uploads/20240917121350/5-Steps-to-learn-DSA-from-scratch.webp",
           sectionImgAlt: "How to learn DSA?",
           extraText1:
             "Hoping you have learned a programming language of your choice, let us move forward with the next step to learn DSA in this DSA tutorial.",
