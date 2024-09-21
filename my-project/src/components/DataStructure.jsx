@@ -444,21 +444,108 @@ const DataStructure = () => {
                               </li>
                             </div>
                           )}
-                          {/* Section Characteristics */}
                           {section.characteristics && (
                             <div className="mb-2">
-                              <strong>{section.characteristics}</strong>
-                              {section.details && (
+                              <p className="text-lg">
+                                {section.characteristics}
+                              </p>
+                              {section.characteristicsList && (
                                 <ul className="list-disc ml-5">
-                                  {section.details.map((detail, idx) => (
-                                    <li key={idx} className="mb-2">
-                                      {detail}
-                                    </li>
-                                  ))}
+                                  {section.characteristicsList.map(
+                                    (detail, idx) => {
+                                      const [boldText, normalText] =
+                                        detail.split(":");
+
+                                      return (
+                                        <li
+                                          key={idx}
+                                          className="mb-2 font-normal text-lg ml-8"
+                                        >
+                                          <span className="font-semibold text-base">
+                                            {boldText}
+                                          </span>
+                                          {normalText && `: ${normalText}`}
+                                        </li>
+                                      );
+                                    }
+                                  )}
                                 </ul>
                               )}
                             </div>
                           )}
+                          {/** applicationsHeading */}
+                          {section.applicationsForMatrix && (
+                            <div className="my-4">
+                              <li>
+                                <Link
+                                  to={"#"}
+                                  className="text-lg font-semibold"
+                                >
+                                  {section.applicationsForMatrix}
+                                </Link>
+                                <span>
+                                  {section.applicationsForMat && (
+                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-xl">
+                                      {section.applicationsForMat.map(
+                                        (step, idx) => (
+                                          <li key={idx}>{step}</li>
+                                        )
+                                      )}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
+                          {section.applicationsHeading && (
+                            <div className="my-4">
+                              <li>
+                                <Link
+                                  to={"#"}
+                                  className="text-xl font-semibold text-green-600 underline"
+                                >
+                                  {section.applicationsHeading}
+                                </Link>
+                                <span>
+                                  {section.applications && (
+                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-xl">
+                                      {section.applications.map((step, idx) => (
+                                        <li key={idx}>{step}</li>
+                                      ))}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
+                          {section.relatedTopic && (
+                            <div className="my-4">
+                              <li>
+                                <Link
+                                  to={"#"}
+                                  className="text-lg font-semibold"
+                                >
+                                  {section.relatedTopic}
+                                </Link>
+                                <span>
+                                  {section.relatedTopics && (
+                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-lg ">
+                                      {section.relatedTopics.map(
+                                        (step, idx) => (
+                                          <li key={idx}>
+                                            <span className="text-green-600 underline">
+                                              {step}
+                                            </span>
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
+                          {/* Section Characteristics */}
                         </li>
                       ))}
                   </ul>

@@ -240,10 +240,39 @@ export const dataStructures = {
             "Implementing queues, stacks, and other data structures",
             "Representing matrices and tables",
           ],
+          relatedTopic: "Related Topics on Array:",
           relatedTopics: [
             "Arrays Tutorial",
             "Top 50 Array Coding Problems for Interviews",
             "Practice problems on Arrays",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Matrix/Grid",
+      description:
+        "A matrix is a two-dimensional array of elements, arranged in rows and columns. It is represented as a rectangular grid, with each element at the intersection of a row and column.",
+      sections: [
+        {
+          characteristics: "Key Concepts:",
+          characteristicsList: [
+            "Rows: Horizontal lines of elements in a matrix.",
+            "Columns: Vertical lines of elements in a matrix.",
+            "Dimensions: The number of rows and columns in a matrix (e.g., a 3×4 matrix has 3 rows and 4 columns).",
+            "Element Access: Elements can be accessed using row and column indices (e.g., M[2][3] refers to the element in row 2, column 3).",
+          ],
+          applicationsForMatrix: "Applications of Matrix/Grid:",
+          applicationsForMat: [
+            "Image processing",
+            "Data analysis",
+            "Optimization problems",
+          ],
+          relatedTopic: "Related posts:",
+          relatedTopics: [
+            "Matrix/Grid Tutorial",
+            "Top 50 Problems on Matrix/Grid for Interviews",
+            "Practice Problems on Matrix/Grid",
           ],
         },
       ],
@@ -316,33 +345,6 @@ export const dataStructures = {
             "Linked List Tutorial",
             "Top 50 Problems on Linked List for Interviews",
             "Practice problems on Linked Lists",
-          ],
-        },
-      ],
-    },
-    {
-      heading: "Matrix/Grid",
-      description:
-        "A matrix is a two-dimensional array of elements, arranged in rows and columns. It is represented as a rectangular grid, with each element at the intersection of a row and column.",
-      sections: [
-        {
-          characteristics: "Operations on Matrix",
-          characteristicsList: [
-            "Rows: Horizontal lines of elements.",
-            "Columns: Vertical lines of elements.",
-            "Dimensions: The size of the matrix in rows and columns.",
-            "Element Access: Accessing elements using row and column indices.",
-          ],
-          applicationsHeading: "Applications of Matrices",
-          applications: [
-            "Image processing",
-            "Data analysis",
-            "Optimization problems",
-          ],
-          relatedTopics: [
-            "Matrix/Grid Tutorial",
-            "Top 50 Problems on Matrix/Grid for Interviews",
-            "Practice Problems on Matrix/Grid",
           ],
         },
       ],
