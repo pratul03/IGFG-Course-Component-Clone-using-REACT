@@ -249,6 +249,42 @@ const DataStructure = () => {
                             <p className="mb-4 text-lg">
                               {topicItem.topicHeadingDescription}
                             </p>
+
+                            {/**Topic table */}
+                            {topicItem.AlgoMathData && (
+                              <div className="overflow-x-auto my-6">
+                                <table className="min-w-full border border-gray-800 text-white">
+                                  <thead>
+                                    <tr>
+                                      <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-700/50">
+                                        Algorithm
+                                      </th>
+                                      <th className="px-6 py-3 border border-gray-400 text-xl font-bold bg-stone-700/50 text-center">
+                                        Description
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {topicItem.AlgoMathData.map(
+                                      (data, index) => (
+                                        <tr key={index}>
+                                          <td className="px-6 py-4 border border-gray-400 font-medium text-base text-green-600 underline">
+                                            <Link to={data.link}>
+                                              {data.algo}
+                                            </Link>
+                                          </td>
+                                          <td className="px-6 py-4 border border-gray-400 font-medium text-base text-center">
+                                            {data.description}
+                                          </td>
+                                        </tr>
+                                      )
+                                    )}
+                                  </tbody>
+                                </table>
+                              </div>
+                            )}
+
+                            {/* Render the topic heading list */}
                           </div>
                         ))}
                       </ol>

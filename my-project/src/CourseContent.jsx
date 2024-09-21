@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -28,7 +29,7 @@ const CourseContent = () => {
 
   return (
     <div className="flex items-center justify-center mt-[-40px] lg:mt-[-60px]">
-      <div className="w-full max-w-[1060px]">
+      <div className="w-full max-w-[1060px] cursor-pointer">
         <CourseCard
           title="DSA"
           items={dsa}

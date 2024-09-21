@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useParams } from "react-router-dom";
 import { allCoursesData } from "../public/data/data.js";
@@ -17,7 +18,6 @@ const CoursePageLayout = () => {
 
   return (
     <div className="flex">
-
       {/* Main content section */}
       <MainContent topics={course.topics} />
     </div>
