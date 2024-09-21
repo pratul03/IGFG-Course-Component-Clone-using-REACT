@@ -209,7 +209,10 @@ export const dataStructures = {
               link: "#",
             },
           ],
-          relatedTopics: ["Practice Problem on Mathematical Algorithm"],
+          relatedTopics: [
+            "Bitwise Algorithms Tutorial",
+            "Practice Problem on Bitwise Algorithms",
+          ],
         },
       ],
     },
@@ -220,8 +223,6 @@ export const dataStructures = {
       sections: [
         {
           heading: "Operations on Array",
-          subHeading:
-            "An array is a linear data structure that stores a collection of elements of the same data type in contiguous memory locations.",
           answerLists: [
             "Traversal: Iterating through the elements of an array.",
             "Insertion: Adding an element to the array at a specific index.",

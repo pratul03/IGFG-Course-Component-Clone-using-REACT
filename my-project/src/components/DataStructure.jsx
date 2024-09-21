@@ -226,7 +226,7 @@ const DataStructure = () => {
         <div className="flex flex-col w-full p-6 text-white shadow-lg mt-[-20px] ml-[-20px]">
           {/* Topics List */}
           {Array.isArray(dataStructures.topics) && (
-            <ol className="list-decimal ml-2 font-bold text-xl">
+            <ol className="list-decimal ml-2 font-bold text-2xl">
               {dataStructures.topics.map((topic, index) => (
                 <li key={index} className="mb-10">
                   <Link className="font-normal text-2xl text-green-600 underline mb-3">
@@ -283,21 +283,23 @@ const DataStructure = () => {
                                 </table>
                                 <div className="my-4">
                                   <p className="font-semibold mb-2">
-                                    Related Topics :
+                                    Related Topics:
                                   </p>
-                                  {topicItem.relatedTopics &&
-                                    topicItem.relatedTopics.map(
-                                      (topic, index) => (
-                                        <li key={index} className="list-circle">
-                                          <Link
-                                            to="#"
-                                            className="text-green-600 underline text-lg font-normal tracking-wide ml-2"
-                                          >
-                                            {topic}
-                                          </Link>
-                                        </li>
-                                      )
-                                    )}
+                                  <ul className="list-disc ml-5">
+                                    {topicItem.relatedTopics &&
+                                      topicItem.relatedTopics.map(
+                                        (topic, index) => (
+                                          <li key={index}>
+                                            <Link
+                                              to="#"
+                                              className="text-green-600 underline text-lg font-normal tracking-wide ml-2"
+                                            >
+                                              {topic}
+                                            </Link>
+                                          </li>
+                                        )
+                                      )}
+                                  </ul>
                                 </div>
                               </div>
                             )}
@@ -400,6 +402,26 @@ const DataStructure = () => {
                     {Array.isArray(topic.sections) &&
                       topic.sections.map((section, idx) => (
                         <li key={idx} className="mt-6 mb-6">
+                          {/* Section Heading */}
+                          {section.heading && (
+                            <div className="my-4">
+                              <Link
+                                to={"#"}
+                                className="text-xl font-semibold text-green-600 underline"
+                              >
+                                {section.heading}
+                              </Link>
+                              <span>
+                                {section.answerLists && (
+                                  <ul className="list-[circle] ml-10 space-y-2 font-normal text-xl">
+                                    {section.answerLists.map((step, idx) => (
+                                      <li key={idx}>{step}</li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </span>
+                            </div>
+                          )}
                           {/* Section Characteristics */}
                           {section.characteristics && (
                             <div className="mb-2">
