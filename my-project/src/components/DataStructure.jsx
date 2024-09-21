@@ -398,7 +398,7 @@ const DataStructure = () => {
                     </ul>
                   )}
                   {/* Topic Sections */}
-                  <ul className="list-disc ml-2">
+                  <ul className="list-disc ml-[-15px]">
                     {Array.isArray(topic.sections) &&
                       topic.sections.map((section, idx) => (
                         <li key={idx} className="mt-6 mb-6">
@@ -420,6 +420,28 @@ const DataStructure = () => {
                                   </ul>
                                 )}
                               </span>
+                            </div>
+                          )}
+                          {/** Section heading2 */}
+                          {section.heading2 && (
+                            <div className="my-4">
+                              <li>
+                                <Link
+                                  to={"#"}
+                                  className="text-xl font-semibold text-green-600 underline"
+                                >
+                                  {section.heading2}
+                                </Link>
+                                <span>
+                                  {section.headSub && (
+                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-xl">
+                                      {section.headSub.map((step, idx) => (
+                                        <li key={idx}>{step}</li>
+                                      ))}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
                             </div>
                           )}
                           {/* Section Characteristics */}
