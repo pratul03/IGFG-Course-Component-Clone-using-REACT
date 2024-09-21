@@ -257,10 +257,10 @@ const DataStructure = () => {
                                   <thead>
                                     <tr>
                                       <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-700/50">
-                                        Algorithm
+                                        {topicItem.algoHeading1}
                                       </th>
                                       <th className="px-6 py-3 border border-gray-400 text-xl font-bold bg-stone-700/50 text-center">
-                                        Description
+                                        {topicItem.algoHeading2}
                                       </th>
                                     </tr>
                                   </thead>
@@ -281,6 +281,24 @@ const DataStructure = () => {
                                     )}
                                   </tbody>
                                 </table>
+                                <div className="my-4">
+                                  <p className="font-semibold mb-2">
+                                    Related Topics :
+                                  </p>
+                                  {topicItem.relatedTopics &&
+                                    topicItem.relatedTopics.map(
+                                      (topic, index) => (
+                                        <li key={index} className="list-circle">
+                                          <Link
+                                            to="#"
+                                            className="text-green-600 underline text-lg font-normal tracking-wide ml-2"
+                                          >
+                                            {topic}
+                                          </Link>
+                                        </li>
+                                      )
+                                    )}
+                                </div>
                               </div>
                             )}
 

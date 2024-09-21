@@ -101,6 +101,8 @@ export const dataStructures = {
           topicHeading: "Mathematical Algorithms",
           topicHeadingDescription:
             "Mathematical algorithms are a class of algorithms that solve problems related to mathematical concepts. They are widely used in various fields, including Computer graphics, Numerical analysis, Optimization and Cryptography.",
+          algoHeading1: "Algorithm",
+          algoHeading2: "Description",
           AlgoMathData: [
             {
               algo: `GCD and LCM`,
@@ -149,59 +151,65 @@ export const dataStructures = {
               link: "#",
             },
           ],
+          relatedTopics: ["Practice Problem on Mathematical Algorithm"],
         },
         {
           topicHeading: "Mathematical Algorithms",
           topicHeadingDescription:
             "Mathematical algorithms are a class of algorithms that solve problems related to mathematical concepts. They are widely used in various fields, including Computer graphics, Numerical analysis, Optimization and Cryptography.",
+          algoHeading1: "Topic",
+          algoHeading2: "Description",
           AlgoMathData: [
             {
-              algo: `GCD and LCM`,
+              algo: "Bit Shifting",
               description:
-                "Find the greatest common divisor and least common multiple of two numbers.",
+                "Shifts bits to the left or right by a specified number of positions.",
               link: "#",
             },
             {
-              algo: "Prime Factorization",
-              description: "Decompose a number into its prime factors.",
-              link: "#",
-            },
-            {
-              algo: "Fibonacci Numbers",
+              algo: "Left shift (<<)",
               description:
-                "Generate the Fibonacci sequence, where each number is the sum of the two preceding ones.",
+                "Shifts bits to the left, effectively multiplying the number by 2.",
               link: "#",
             },
             {
-              algo: "Modular Arithmetic",
+              algo: "Right shift (>>)",
               description:
-                "Perform arithmetic operations on numbers modulo a given value.",
+                "Shifts bits to the right, effectively dividing the number by 2.",
               link: "#",
             },
             {
-              algo: "Euler Totient Function",
+              algo: "Extract bits",
               description:
-                "Count the number of positive integers less than a given number that are relatively prime to it.",
+                "Using masks to extract specific bits from an integer.",
               link: "#",
             },
             {
-              algo: "nCr Computations",
+              algo: "Setting bits",
               description:
-                "Calculate the binomial coefficient, which represents the number of ways to choose r elements from a set of n elements.",
+                "Using masks to set specific bits to 1 in an integer.",
               link: "#",
             },
             {
-              algo: "Prime Numbers and Primality Tests",
+              algo: "Clearing bits",
               description:
-                "Determine whether a given number is prime and find prime numbers efficiently.",
+                "Using masks to set specific bits to 0 in an integer.",
               link: "#",
             },
             {
-              algo: "Sieve Algorithms",
-              description: "Find all prime numbers up to a given limit.",
+              algo: "Toggling bits",
+              description:
+                "Using XOR (^) to toggle specific bits in an integer.",
+              link: "#",
+            },
+            {
+              algo: "Counting Set bits",
+              description:
+                "Counting the number of set bits (1s) in an integer.",
               link: "#",
             },
           ],
+          relatedTopics: ["Practice Problem on Mathematical Algorithm"],
         },
       ],
     },
