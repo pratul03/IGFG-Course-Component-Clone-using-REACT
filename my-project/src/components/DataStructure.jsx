@@ -414,9 +414,21 @@ const DataStructure = () => {
                               <span>
                                 {section.answerLists && (
                                   <ul className="list-[circle] ml-10 space-y-2 font-normal text-xl">
-                                    {section.answerLists.map((step, idx) => (
-                                      <li key={idx}>{step}</li>
-                                    ))}
+                                    {section.answerLists.map((step, idx) => {
+                                      const [boldText, normalText] =
+                                        step.split(":");
+                                      return (
+                                        <li
+                                          key={idx}
+                                          className="mb-2 font-normal text-lg ml-8"
+                                        >
+                                          <span className="font-semibold text-base">
+                                            {boldText}
+                                          </span>
+                                          {normalText && `: ${normalText}`}
+                                        </li>
+                                      );
+                                    })}
                                   </ul>
                                 )}
                               </span>
@@ -508,7 +520,7 @@ const DataStructure = () => {
                                 </Link>
                                 <span>
                                   {section.applications && (
-                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-xl">
+                                    <ul className="list-[circle] ml-16 space-y-2 font-normal text-lg">
                                       {section.applications.map((step, idx) => (
                                         <li key={idx}>{step}</li>
                                       ))}
