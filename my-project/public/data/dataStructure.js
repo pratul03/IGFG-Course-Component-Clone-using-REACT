@@ -540,6 +540,7 @@ export const dataStructures = {
             "Distributing requests across multiple servers.",
             "Generating secure hashes for data integrity and authentication.",
           ],
+          relatedTopic: "Related posts:",
           relatedTopics: ["Hash Tutorial", "Practice Problems on Hashing"],
         },
       ],

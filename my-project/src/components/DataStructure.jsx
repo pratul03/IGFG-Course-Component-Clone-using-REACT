@@ -195,7 +195,10 @@ const DataStructure = () => {
                             {section.extraText3SubParts &&
                               section.extraText3SubParts.map((item, idx) => (
                                 <li key={idx}>
-                                  <Link className="text-green-600 underline">
+                                  <Link
+                                    to={"#"}
+                                    className="text-green-600 underline"
+                                  >
                                     {item}
                                   </Link>
                                 </li>
@@ -227,7 +230,10 @@ const DataStructure = () => {
             <ol className="list-decimal ml-2 font-bold text-2xl">
               {dataStructures.topics.map((topic, index) => (
                 <li key={index} className="mb-10">
-                  <Link className="font-normal text-2xl text-green-600 underline mb-3">
+                  <Link
+                    to={"#"}
+                    className="font-normal text-2xl text-green-600 underline mb-3"
+                  >
                     {topic.heading}
                   </Link>
                   {topic.topicsFr && (
@@ -238,7 +244,10 @@ const DataStructure = () => {
                           <div key={index} className="mb-6">
                             {/* Render the topic heading inside the <li> */}
                             <li className="my-4">
-                              <Link className="text-green-600 underline">
+                              <Link
+                                to={"#"}
+                                className="text-green-600 underline"
+                              >
                                 {topicItem.topicHeading}
                               </Link>
                             </li>
@@ -289,7 +298,7 @@ const DataStructure = () => {
                                         (topic, index) => (
                                           <li key={index}>
                                             <Link
-                                              to="#"
+                                              to={"#"}
                                               className="text-green-600 underline text-lg font-normal tracking-wide ml-2"
                                             >
                                               {topic}
@@ -319,7 +328,10 @@ const DataStructure = () => {
                             const [boldText, normalText] = topic.split(":");
                             return (
                               <li key={index}>
-                                <Link className="text-green-600 underline">
+                                <Link
+                                  to={"#"}
+                                  className="text-green-600 underline"
+                                >
                                   {boldText}
                                 </Link>
                                 :{normalText}
@@ -381,7 +393,10 @@ const DataStructure = () => {
                                           {section.relatedTopics.map(
                                             (topic, index) => (
                                               <li key={index}>
-                                                <Link className="text-green-600 underline text-lg font-normal tracking-wide">
+                                                <Link
+                                                  to={"#"}
+                                                  className="text-green-600 underline text-lg font-normal tracking-wide"
+                                                >
                                                   {topic}
                                                 </Link>
                                               </li>
@@ -408,7 +423,10 @@ const DataStructure = () => {
                   )}
 
                   {topic.notation && (
-                    <Link className="mt-2 text-lg font-medium text-green-600 ml-[-10px] underline">
+                    <Link
+                      to={"#"}
+                      className="mt-2 text-lg font-medium text-green-600 ml-[-10px] underline"
+                    >
                       {topic.notation}
                     </Link>
                   )}
@@ -465,7 +483,10 @@ const DataStructure = () => {
                           <ul className="list-disc ml-5">
                             {topic.relatedTopics.map((topic, index) => (
                               <li key={index}>
-                                <Link className="text-green-600 underline text-lg font-normal tracking-wide">
+                                <Link
+                                  to={"#"}
+                                  className="text-green-600 underline text-lg font-normal tracking-wide"
+                                >
                                   {topic}
                                 </Link>
                               </li>
@@ -512,6 +533,7 @@ const DataStructure = () => {
                               </span>
                             </div>
                           )}
+
                           {/** Section heading2 */}
                           {section.heading2 && (
                             <div className="my-4">
@@ -534,6 +556,7 @@ const DataStructure = () => {
                               </li>
                             </div>
                           )}
+                          {/**characteristics */}
                           {section.characteristics && (
                             <div className="mb-2">
                               <p className="text-lg">
@@ -575,7 +598,10 @@ const DataStructure = () => {
                                             key={idx}
                                             className="font-normal text-lg my-2 ml-8"
                                           >
-                                            <Link className="text-lg text-green-600 underline">
+                                            <Link
+                                              to={"#"}
+                                              className="text-lg text-green-600 underline"
+                                            >
                                               {boldText}
                                             </Link>
                                             {normalText && `: ${normalText}`}
@@ -588,7 +614,81 @@ const DataStructure = () => {
                               </span>
                             </div>
                           )}
+                          {/** section heading1 */}
+                          {section.heading1 && (
+                            <div className="my-4">
+                              <li>
+                                <Link
+                                  to={"#"}
+                                  className="text-lg font-bold text-green-600 underline"
+                                >
+                                  {section.heading1}
+                                </Link>
+                                <span>
+                                  {section.answerLists2 && (
+                                    <ul className="list-disc ml-5">
+                                      {section.answerLists2.map(
+                                        (detail, idx) => {
+                                          const [boldText, normalText] =
+                                            detail.split(":");
 
+                                          return (
+                                            <li
+                                              key={idx}
+                                              className="mb-2 font-normal text-lg ml-8"
+                                            >
+                                              <span className="font-semibold text-base">
+                                                {boldText}
+                                              </span>
+                                              {normalText && `: ${normalText}`}
+                                            </li>
+                                          );
+                                        }
+                                      )}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
+                          {/** special section */}
+                          {section.heading3 && (
+                            <div className="my-4">
+                              <li>
+                                <Link
+                                  to={"#"}
+                                  className="text-lg text-green-600 underline"
+                                >
+                                  {section.heading3}
+                                </Link>
+                                <span>
+                                  {section.answerLists3 && (
+                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-lg">
+                                      {section.answerLists3.map((step, idx) => {
+                                        const [boldText, normalText] =
+                                          step.split(":");
+
+                                        return (
+                                          <li
+                                            key={idx}
+                                            className="mb-2 font-normal text-lg ml-4"
+                                          >
+                                            <Link
+                                              to={"#"}
+                                              className="font-normal text-lg underline text-green-600"
+                                            >
+                                              {boldText}
+                                            </Link>
+                                            {normalText && `: ${normalText}`}
+                                          </li>
+                                        );
+                                      })}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
                           {/** operations */}
                           {section.operations && (
                             <div className="my-4">
@@ -626,7 +726,10 @@ const DataStructure = () => {
                           {/** types*/}
                           {section.headingLink && (
                             <div className="my-4">
-                              <Link className="text-xl font-semibold text-green-600 underline">
+                              <Link
+                                to={"#"}
+                                className="text-xl font-semibold text-green-600 underline"
+                              >
                                 {section.headingLink}
                               </Link>
                               <span>
@@ -640,7 +743,10 @@ const DataStructure = () => {
                                           key={idx}
                                           className="font-normal text-lg my-2 ml-8"
                                         >
-                                          <Link className="text-lg text-green-600 underline">
+                                          <Link
+                                            to={"#"}
+                                            className="text-lg text-green-600 underline"
+                                          >
                                             {boldText}
                                           </Link>
                                           {normalText && `: ${normalText}`}
