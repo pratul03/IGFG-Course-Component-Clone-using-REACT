@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import React, { useEffect, useState } from "react";
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { dataStructures } from "../../public/data/dataStructure";
@@ -331,6 +329,84 @@ const DataStructure = () => {
                       </ol>
                     </p>
                   )}
+                  {topic.des1 && (
+                    <div>
+                      <span className="text-lg font-medium">
+                        <p className="text-lg font-medium">
+                          {topic.des1}
+                          <strong> For Examples: </strong>
+                          {topic.examples.map((example, index) => (
+                            <React.Fragment key={index}>
+                              <Link
+                                to={example.link}
+                                className="text-green-600 underline"
+                              >
+                                {example.label}
+                              </Link>
+                              {index < topic.examples.length - 1 && ", "}
+                            </React.Fragment>
+                          ))}{" "}
+                          etc .
+                        </p>
+                      </span>
+                      <span>
+                        {topic.sections1?.map((section, index) => (
+                          <div key={index}>
+                            <span className="text-lg font-normal text-gray-100">
+                              <p className="font-semibold">{section.heading}</p>
+                              {section.answerLists && (
+                                <ul className="list-disc ml-5 space-y-2 font-normal text-lg">
+                                  {section.answerLists.map((step, idx) => {
+                                    const [boldText, normalText] =
+                                      step.split(":");
+                                    return (
+                                      <li key={idx}>
+                                        <span className="font-semibold text-lg">
+                                          {boldText}
+                                        </span>
+                                        {normalText && `: ${normalText}`}
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              )}
+                              <p className="mt-3">{section.description}</p>
+                              <span>
+                                {section.relatedTopic && (
+                                  <ul className="font-semibold text-lg my-4">
+                                    <p>{section.relatedTopic} :</p>
+                                    <span>
+                                      {section.relatedTopics && (
+                                        <ul className="list-disc ml-5">
+                                          {section.relatedTopics.map(
+                                            (topic, index) => (
+                                              <li key={index}>
+                                                <Link className="text-green-600 underline text-lg font-normal tracking-wide">
+                                                  {topic}
+                                                </Link>
+                                              </li>
+                                            )
+                                          )}
+                                        </ul>
+                                      )}
+                                    </span>
+                                  </ul>
+                                )}
+                              </span>
+                            </span>
+                          </div>
+                        ))}
+                      </span>
+                    </div>
+                  )}
+                  {topic.desc1 && (
+                    <span>
+                      <p className="text-lg font-normal text-gray-100">
+                        {topic.desc1}
+                      </p>
+                    </span>
+                  )}
+
                   {topic.notation && (
                     <Link className="mt-2 text-lg font-medium text-green-600 ml-[-10px] underline">
                       {topic.notation}
@@ -341,28 +417,29 @@ const DataStructure = () => {
                       {topic.notationDescription}
                     </p>
                   )}
-                  {topic.complexityData && (
+
+                  {topic.table && (
                     <div className="overflow-x-auto my-6">
-                      <table className="min-w-full border border-gray-800  text-white">
+                      <table className="min-w-full border border-gray-800 text-white">
                         <thead>
                           <tr>
                             <th className="px-6 py-3 border border-gray-400 text-left text-xl font-bold bg-stone-700/50">
-                              Notation
+                              {topic.table[0].tableHeading1}
                             </th>
                             <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-700/50">
-                              Description
+                              {topic.table[0].tableHeading2}
                             </th>
                           </tr>
                         </thead>
                         <tbody>
-                          {topic.complexityData.map((item, index) => (
+                          {topic.table[0].tableData.map((item, index) => (
                             <tr key={index}>
                               <td className="px-8 py-4 border border-gray-400 font-medium text-base">
                                 <Link
                                   to={item.link}
                                   className="text-green-600 underline"
                                 >
-                                  {item.notation}
+                                  {item.problem}
                                 </Link>
                               </td>
                               <td className="px-6 py-4 border border-gray-400 font-normal text-base text-center">
@@ -374,6 +451,7 @@ const DataStructure = () => {
                       </table>
                     </div>
                   )}
+
                   {topic.afterDescription && (
                     <p className="mt-6 text-lg font-normal text-gray-100">
                       {topic.afterDescription}
@@ -461,30 +539,120 @@ const DataStructure = () => {
                               <p className="text-lg">
                                 {section.characteristics}
                               </p>
-                              {section.characteristicsList && (
-                                <ul className="list-disc ml-5">
-                                  {section.characteristicsList.map(
-                                    (detail, idx) => {
-                                      const [boldText, normalText] =
-                                        detail.split(":");
+                              <span>
+                                {section.characteristicsList && (
+                                  <ul className="list-disc ml-5">
+                                    {section.characteristicsList.map(
+                                      (detail, idx) => {
+                                        const [boldText, normalText] =
+                                          detail.split(":");
 
+                                        return (
+                                          <li
+                                            key={idx}
+                                            className="mb-2 font-normal text-lg ml-8"
+                                          >
+                                            <span className="font-semibold text-base">
+                                              {boldText}
+                                            </span>
+                                            {normalText && `: ${normalText}`}
+                                          </li>
+                                        );
+                                      }
+                                    )}
+                                  </ul>
+                                )}
+                              </span>
+                              <span>
+                                {section.characteristicList && (
+                                  <ul className="list-disc ml-5 space-y-2">
+                                    {section.characteristicList.map(
+                                      (item, idx) => {
+                                        const [boldText, normalText] =
+                                          item.split(":");
+                                        return (
+                                          <li
+                                            key={idx}
+                                            className="font-normal text-lg my-2 ml-8"
+                                          >
+                                            <Link className="text-lg text-green-600 underline">
+                                              {boldText}
+                                            </Link>
+                                            {normalText && `: ${normalText}`}
+                                          </li>
+                                        );
+                                      }
+                                    )}
+                                  </ul>
+                                )}
+                              </span>
+                            </div>
+                          )}
+
+                          {/** operations */}
+                          {section.operations && (
+                            <div className="my-4">
+                              <li>
+                                <p className="text-lg font-semibold ">
+                                  {section.operations}
+                                </p>
+                                <span>
+                                  {section.operationsList && (
+                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-lg">
+                                      {section.operationsList.map(
+                                        (step, idx) => {
+                                          const [boldText, normalText] =
+                                            step.split(":");
+
+                                          return (
+                                            <li
+                                              key={idx}
+                                              className="mb-2 font-normal text-lg ml-4"
+                                            >
+                                              <span className="font-semibold text-base">
+                                                {boldText}
+                                              </span>
+                                              {normalText && `: ${normalText}`}
+                                            </li>
+                                          );
+                                        }
+                                      )}
+                                    </ul>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
+                          {/** types*/}
+                          {section.headingLink && (
+                            <div className="my-4">
+                              <Link className="text-xl font-semibold text-green-600 underline">
+                                {section.headingLink}
+                              </Link>
+                              <span>
+                                {section.answerLists1 && (
+                                  <ul className="list-disc ml-5 space-y-2">
+                                    {section.answerLists1.map((item, idx) => {
+                                      const [boldText, normalText] =
+                                        item.split(":");
                                       return (
                                         <li
                                           key={idx}
-                                          className="mb-2 font-normal text-lg ml-8"
+                                          className="font-normal text-lg my-2 ml-8"
                                         >
-                                          <span className="font-semibold text-base">
+                                          <Link className="text-lg text-green-600 underline">
                                             {boldText}
-                                          </span>
+                                          </Link>
                                           {normalText && `: ${normalText}`}
                                         </li>
                                       );
-                                    }
-                                  )}
-                                </ul>
-                              )}
+                                    })}
+                                  </ul>
+                                )}
+                              </span>
                             </div>
                           )}
+
                           {/** applicationsHeading */}
                           {section.applicationsForMatrix && (
                             <div className="my-4">
@@ -530,6 +698,7 @@ const DataStructure = () => {
                               </li>
                             </div>
                           )}
+                          {}
                           {section.relatedTopic && (
                             <div className="my-4">
                               <li>
@@ -541,7 +710,7 @@ const DataStructure = () => {
                                 </Link>
                                 <span>
                                   {section.relatedTopics && (
-                                    <ul className="list-[circle] ml-10 space-y-2 font-normal text-lg ">
+                                    <ul className="list-[circle] ml-16 space-y-2 font-normal text-lg ">
                                       {section.relatedTopics.map(
                                         (step, idx) => (
                                           <li key={idx}>

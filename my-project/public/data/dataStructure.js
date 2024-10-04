@@ -300,51 +300,11 @@ export const dataStructures = {
             "Data validation",
             "Database management",
           ],
+          relatedTopic: "Related posts:",
           relatedTopics: [
             "String Tutorial",
             "Top 50 String Coding Problems for Interviews",
             "Practice Problems on String",
-          ],
-        },
-      ],
-    },
-    {
-      heading: "Linked Lists",
-      description:
-        "A linked list is a linear data structure that stores data in nodes, which are connected by pointers. Unlike arrays, linked lists are not stored in contiguous memory locations.",
-      sections: [
-        {
-          characteristics: "Characteristics of Linked List",
-          characteristicsList: [
-            "Dynamic: Linked lists can be easily resized by adding or removing nodes.",
-            "Non-contiguous: Nodes are stored in random memory locations and connected by pointers.",
-            "Sequential access: Nodes can only be accessed sequentially, starting from the head of the list.",
-          ],
-          operations: "Operations on Linked List",
-          operationsList: [
-            "Creation: Creating a new linked list or adding a new node to an existing list.",
-            "Traversal: Iterating through the list and accessing each node.",
-            "Insertion: Adding a new node at a specific position in the list.",
-            "Deletion: Removing a node from the list.",
-            "Search: Finding a node with a specific value in the list.",
-          ],
-          heading: "Types of Linked List",
-          answerLists1: [
-            "Singly Linked List: Each node points to the next node in the list.",
-            "Doubly Linked List: Each node points to both the next and previous nodes in the list.",
-            "Circular Linked List: The last node points back to the first node, forming a circular loop.",
-          ],
-          applicationsHeading: "Applications of Linked Lists",
-          applications: [
-            "Implementing queues and stacks",
-            "Representing graphs and trees",
-            "Maintaining ordered data",
-            "Memory management",
-          ],
-          relatedTopics: [
-            "Linked List Tutorial",
-            "Top 50 Problems on Linked List for Interviews",
-            "Practice problems on Linked Lists",
           ],
         },
       ],
@@ -369,6 +329,7 @@ export const dataStructures = {
             "Function call management",
             "Parsing and syntax checking",
           ],
+          relatedTopic: "Related posts:",
           relatedTopics: [
             "Stack Tutorial",
             "Top 50 Problems on Stack for Interviews",
@@ -404,6 +365,7 @@ export const dataStructures = {
             "Simulation modeling",
             "Data buffering",
           ],
+          relatedTopic: "Related posts:",
           relatedTopics: [
             "Queue Tutorial",
             "Top 50 Problems on Queue for Interviews",
@@ -413,32 +375,136 @@ export const dataStructures = {
       ],
     },
     {
-      heading: "Heap",
+      heading: "Recursion",
+      des1: "Recursion is a programming technique where a function calls itself within its own definition. It is used to solve problems that can be broken down into smaller instances of the same problem.For Examples: include Towers of Hanoi (TOH), Factorial Calculation, and Fibonacci Sequence.",
+      examples: [
+        {
+          label: "Towers of Hanoi (TOH)",
+          link: "#towers-of-hanoi",
+        },
+        {
+          label: "Factorial Calculation",
+          link: "#factorial-calculation",
+        },
+        {
+          label: "Fibonacci Sequence",
+          link: "#fibonacci-sequence",
+        },
+      ],
+      sections1: [
+        {
+          heading: "Steps:",
+          answerLists: [
+            "Base Case: Define a condition that stops the recursive calls and provides a solution.",
+            "Recursive Case: Define the steps to break down the problem into smaller instances and make recursive calls.",
+            "Return: Return the solution from the recursive calls and combine them to solve the original problem.",
+          ],
+          description:
+            "The point which makes Recursion one of the most used algorithms is that it forms the base for many other algorithms such as Tree traversals, Graph traversals, Divide and Conquers Algorithms and Backtracking algorithms.",
+          relatedTopic: "Related posts:",
+          relatedTopics: [
+            "Recursion Tutorial",
+            "Recursive Functions",
+            "Tail Recursion",
+            "Top 50 Problems on Recursion Algorithm for Interview",
+            "Practice problems on Recursion algorithm",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Backtracking Algorithm",
       description:
-        "A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.",
+        "As mentioned earlier, the Backtracking algorithm is derived from the Recursion algorithm, with the option to revert if a recursive solution fails. In case a solution fails, the program traces back to the moment where it failed and builds on another solution. It essentially tries out all possible solutions and finds the correct one.",
+      desc1:
+        "Some important and most common problems of backtracking algorithms, that you must solve before moving ahead, are:",
+      table: [
+        {
+          tableHeading1: "Problem",
+          tableHeading2: "Description",
+          tableData: [
+            {
+              problem: "Knight's Tour Problem",
+              description:
+                "Finding a sequence of moves by a knight on a chessboard such that it visits every square exactly once.",
+              link: "#",
+            },
+            {
+              problem: "Rat in a Maze",
+              description:
+                "Finding a path from the starting position to the exit in a maze, with obstacles represented as walls.",
+              link: "#",
+            },
+            {
+              problem: "N-Queen Problem",
+              description:
+                "Placing N queens on an N×N chessboard such that no two queens attack each other.",
+              link: "#",
+            },
+            {
+              problem: "Subset Sum Problem",
+              description:
+                "Determining whether there exists a subset of the given set with a given sum.",
+              link: "#",
+            },
+            {
+              problem: "Sudoku",
+              description:
+                "Solving a 9x9 grid puzzle with numbers from 1 to 9 such that each row, column, and 3x3 subgrid contains all the digits without repetition.",
+              link: "#",
+            },
+          ],
+        },
+      ],
       sections: [
         {
-          heading: "Operations on Heap",
-          answerLists: [
-            "Insert: Adds a new element to the heap while maintaining heap properties.",
-            "Extract-Max/Extract-Min: Removes the root element and restructures the heap.",
-            "Increase/Decrease-Key: Updates the value of a node and restructures the heap.",
-          ],
-          heading1: "Types of Heap",
-          answerLists1: [
-            "Max-Heap: Root node has the maximum value among its children.",
-            "Min-Heap: Root node has the minimum value among its children.",
-          ],
-          applicationsHeading: "Applications of Heaps",
-          applications: [
-            "Priority queues",
-            "Sorting",
-            "Graph algorithms (e.g., Dijkstra’s algorithm)",
-          ],
+          relatedTopic: "Related posts:",
           relatedTopics: [
-            "Heap Tutorial",
-            "Top 50 Problems on Heap for Interviews",
-            "Practice problems on Heap",
+            "Backtracking Tutorial",
+            "Practice problems on Backtracking algorithm",
+          ],
+        },
+      ],
+    },
+
+    {
+      heading: "Linked Lists",
+      description:
+        "A linked list is a linear data structure that stores data in nodes, which are connected by pointers. Unlike arrays, linked lists are not stored in contiguous memory locations.",
+      sections: [
+        {
+          characteristics: "Characteristics of Linked List",
+          characteristicsList: [
+            "Dynamic: Linked lists can be easily resized by adding or removing nodes.",
+            "Non-contiguous: Nodes are stored in random memory locations and connected by pointers.",
+            "Sequential access: Nodes can only be accessed sequentially, starting from the head of the list.",
+          ],
+          operations: "Operations on Linked List",
+          operationsList: [
+            "Creation: Creating a new linked list or adding a new node to an existing list.",
+            "Traversal: Iterating through the list and accessing each node.",
+            "Insertion: Adding a new node at a specific position in the list.",
+            "Deletion: Removing a node from the list.",
+            "Search: Finding a node with a specific value in the list.",
+          ],
+          headingLink: "Types of Linked List",
+          answerLists1: [
+            "Singly Linked List: Each node points to the next node in the list.",
+            "Doubly Linked List: Each node points to both the next and previous nodes in the list.",
+            "Circular Linked List: The last node points back to the first node, forming a circular loop.",
+          ],
+          applicationsHeading: "Applications of Linked Lists",
+          applications: [
+            "Implementing queues and stacks",
+            "Representing graphs and trees",
+            "Maintaining ordered data",
+            "Memory management",
+          ],
+          relatedTopic: "Related Topics:",
+          relatedTopics: [
+            "Linked List Tutorial",
+            "Top 50 Problems on Linked List for Interviews",
+            "Practice problems on Linked Lists",
           ],
         },
       ],
@@ -450,7 +516,7 @@ export const dataStructures = {
       sections: [
         {
           characteristics: "Key Concepts",
-          characteristicsList: [
+          characteristicList: [
             "Hash Function: A mathematical function that maps an input to a hash value.",
             "Hash Table: A data structure that stores key-value pairs, where the key is a hash value and the value is the actual data.",
             "Collision: When two different keys produce the same hash value.",
@@ -505,6 +571,37 @@ export const dataStructures = {
             "Tree Tutorial",
             "Top 50 Problems on Trees for Interviews",
             "Practice problems on Trees",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Heap",
+      description:
+        "A Heap is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.",
+      sections: [
+        {
+          heading: "Operations on Heap",
+          answerLists: [
+            "Insert: Adds a new element to the heap while maintaining heap properties.",
+            "Extract-Max/Extract-Min: Removes the root element and restructures the heap.",
+            "Increase/Decrease-Key: Updates the value of a node and restructures the heap.",
+          ],
+          heading1: "Types of Heap",
+          answerLists1: [
+            "Max-Heap: Root node has the maximum value among its children.",
+            "Min-Heap: Root node has the minimum value among its children.",
+          ],
+          applicationsHeading: "Applications of Heaps",
+          applications: [
+            "Priority queues",
+            "Sorting",
+            "Graph algorithms (e.g., Dijkstra’s algorithm)",
+          ],
+          relatedTopics: [
+            "Heap Tutorial",
+            "Top 50 Problems on Heap for Interviews",
+            "Practice problems on Heap",
           ],
         },
       ],
