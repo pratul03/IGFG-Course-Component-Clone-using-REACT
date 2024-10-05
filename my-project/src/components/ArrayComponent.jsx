@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { array } from "../../public/data/array";
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
+import { Link } from "react-router-dom";
+import CardContainer from "../CardContainer";
 
 const ArrayComponent = () => {
   const [updateTime, setUpdateTime] = useState("");
@@ -18,7 +20,7 @@ const ArrayComponent = () => {
   }, []);
 
   return (
-    <div className="flex w-full mt-[-20px] flex-col">
+    <div className="flex w-full mt-[-20px] ml-[-20px] flex-col">
       <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
         {array[0]?.topics?.map((item, index) => (
           <div key={index} className="flex flex-col mb-4">
@@ -69,12 +71,12 @@ const ArrayComponent = () => {
                 <h4 className="text-2xl font-semibold mb-2">
                   {section.heading}
                 </h4>
-                <p className="text-lg my-3">{section.content}</p>
+                <p className="text-[20px] my-3">{section.content}</p>
                 <span>
                   {section.contentList && (
                     <ul className="list-disc pl-5">
                       {section.contentList.map((listItem, listIndex) => (
-                        <li key={listIndex} className="text-lg font-normal">
+                        <li key={listIndex} className="text-[20px] font-normal">
                           <span>{listItem}</span>
                         </li>
                       ))}
@@ -88,10 +90,10 @@ const ArrayComponent = () => {
                         const [boldText, normalText] = listItem.split(":");
                         return (
                           <li key={listIndex}>
-                            <span className="font-semibold text-lg">
+                            <span className="font-semibold text-[20px]">
                               {boldText}
                             </span>
-                            <span className="text-base">
+                            <span className="text-[20px]">
                               {normalText && `: ${normalText}`}
                             </span>
                           </li>
@@ -104,6 +106,11 @@ const ArrayComponent = () => {
             ))}
           </div>
         ))}
+        <span>
+          <Link to={"/"}>
+            <CardContainer />
+          </Link>
+        </span>
       </div>
     </div>
   );
