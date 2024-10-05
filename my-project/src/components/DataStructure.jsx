@@ -3,6 +3,7 @@ import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { dataStructures } from "../../public/data/dataStructure";
 import { Link } from "react-router-dom";
 import TreeClassificationTable from "./TreeClassificationTable";
+import CardContainer from "../CardContainer";
 
 const DataStructure = () => {
   const [updateTime, setUpdateTime] = useState("");
@@ -20,7 +21,7 @@ const DataStructure = () => {
   }, []);
 
   return (
-    <div className="flex w-full mt-[-20px]">
+    <div className="flex w-full mt-[-20px] flex-col">
       <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
         {dataStructures.topic?.map((item, index) => (
           <div key={index}>
@@ -923,6 +924,11 @@ const DataStructure = () => {
           )}
         </div>
       </div>
+      <span className="ml-[-100px]">
+        <Link to={"/"}>
+          <CardContainer />
+        </Link>
+      </span>
     </div>
   );
 };

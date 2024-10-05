@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-import React from "react";
 
 const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
   return (
     <div className="p-6 rounded-lg max-w-[1060px] overflow-hidden">
       <div className="flex justify-between items-center">
-        <h2 className="text-white text-2xl font-semibold mb-6 mt-[-5px] lg:mt-2">{title}</h2>
+        <h2 className="text-white text-2xl font-semibold mb-6 mt-[-5px] lg:mt-2">
+          {title}
+        </h2>
         <button
           onClick={onViewAll}
           className="text-sm hover:text-emerald-600 text-white focus:outline-none border-slate-300/65 border border-1 hover:border-emerald-600 px-3 rounded-2xl leading-8 w-20 h-8"
