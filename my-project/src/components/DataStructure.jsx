@@ -531,7 +531,65 @@ const DataStructure = () => {
                                   </ul>
                                 )}
                               </span>
+                              <span>
+                                {section.headingDescription && (
+                                  <span className="text-lg font-normal">
+                                    :{section.headingDescription}
+                                    <span>
+                                      {section.treeHeadList && (
+                                        <ul className="list-[circle] ml-16 space-y-2 font-normal text-lg">
+                                          {section.treeHeadList.map(
+                                            (item, idx) => {
+                                              const [boldText, normalText] =
+                                                item.split(":");
+                                              return (
+                                                <li
+                                                  key={idx}
+                                                  className="font-normal text-lg my-2"
+                                                >
+                                                  <Link
+                                                    to={"#"}
+                                                    className="text-lg text-green-600 underline"
+                                                  >
+                                                    {boldText}
+                                                  </Link>
+                                                  {normalText &&
+                                                    `: ${normalText}`}
+                                                </li>
+                                              );
+                                            }
+                                          )}
+                                        </ul>
+                                      )}
+                                    </span>
+                                  </span>
+                                )}
+                              </span>
                             </div>
+                          )}
+                          {/** classification */}
+                          {section.classification && (
+                            <div className="my-4">
+                              <li>
+                                <p className="text-xl font-semibold">
+                                  {section.classification}
+                                </p>
+                                <span>
+                                  {section.classificationData && (
+                                    <li className="list-[circle] ml-10 text-lg font-normal">
+                                      {section.classificationData}
+                                    </li>
+                                  )}
+                                </span>
+                              </li>
+                            </div>
+                          )}
+
+                          {/** treeTable */}
+                          {section.heading === "Traversal of Tree" && (
+                            <span className="text-lg my-4 font-normal">
+                              <TreeClassificationTable />
+                            </span>
                           )}
 
                           {/** Section heading2 */}
@@ -624,6 +682,30 @@ const DataStructure = () => {
                                 >
                                   {section.heading1}
                                 </Link>
+                                <span>
+                                  {section.answerLists1 && (
+                                    <ul className="list-disc ml-5">
+                                      {section.answerLists1.map(
+                                        (detail, idx) => {
+                                          const [boldText, normalText] =
+                                            detail.split(":");
+
+                                          return (
+                                            <li
+                                              key={idx}
+                                              className="mb-2 font-normal text-lg ml-8"
+                                            >
+                                              <Link className="font-normal text-lg text-green-600 underline">
+                                                {boldText}
+                                              </Link>
+                                              {normalText && `: ${normalText}`}
+                                            </li>
+                                          );
+                                        }
+                                      )}
+                                    </ul>
+                                  )}
+                                </span>
                                 <span>
                                   {section.answerLists2 && (
                                     <ul className="list-disc ml-5">
@@ -832,7 +914,6 @@ const DataStructure = () => {
                               </li>
                             </div>
                           )}
-                          {/* Section Characteristics */}
                         </li>
                       ))}
                   </ul>
@@ -840,10 +921,6 @@ const DataStructure = () => {
               ))}
             </ol>
           )}
-        </div>
-
-        <div className="w-full flex flex-col p-6 text-white shadow-lg mt-8">
-          <TreeClassificationTable />
         </div>
       </div>
     </div>

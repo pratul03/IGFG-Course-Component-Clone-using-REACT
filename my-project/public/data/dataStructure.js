@@ -554,20 +554,23 @@ export const dataStructures = {
           heading: "Traversal of Tree",
           headingDescription:
             "Tree traversal methods are used to visit and process nodes in a tree data structure. The three common traversal methods are:",
-          answerLists1: [
+          treeHeadList: [
             "In-Order: Visit left subtree, current node, then right subtree.",
             "Pre-Order: Visit current node, left subtree, then right subtree.",
             "Post-Order: Visit left subtree, right subtree, then current node.",
           ],
-          classification: "Classifications of Trees",
+          classification: "Classifications of Trees :",
           classificationData:
             "Classifications of Trees refer to grouping trees based on certain characteristics or criteria. This can involve categorizing trees based on their balance factor, degree of nodes, ordering properties, etc. Below are some important classifications of trees.",
+
           applicationsHeading: "Applications of Trees",
           applications: [
-            "Hierarchical data representation",
-            "Efficient searching and sorting",
-            "Database indexing",
+            "File systems",
+            "Databases",
+            "XML documents",
+            "Artificial intelligence",
           ],
+          relatedTopic: "Related posts:",
           relatedTopics: [
             "Tree Tutorial",
             "Top 50 Problems on Trees for Interviews",
@@ -599,10 +602,38 @@ export const dataStructures = {
             "Sorting",
             "Graph algorithms (e.g., Dijkstra’s algorithm)",
           ],
+          relatedTopic: "Related posts:",
           relatedTopics: [
             "Heap Tutorial",
             "Top 50 Problems on Heap for Interviews",
             "Practice problems on Heap",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Graph",
+      description:
+        "A Graph is a non-linear data structure consisting of a finite set of vertices(or nodes) and a set of edges that connect a pair of nodes.",
+      sections: [
+        {
+          characteristics: "Traversals of Graph:",
+          characteristicList: [
+            "Breadth-First Search (BFS): Visits nodes level by level.",
+            "Depth-First Search (DFS): Visits nodes recursively, exploring one branch at a time.",
+          ],
+          applicationsHeading: "Applications of Graphs",
+          applications: [
+            "Social networks",
+            "Routing algorithms",
+            "Network flow problems",
+            "Recommendation systems",
+          ],
+          relatedTopic: "Related posts:",
+          relatedTopics: [
+            "Graph Tutorial",
+            "Top 50 Problems on Graph for Interviews",
+            "Practice problems on Graph",
           ],
         },
       ],
