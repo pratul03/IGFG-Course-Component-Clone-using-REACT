@@ -1,10 +1,56 @@
 export const array = [
   {
-    title: "Array Data Structure Guide :",
-    description:
-      "An array data structure is a fundamental concept in computer science that stores a collection of elements in a contiguous block of memory. It allows for efficient access to elements using indices and is widely used in programming for organizing and manipulating data.",
-    description1:
-      " Common data structures include arrays, linked lists, stacks, queues, trees, and graphs, each serving specific purposes based on the requirements of the problem at hand. Understanding data structures is fundamental for designing efficient algorithms and optimizing software performance.",
-    heading: "Common Data Structures to learn : ",
+    topics: [
+      {
+        title: "Array Data Structure Guide",
+        lastUpdated: "01 Sep, 2024",
+        description:
+          "An array data structure is a fundamental concept in computer science that stores a collection of elements in a contiguous block of memory. It allows for efficient access to elements using indices and is widely used in programming for organizing and manipulating data.",
+        image:
+          "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726162247/Array-data-structure.png",
+        imageDescription: "Array Data Structure",
+        sections: [
+          {
+            heading: "What is an Array?",
+            content:
+              "An array is a collection of items of the same variable type that are stored at contiguous memory locations. It’s one of the most popular and simple data structures and is often used to implement other data structures. Each item in an array is indexed starting with 0. Each element in an array is accessed through its index.",
+          },
+          {
+            heading: "Need of Array Data Structures",
+            content:
+              "Arrays are a fundamental data structure in computer science. They are used in a wide variety of applications, including:",
+            contentList: [
+              "Storing data for processing",
+              "Implementing data structures such as stacks and queues",
+              "Representing data in tables and matrices",
+              "Creating dynamic data structures such as linked lists and trees",
+            ],
+          },
+          {
+            heading: "Types of Array",
+            content: "There are two main types of arrays:",
+            contentList: [
+              "One-dimensional arrays: These arrays store a single row of elements.",
+              "Multidimensional arrays: These arrays store multiple rows of elements.",
+            ],
+          },
+          {
+            heading: "Array Operations",
+            content: "Common operations performed on arrays include:",
+            contentList1: [
+              "Traversal : Visiting each element of an array in a specific order (e.g., sequential, reverse).",
+              "Insertion : Adding a new element to an array at a specific index.",
+              "Deletion : Removing an element from an array at a specific index.",
+              "Searching : Finding the index of an element in an array",
+            ],
+          },
+          {
+            heading: "Applications of Array",
+            content:
+              "Arrays are used in a wide variety of applications, including: Storing data for processing, Implementing data structures such as stacks and queues, Representing data in tables and matrices, Creating dynamic data structures such as linked lists and trees.",
+          },
+        ],
+      },
+    ],
   },
 ];
