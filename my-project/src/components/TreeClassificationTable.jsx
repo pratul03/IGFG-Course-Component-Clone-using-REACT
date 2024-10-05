@@ -20,7 +20,7 @@ const TreeClassificationTable = () => {
               Trees can be classified based on the maximum number of children
               each node can have.
             </td>
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline  cursor-pointer">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline  cursor-pointer">
               Binary Tree
             </td>
             <td className="border border-gray-200 px-4 py-2">
@@ -28,7 +28,7 @@ const TreeClassificationTable = () => {
             </td>
           </tr>
           <tr className=" text-white">
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline cursor-pointer">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline cursor-pointer">
               Ternary Tree
             </td>
             <td className="border border-gray-200 px-4 py-2">
@@ -36,7 +36,7 @@ const TreeClassificationTable = () => {
             </td>
           </tr>
           <tr className=" text-white">
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline cursor-pointer">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline cursor-pointer">
               N-ary Tree
             </td>
             <td className="border border-gray-200 px-4 py-2">
@@ -53,7 +53,7 @@ const TreeClassificationTable = () => {
               Trees can be classified based on the ordering of nodes and
               subtrees.
             </td>
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline cursor-pointer">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline cursor-pointer">
               Binary Search Tree (BST)
             </td>
             <td className="border border-gray-200 px-4 py-2">
@@ -61,7 +61,7 @@ const TreeClassificationTable = () => {
             </td>
           </tr>
           <tr className=" text-white">
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline cursor-pointer">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline cursor-pointer">
               Heap
             </td>
             <td className="border border-gray-200 px-4 py-2">
@@ -77,7 +77,7 @@ const TreeClassificationTable = () => {
             <td rowSpan="2" className="border border-gray-200 px-4 py-2">
               Trees can be classified based on how well-balanced they are.
             </td>
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline">
               Balanced Tree
             </td>
             <td className="border border-gray-200 px-4 py-2">
@@ -86,7 +86,7 @@ const TreeClassificationTable = () => {
             </td>
           </tr>
           <tr className=" text-white">
-            <td className="border border-gray-200 px-4 py-2 text-green-400 underline cursor-pointer">
+            <td className="border border-gray-200 px-4 py-2 text-[#22a779] underline cursor-pointer">
               Unbalanced Tree
             </td>
             <td className="border border-gray-200 px-4 py-2">

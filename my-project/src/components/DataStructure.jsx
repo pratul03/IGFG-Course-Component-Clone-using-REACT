@@ -105,7 +105,7 @@ const DataStructure = () => {
                       {section.linkHead && (
                         <Link
                           to={"#"}
-                          className="text-green-600 underline text-2xl font-normal tracking-wide"
+                          className="text-[#22a779] underline text-2xl font-normal tracking-wide"
                         >
                           {section.linkHead}
                         </Link>
@@ -127,7 +127,7 @@ const DataStructure = () => {
                       {section.linkHead2 && (
                         <Link
                           to={"#"}
-                          className="text-green-600 underline text-2xl font-normal tracking-wide"
+                          className="text-[#22a779] underline text-2xl font-normal tracking-wide"
                         >
                           {section.linkHead2}
                         </Link>
@@ -148,7 +148,7 @@ const DataStructure = () => {
                                 {isLastItem ? (
                                   <Link
                                     to={"#"}
-                                    className="text-green-600 underline"
+                                    className="text-[#22a779] underline"
                                   >
                                     {step}
                                   </Link>
@@ -197,7 +197,7 @@ const DataStructure = () => {
                                 <li key={idx}>
                                   <Link
                                     to={"#"}
-                                    className="text-green-600 underline"
+                                    className="text-[#22a779] underline"
                                   >
                                     {item}
                                   </Link>
@@ -211,7 +211,7 @@ const DataStructure = () => {
                           {section.extraText4}
                           <Link
                             to={"#"}
-                            className="text-green-600 underline font-semibold"
+                            className="text-[#22a779] underline font-semibold"
                           >
                             {section.extraText4Sub}
                           </Link>
@@ -232,7 +232,7 @@ const DataStructure = () => {
                 <li key={index} className="mb-10">
                   <Link
                     to={"#"}
-                    className="font-normal text-2xl text-green-600 underline mb-3"
+                    className="font-normal text-2xl text-[#22a779] underline mb-3"
                   >
                     {topic.heading}
                   </Link>
@@ -246,7 +246,7 @@ const DataStructure = () => {
                             <li className="my-4">
                               <Link
                                 to={"#"}
-                                className="text-green-600 underline"
+                                className="text-[#22a779] underline"
                               >
                                 {topicItem.topicHeading}
                               </Link>
@@ -275,7 +275,7 @@ const DataStructure = () => {
                                     {topicItem.AlgoMathData.map(
                                       (data, index) => (
                                         <tr key={index}>
-                                          <td className="px-6 py-4 border border-gray-400 font-medium text-base text-green-600 underline">
+                                          <td className="px-6 py-4 border border-gray-400 font-medium text-base text-[#22a779] underline">
                                             <Link to={data.link}>
                                               {data.algo}
                                             </Link>
@@ -299,7 +299,7 @@ const DataStructure = () => {
                                           <li key={index}>
                                             <Link
                                               to={"#"}
-                                              className="text-green-600 underline text-lg font-normal tracking-wide ml-2"
+                                              className="text-[#22a779] underline text-lg font-normal tracking-wide ml-2"
                                             >
                                               {topic}
                                             </Link>
@@ -330,7 +330,7 @@ const DataStructure = () => {
                               <li key={index}>
                                 <Link
                                   to={"#"}
-                                  className="text-green-600 underline"
+                                  className="text-[#22a779] underline"
                                 >
                                   {boldText}
                                 </Link>
@@ -351,7 +351,7 @@ const DataStructure = () => {
                             <React.Fragment key={index}>
                               <Link
                                 to={example.link}
-                                className="text-green-600 underline"
+                                className="text-[#22a779] underline"
                               >
                                 {example.label}
                               </Link>
@@ -395,7 +395,7 @@ const DataStructure = () => {
                                               <li key={index}>
                                                 <Link
                                                   to={"#"}
-                                                  className="text-green-600 underline text-lg font-normal tracking-wide"
+                                                  className="text-[#22a779] underline text-lg font-normal tracking-wide"
                                                 >
                                                   {topic}
                                                 </Link>
@@ -425,7 +425,7 @@ const DataStructure = () => {
                   {topic.notation && (
                     <Link
                       to={"#"}
-                      className="mt-2 text-lg font-medium text-green-600 ml-[-10px] underline"
+                      className="mt-2 text-lg font-medium text-[#22a779] ml-[-10px] underline"
                     >
                       {topic.notation}
                     </Link>
@@ -455,7 +455,7 @@ const DataStructure = () => {
                               <td className="px-8 py-4 border border-gray-400 font-medium text-base">
                                 <Link
                                   to={item.link}
-                                  className="text-green-600 underline"
+                                  className="text-[#22a779] underline"
                                 >
                                   {item.problem}
                                 </Link>
@@ -485,7 +485,7 @@ const DataStructure = () => {
                               <li key={index}>
                                 <Link
                                   to={"#"}
-                                  className="text-green-600 underline text-lg font-normal tracking-wide"
+                                  className="text-[#22a779] underline text-lg font-normal tracking-wide"
                                 >
                                   {topic}
                                 </Link>
@@ -506,7 +506,7 @@ const DataStructure = () => {
                             <div className="my-4">
                               <Link
                                 to={"#"}
-                                className="text-xl font-semibold text-green-600 underline"
+                                className="text-xl font-semibold text-[#22a779] underline"
                               >
                                 {section.heading}
                               </Link>
@@ -549,7 +549,7 @@ const DataStructure = () => {
                                                 >
                                                   <Link
                                                     to={"#"}
-                                                    className="text-lg text-green-600 underline"
+                                                    className="text-lg text-[#22a779] underline"
                                                   >
                                                     {boldText}
                                                   </Link>
@@ -598,7 +598,7 @@ const DataStructure = () => {
                               <li>
                                 <Link
                                   to={"#"}
-                                  className="text-xl font-semibold text-green-600 underline"
+                                  className="text-xl font-semibold text-[#22a779] underline"
                                 >
                                   {section.heading2}
                                 </Link>
@@ -658,7 +658,7 @@ const DataStructure = () => {
                                           >
                                             <Link
                                               to={"#"}
-                                              className="text-lg text-green-600 underline"
+                                              className="text-lg text-[#22a779] underline"
                                             >
                                               {boldText}
                                             </Link>
@@ -678,7 +678,7 @@ const DataStructure = () => {
                               <li>
                                 <Link
                                   to={"#"}
-                                  className="text-lg font-bold text-green-600 underline"
+                                  className="text-lg font-bold text-[#22a779] underline"
                                 >
                                   {section.heading1}
                                 </Link>
@@ -695,7 +695,7 @@ const DataStructure = () => {
                                               key={idx}
                                               className="mb-2 font-normal text-lg ml-8"
                                             >
-                                              <Link className="font-normal text-lg text-green-600 underline">
+                                              <Link className="font-normal text-lg text-[#22a779] underline">
                                                 {boldText}
                                               </Link>
                                               {normalText && `: ${normalText}`}
@@ -739,7 +739,7 @@ const DataStructure = () => {
                               <li>
                                 <Link
                                   to={"#"}
-                                  className="text-lg text-green-600 underline"
+                                  className="text-lg text-[#22a779] underline"
                                 >
                                   {section.heading3}
                                 </Link>
@@ -757,7 +757,7 @@ const DataStructure = () => {
                                           >
                                             <Link
                                               to={"#"}
-                                              className="font-normal text-lg underline text-green-600"
+                                              className="font-normal text-lg underline text-[#22a779]"
                                             >
                                               {boldText}
                                             </Link>
@@ -810,7 +810,7 @@ const DataStructure = () => {
                             <div className="my-4">
                               <Link
                                 to={"#"}
-                                className="text-xl font-semibold text-green-600 underline"
+                                className="text-xl font-semibold text-[#22a779] underline"
                               >
                                 {section.headingLink}
                               </Link>
@@ -827,7 +827,7 @@ const DataStructure = () => {
                                         >
                                           <Link
                                             to={"#"}
-                                            className="text-lg text-green-600 underline"
+                                            className="text-lg text-[#22a779] underline"
                                           >
                                             {boldText}
                                           </Link>
@@ -870,7 +870,7 @@ const DataStructure = () => {
                               <li>
                                 <Link
                                   to={"#"}
-                                  className="text-xl font-semibold text-green-600 underline"
+                                  className="text-xl font-semibold text-[#22a779] underline"
                                 >
                                   {section.applicationsHeading}
                                 </Link>
@@ -902,7 +902,7 @@ const DataStructure = () => {
                                       {section.relatedTopics.map(
                                         (step, idx) => (
                                           <li key={idx}>
-                                            <span className="text-green-600 underline">
+                                            <span className="text-[#22a779] underline">
                                               {step}
                                             </span>
                                           </li>
