@@ -9,10 +9,6 @@ export const LinkList = [
         heading: "What is a Linked List?",
         content:
           "A linked list is a linear data structure that consists of a series of nodes connected by pointers (in C or C++) or references (in Java, Python and JavaScript). Each node contains data and a pointer/reference to the next node in the list. Unlike arrays, linked lists allow for efficient insertion or removal of elements from any position in the list, as the nodes are not stored contiguously in memory.",
-
-        image:
-          "https://media.geeksforgeeks.org/wp-content/uploads/20240410135517/linked-list.webp",
-        imageDescription: "Linked List Data Structure",
         sectionHeading: "Linked List vs Array",
         sectionContent: "Here’s the comparison of Linked List vs Arrays :",
         sections: [
@@ -45,22 +41,38 @@ export const LinkList = [
             ],
           },
           {
-            operation: "Linked List Operations",
+            operation: "Operations of Linked Lists:",
             operationsList: [
-              "Traversal: Visiting each node of a linked list in a specific order (e.g., sequential, reverse).",
-              "Insertion: Adding a new node to a linked list at a specific position.",
-              "Deletion: Removing a node from a linked list at a specific position.",
-              "Searching: Finding a node with a specific value in a linked list.",
+              "Linked List Insertion",
+              "Search an element in a Linked List (Iterative and Recursive).",
+              "Find Length of a Linked List (Iterative and Recursive).",
+              "Reverse a linked list",
+              "Linked List Deletion (Deleting a given key)",
+              "Linked List Deletion (Deleting a key at given position)",
+              "Write a function to delete a Linked List",
+              "Write a function to get Nth node in a Linked List",
+              "Nth node from the end of a Linked List",
             ],
           },
           {
             types: "Applications of Linked List",
-            typesList: [
+            applicationsList: [
               "Implementing other data structures such as stacks, queues, and deques.",
               "Dynamic memory allocation.",
               "Representing sparse matrices.",
               "Implementing algorithms such as Floyd’s cycle detection algorithm.",
             ],
+          },
+          {
+            imgHeading: "Basics of Linked List:",
+            imgContent: [
+              "What is Linked List",
+              "Introduction to Linked List – Data Structure and Algorithm Tutorials",
+              "Applications, Advantages and Disadvantages of Linked List",
+            ],
+            image:
+              "https://media.geeksforgeeks.org/wp-content/uploads/20240410135517/linked-list.webp",
+            imageDescription: "Linked List Data Structure",
           },
         ],
       },

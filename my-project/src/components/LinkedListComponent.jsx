@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LinkList } from "../../public/data/LinkList";
+import CardContainer from "../CardContainer";
 
 const LinkedListComponent = () => {
   const [updateTime, setUpdateTime] = useState("");
@@ -82,10 +83,17 @@ const LinkedListComponent = () => {
             <div>
               {item.sections?.map((section, secIndex) => (
                 <div key={secIndex} className="mt-6">
-                  <h4 className="text-xl font-semibold mb-2">
-                    {section.heading}
-                  </h4>
-                  <p className="text-[20px] my-3">{section.content}</p>
+                  {/** section heading */}
+                  {section.heading && (
+                    <h4 className="text-xl font-semibold mb-2">
+                      {section.heading}
+                    </h4>
+                  )}
+                  {/**section content*/}
+                  {section.content && (
+                    <p className="text-[20px] my-3">{section.content}</p>
+                  )}
+                  {/**section contentList */}
                   <div className="mt-5">
                     {section.contentList && (
                       <ul className="list-disc pl-5">
@@ -101,11 +109,127 @@ const LinkedListComponent = () => {
                       </ul>
                     )}
                   </div>
+                  <div className="mt-5">
+                    {/** section types */}
+                    <span>
+                      {section.types && (
+                        <Link className="text-greenGFG underline font-normal text-2xl">
+                          {section.types}
+                        </Link>
+                      )}
+                    </span>
+                    {/** section typeList */}
+                    <span>
+                      {section.typesList && (
+                        <ol className="list-decimal pl-5">
+                          {section.typesList.map((listItem, listIndex) => (
+                            <li key={listIndex} className="text-lg font-normal">
+                              <Link
+                                to={"#"}
+                                className="text-greenGFG underline font-normal text-lg tracking-wide leading-6"
+                              >
+                                {listItem}
+                              </Link>
+                            </li>
+                          ))}
+                        </ol>
+                      )}
+                    </span>
+                    {/** application list */}
+                    <span>
+                      {section.applicationsList && (
+                        <ul className="list-disc pl-5">
+                          {section.applicationsList.map(
+                            (listItem, listIndex) => (
+                              <li
+                                key={listIndex}
+                                className="text-lg font-normal"
+                              >
+                                <h2 className="text-lg">{listItem}</h2>
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      )}
+                    </span>
+                    {/** section operation */}
+                    <span>
+                      {section.operation && (
+                        <h1 className="font-semibold text-2xl tracking-wide">
+                          {section.operation}
+                        </h1>
+                      )}
+                    </span>
+                    {/** operation list */}
+                    <span>
+                      {section.operationsList && (
+                        <ul className="list-disc pl-5">
+                          {section.operationsList.map((listItem, listIndex) => (
+                            <li key={listIndex} className="text-lg font-normal">
+                              <Link
+                                to={"#"}
+                                className="text-greenGFG underline"
+                              >
+                                {listItem}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </span>
+                    {/** section extra parts */}
+                    <span>
+                      {section.imgHeading && (
+                        <h1 className="font-semibold text-2xl tracking-wide">
+                          {section.imgHeading}
+                        </h1>
+                      )}
+                    </span>
+                    <span>
+                      {section.imgContent && (
+                        <ul className="list-disc text-lg font-normal mt-2">
+                          {section.imgContent.map((listItem, listIndex) => (
+                            <li key={listIndex} className="ml-6">
+                              <Link
+                                to={"#"}
+                                className="text-greenGFG underline"
+                              >
+                                {listItem}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </span>
+                    <div className="flex flex-col items-center">
+                      <span>
+                        {section.image && (
+                          <img
+                            src={section.image}
+                            alt={section.imageDescription || "Image"}
+                            className="mt-4 rounded-lg w-[600px] h-[40vh]"
+                          />
+                        )}
+                      </span>
+                      <span>
+                        {section.imageDescription && (
+                          <p className="text-stone-500/70 italic text-xs font-normal mt-[0.5px] ">
+                            {section.imageDescription}
+                          </p>
+                        )}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         ))}
+        <span>
+          <Link to={"/"}>
+            <CardContainer />
+          </Link>
+        </span>
       </div>
     </div>
   );
