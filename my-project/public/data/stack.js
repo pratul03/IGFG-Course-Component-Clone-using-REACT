@@ -24,9 +24,20 @@ export const stack = [
             listItem: [
               "Push: Adds an element to the top of the stack.",
               "Pop: Removes the top element from the stack.",
-              "Peek/Top: Returns the top element without removing it.",
+              "Peek: Returns the top element without removing it.",
               "isEmpty: Checks if the stack is empty.",
               "isFull: Checks if the stack is full (for fixed-size stacks).",
+            ],
+          },
+          {
+            applicationHeading: "Applications of Stack Data Structures",
+            applicationList: [
+              "Recursion",
+              "Expression Evaluation and Parsing",
+              "Depth-First Search (DFS)",
+              "Undo/Redo Operations",
+              "Browser History",
+              "Function Calls",
             ],
           },
         ],

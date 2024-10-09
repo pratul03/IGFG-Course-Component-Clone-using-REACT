@@ -2,6 +2,7 @@ import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { stack } from "../../public/data/stack";
+import CardContainer from "../CardContainer";
 
 const StackComponent = () => {
   const [updateTime, setUpdateTime] = useState("");
@@ -96,7 +97,7 @@ const StackComponent = () => {
                         return (
                           <li key={index} className="ml-4">
                             <span className="font-semibold text-[18px]">
-                              {label} :
+                              {label} :{" "}
                             </span>
                             <span className="text-[18px] font-normal my-5">
                               {desc?.trim()}{" "}
@@ -106,11 +107,32 @@ const StackComponent = () => {
                       })}
                     </ul>
                   )}
+                  {section.applicationHeading && (
+                    <h4 className="text-2xl font-semibold mt-4 mb-2">
+                      {section.applicationHeading}
+                    </h4>
+                  )}
+                  {section.applicationList && (
+                    <ul className="list-disc text-lg ml-4">
+                      {section.applicationList.map((item, index) => (
+                        <li key={index}>
+                          <span className="font-normal text-[18px]">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         ))}
+        <span>
+          <Link to={"/"}>
+            <CardContainer />
+          </Link>
+        </span>
       </div>
     </div>
   );
