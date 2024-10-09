@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ courseId, topics }) => {

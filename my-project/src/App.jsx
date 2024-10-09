@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom"; // Use BrowserRouter for full navigation context
 import HomePageLayout from "./HomePageLayout";
 import CoursePageLayout from "./CoursePageLayout.jsx";
