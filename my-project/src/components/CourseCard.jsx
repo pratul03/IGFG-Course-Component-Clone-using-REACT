@@ -1,7 +1,23 @@
-/* eslint-disable react/prop-types */
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
+import PropTypes from "prop-types";
+
+import { useNavigate } from "react-router-dom";
+
 const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (category) => {
+    if (!category) return;
+
+    const formattedCategory = category.toLowerCase().replace(/ /g, "-");
+
+    if (formattedCategory === "dsa") {
+      navigate(`/courses/dsa/topics/analysis-of-algorithms`);
+    } else {
+      navigate(`/courses/dsa/topics/${formattedCategory}`);
+    }
+  };
   return (
     <div className="p-6 rounded-lg max-w-[1060px] overflow-hidden">
       <div className="flex justify-between items-center">
@@ -35,6 +51,7 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
                   className="text-white w-[26px]
                 h-[26px] group-hover:outline-red-100 ml-[150px] mt-3 group-hover:transition ease-in-out duration-200 group-hover:bg-slate-50 group-hover:rounded-full
                 lg:w-[30px] lg:h-[30px] delay-75 group-hover:text-black lg:ml-[170px]"
+                  onClick={() => handleClick(item.label)}
                 />
               </span>
             </div>
@@ -43,6 +60,18 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
       </div>
     </div>
   );
+};
+
+// Prop validation
+CourseCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onViewAll: PropTypes.func.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
 };
 
 export default CourseCard;
