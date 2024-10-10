@@ -42,6 +42,7 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
             <div
               key={index}
               className={`${backgroundColor} p-4 rounded-xl flex flex-col justify-center flex-shrink-0 w-[200px] h-[100px] group lg:w-[240px]`}
+              onClick={() => handleClick(item.label)}
             >
               <span className="text-white truncate text-lg lg:text-xl font-medium lg:font-semibold tracking-wide">
                 {item.label}
