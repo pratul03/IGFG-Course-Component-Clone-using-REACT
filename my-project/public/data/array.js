@@ -55,6 +55,40 @@ export const array = [
               "Creating dynamic data structures such as linked lists and trees",
             ],
           },
+          {
+            heading: "Array in Different Language:",
+            langList: [
+              //http://localhost:5173/courses/dsa/topics/array/array-in-c-language
+              {
+                name: "Arrays in C/C++",
+                path: "/courses/dsa/topics/array/array-in-c-language",
+              },
+              {
+                name: "Vector in C++ STL",
+                path: "/courses/dsa/topics/array/vector-in-cpp",
+              },
+              {
+                name: "Arrays in Java",
+                path: "/courses/dsa/topics/array/array-in-java",
+              },
+              {
+                name: "ArrayList in Java",
+                path: "/courses/dsa/topics/array/arraylist-in-java",
+              },
+              {
+                name: "List in Python",
+                path: "/courses/dsa/topics/array/list-in-python",
+              },
+              {
+                name: "Arrays in C#",
+                path: "/courses/dsa/topics/array/arrays-in-csharp",
+              },
+              {
+                name: "Arrays in JavaScript",
+                path: "/courses/dsa/topics/array/arrays-in-js",
+              },
+            ],
+          },
         ],
       },
     ],

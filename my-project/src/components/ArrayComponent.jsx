@@ -102,6 +102,22 @@ const ArrayComponent = () => {
                     </ul>
                   )}
                 </span>
+                <span>
+                  {section.langList && (
+                    <ul className="list-disc ml-6">
+                      {section.langList.map((listItem, listIndex) => (
+                        <li key={listIndex}>
+                          <Link
+                            to={listItem.path} // Navigate to the specified path
+                            className="text-[20px] text-greenGFG underline tracking-wide"
+                          >
+                            {listItem.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </span>
               </div>
             ))}
           </div>
