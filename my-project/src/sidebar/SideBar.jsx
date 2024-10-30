@@ -1,14 +1,31 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, ChevronDown } from "lucide-react";
+import { topics } from "../../public/data/sidebar";
 
-const Sidebar = ({ courseId, topics }) => {
+const Sidebar = ({ courseId }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null); // Separate state for dropdown visibility
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  const handleTopicClick = (topic) => {
+    const topicPath = `/courses/${courseId}/topics/${topic.label
+      .toLowerCase()
+      .replace(/ /g, "-")}`;
+
+    navigate(topicPath); // Navigate to the main topic page
+    setIsSidebarOpen(false);
+
+    // Close any open dropdown when navigating to a new main topic
+    setActiveDropdown(null);
+  };
+
+  const toggleDropdown = (topicLabel) => {
+    setActiveDropdown((prev) => (prev === topicLabel ? null : topicLabel));
   };
 
   return (
@@ -32,21 +49,70 @@ const Sidebar = ({ courseId, topics }) => {
               .toLowerCase()
               .replace(/ /g, "-")}`;
 
-            const isActive = location.pathname === topicPath;
+            const isActiveTopic = location.pathname.startsWith(topicPath);
+            const isDropdownOpen = activeDropdown === topic.label;
 
             return (
               <li key={index} className="mb-2">
-                <Link
-                  to={topicPath}
-                  className={`flex mt-3 items-center justify-start font-semibold text-lg h-[6vh] ${
-                    isActive
-                      ? "text-green-600 bg-stone-800/50" // Active link styling
-                      : "text-neutral-300 hover:scale-105 transition-all ease-linear duration-75" // Non-active link hover effect
+                <div
+                  className={`flex mt-3 items-center justify-between font-semibold text-lg h-[6vh] cursor-pointer ${
+                    isActiveTopic
+                      ? "text-green-600 bg-stone-800/50"
+                      : "text-neutral-300 hover:bg-black/20 transition-all ease-linear duration-75"
                   }`}
-                  onClick={() => setIsSidebarOpen(false)} // Close sidebar when a topic is clicked on mobile
                 >
-                  <span className="ml-3">{topic.label}</span>
-                </Link>
+                  {/* Topic Label - only navigates */}
+                  <span
+                    className="ml-3"
+                    onClick={() => handleTopicClick(topic)} // Only handles navigation
+                  >
+                    {topic.label}
+                  </span>
+
+                  {/* Dropdown Icon - only toggles dropdown */}
+                  {topic.subTopics && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevents triggering handleTopicClick
+                        toggleDropdown(topic.label);
+                      }}
+                    >
+                      <ChevronDown
+                        className={`text-neutral-300 ease-linear transition-transform duration-200 ml-[-30px] ${
+                          isDropdownOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  )}
+                </div>
+
+                {/* Dropdown Menu */}
+                {topic.subTopics && isDropdownOpen && (
+                  <ul className="ml-6 mt-2 text-neutral-300">
+                    {topic.subTopics.map((subTopic, subIndex) => {
+                      const subTopicPath = `${topicPath}/${subTopic
+                        .toLowerCase()
+                        .replace(/ /g, "-")}`;
+                      const isSubActive = location.pathname === subTopicPath;
+
+                      return (
+                        <li key={subIndex}>
+                          <Link
+                            to={subTopicPath}
+                            className={`block py-1 px-2 font-semibold text-base rounded transition duration-150 ml-[-10px] ${
+                              isSubActive
+                                ? "text-green-600 bg-stone-800/50"
+                                : "text-neutral-300 hover:text-green-600 hover:bg-black/20"
+                            }`}
+                            onClick={() => setIsSidebarOpen(false)}
+                          >
+                            {subTopic}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
               </li>
             );
           })}

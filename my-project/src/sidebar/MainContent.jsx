@@ -10,9 +10,10 @@ import QueueComponent from "../components/QueueComponent.jsx";
 import TreeComponent from "../components/TreeComponent.jsx";
 import GraphComponent from "../components/GraphComponent.jsx";
 import { allCoursesData } from "../../public/data/dsaCard.js";
+import ArrayInCLang from "../arrays/array-in-c-language.jsx";
 
 const MainComponent = () => {
-  const { courseId, topicId } = useParams();
+  const { courseId, topicId, subTopicId } = useParams();
 
   // Find course data matching the courseId
   const course = allCoursesData.find(
@@ -25,6 +26,11 @@ const MainComponent = () => {
 
   // Function to render the appropriate component based on the topicId
   const renderComponent = () => {
+    // Check if topicId is "array" and subTopicId is "array-in-different-language"
+    if (topicId === "array" && subTopicId === "array-in-c-language") {
+      return <ArrayInCLang />;
+    }
+
     switch (topicId) {
       case "analysis-of-algorithms":
         return (

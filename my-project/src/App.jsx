@@ -17,7 +17,7 @@ function App() {
         {/* Dynamic Course Page */}
         <Route path="courses/:courseId" element={<CoursePageLayout />} />
         <Route
-          path="courses/:courseId/topics/:topicId"
+          path="courses/:courseId/topics/:topicId/:subTopicId?"
           element={<MainContent />}
         />
       </Routes>
