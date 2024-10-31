@@ -18,6 +18,14 @@ export const arrayInC = [
         basicSyntax: "Syntax of Array Declaration",
         basicSyntaxDes:
           "data_type array_name [size];\n           or     \ndata_type array_name [size1] [size2]...[sizeN];",
+        beforeImg: "where N is the number of dimensions.",
+        afterImg:
+          "https://media.geeksforgeeks.org/wp-content/uploads/20230302092603/c-array-declaration.png",
+        afterImgText:
+          "The C arrays are static in nature, i.e., they are allocated memory at the compile time.",
+        exampleOfArrayDeclaration: "Example of Array Declaration",
+        exampleOfArrayDeclarationDes:
+          "// C Program to illustrate the array declaration \n\n #include <stdio.h> \n\n int main(){  \n// declaring array of integers \n  int arr_int[5];    \n\n// declaring array of characters \n   char arr_char[5]; \n\n   return 0; \n  }",
       },
     ],
   },

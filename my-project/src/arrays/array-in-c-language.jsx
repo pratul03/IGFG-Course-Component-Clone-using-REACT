@@ -3,10 +3,16 @@ import { arrayInC } from "../../public/arraydata/arrayInC";
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Play, FilePenLine, Copy } from "lucide-react";
+import { FaCuttlefish } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ArrayInCLang = () => {
   const [updateTime, setUpdateTime] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [code, setCode] = useState(
+    arrayInC[0]?.topics[0]?.exampleOfArrayDeclarationDes || ""
+  ); // Initialize code with data
 
   const formatUpdateTime = () => {
     const now = new Date();
@@ -14,6 +20,14 @@ const ArrayInCLang = () => {
     const month = now.toLocaleString("en-US", { month: "short" });
     const year = now.getFullYear();
     return `${day} ${month}, ${year}`; // Format it as "14 Sep, 2024"
+  };
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    alert("Code copied to clipboard!");
+  };
+
+  const handleEdit = () => {
+    setIsEditing(!isEditing);
   };
 
   useEffect(() => {
@@ -104,6 +118,96 @@ const ArrayInCLang = () => {
                 >
                   {item.basicSyntaxDes}
                 </SyntaxHighlighter>
+              </div>
+            )}
+            {item.beforeImg && (
+              <div className="flex flex-col mt-4">
+                <h4 className="text-lg  tracking-wide mb-2">
+                  {item.beforeImg}
+                </h4>
+                <p>
+                  {item.afterImg && (
+                    <span className="flex flex-col justify-center content-center items-center">
+                      <img
+                        src={item.afterImg}
+                        alt="Image"
+                        className="mt-4 rounded-lg w-[600px] h-[40vh]"
+                      />
+                    </span>
+                  )}
+                </p>
+                {item.afterImgText && (
+                  <p className="text-lg  font-normal mt-2">
+                    {item.afterImgText}
+                  </p>
+                )}
+              </div>
+            )}
+            {item.exampleOfArrayDeclaration && (
+              <div className="flex flex-col mt-4">
+                <h4 className="text-[28px] font-semibold mb-2">
+                  {item.exampleOfArrayDeclaration}
+                </h4>
+                <p>
+                  {item.exampleOfArrayDeclarationDes && (
+                    <div className="w-4/5 mx-auto bg-[#282c34] p-4 rounded-lg">
+                      <div className="flex gap-6">
+                        {/* Language Logo and Action Buttons */}
+                        <div className="flex flex-col items-start gap-4">
+                          {/* Language Logo and Label */}
+                          <div className="flex items-center">
+                            <FaCuttlefish
+                              size={24}
+                              color="#fff"
+                              className="mr-2"
+                            />
+                          </div>
+
+                          {/* Action Buttons */}
+                          <div className="flex flex-col gap-4">
+                            <Copy
+                              size={20}
+                              className="text-white cursor-pointer"
+                              onClick={handleCopy}
+                              title="Copy Code"
+                            />
+                            <FilePenLine
+                              size={20}
+                              className="text-white cursor-pointer"
+                              onClick={handleEdit}
+                              title="Edit Code"
+                            />
+                            <Play
+                              size={20}
+                              className="text-white cursor-pointer"
+                              onClick={() => alert("Code Running...")}
+                              title="Run Code"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Code Display */}
+                        <div className="flex-1">
+                          {isEditing ? (
+                            <textarea
+                              className="w-full bg-[#282c34] text-white border-none p-28 text-base rounded-lg focus:outline-none"
+                              value={code}
+                              onChange={(e) => setCode(e.target.value)}
+                            />
+                          ) : (
+                            <SyntaxHighlighter
+                              language="c"
+                              style={oneDark}
+                              showLineNumbers
+                            >
+                              {code}
+                            </SyntaxHighlighter>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </p>
               </div>
             )}
           </div>
