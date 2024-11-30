@@ -145,16 +145,97 @@ int main()
     int arr[5] = { 15, 25, 35, 45, 55 };
 
     // accessing element at index 2 i.e 3rd element
-    printf("Element at arr[2]: %d\n", arr[2]);
+    printf("Element at arr[2]: %d", arr[2]);
 
     // accessing element at index 4 i.e last element
-    printf("Element at arr[4]: %d\n", arr[4]);
+    printf("Element at arr[4]: %d", arr[4]);
 
     // accessing element at index 0 i.e first element
     printf("Element at arr[0]: %d", arr[0]);
 
     return 0;
 }`,
+            outputHeading: "Output",
+            output: `Element at arr[2]: 35
+Element at arr[4]: 55
+Element at arr[0]: 15`,
+          },
+          {
+            type: "list",
+            items: [
+              {
+                title: "Update Array Elements",
+                description:
+                  "We can update the value of an element at the given index i in a similar way to accessing an element by using the array subscript operator [ ] and assignment operator = .",
+                code: "array_name [i] = new_value;",
+              },
+            ],
+          },
+          {
+            type: "list",
+            items: [
+              {
+                title: "C Array Traversal",
+                description:
+                  "Traversal is the process in which we visit every element of the data structure. For C array traversal, we use loops to iterate through each element of the array.",
+                code: `for (int i = 0; i < N; i++) {
+    array_name[i];
+}`,
+                image: {
+                  url: "https://media.geeksforgeeks.org/wp-content/uploads/20230302092847/C-array-traversal.png",
+                  description: null,
+                },
+              },
+            ],
+          },
+          {
+            type: "code",
+            heading: "How to use Array in C?",
+            code: `// C Program to demonstrate the use of array
+#include <stdio.h>
+
+int main()
+{
+    // array declaration and initialization
+    int arr[5] = { 10, 20, 30, 40, 50 };
+
+    // modifying element at index 2
+    arr[2] = 100;
+
+    // traversing array using for loop
+  printf("Elements in Array: ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}`,
+            outputHeading: "Output",
+            output: `Elements in Array: 10 20 100 40 50 `,
+          },
+          {
+            type: "code",
+            heading: "Array of Characters (Strings)",
+            description:
+              "In C, we store the words, i.e., a sequence of characters in the form of an array of characters terminated by a NULL character. These are called strings in C language.",
+            code: `// C Program to illustrate strings
+#include <stdio.h>
+
+int main()
+{
+
+    // creating array of character
+    char arr[6] = { 'G', 'e', 'e', 'k', 's', '\0' };
+
+    // printing string
+    int i = 0;
+    while (arr[i]) {
+        printf("%c", arr[i++]);
+    }
+    return 0;
+}`,
+            outputHeading: "Output",
+            output: `Geeks`,
           },
         ],
       },

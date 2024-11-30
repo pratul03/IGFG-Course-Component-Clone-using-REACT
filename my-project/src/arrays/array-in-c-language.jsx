@@ -105,8 +105,10 @@ const ArrayInCLang = () => {
                     >
                       {item.items.map((listItem, listIndex) => (
                         <li key={listIndex} className="mb-2">
-                          <p className="font-semibold">{listItem.title}</p>
-                          <p>{listItem.description}</p>
+                          <p className="text-xl font-semibold my-3">
+                            {listItem.title}
+                          </p>
+                          <p className="font-normal">{listItem.description}</p>
                           {listItem.code && (
                             <SyntaxHighlighter language="c" style={oneDark}>
                               {listItem.code}
@@ -127,11 +129,14 @@ const ArrayInCLang = () => {
                   );
                 case "code":
                   return (
-                    <div>
+                    <div className="px-10 ml-[-20px]">
                       {item.type === "code" && item.heading && (
                         <h5 className="font-semibold text-lg mb-2">
                           {item.heading}
                         </h5>
+                      )}
+                      {item.type === "code" && item.description && (
+                        <p className="text-lg mb-4">{item.description}</p>
                       )}
                       <div
                         key={contentIndex}
@@ -182,6 +187,16 @@ const ArrayInCLang = () => {
                           </div>
                         </div>
                       </div>
+                      {item.type === "code" && item.outputHeading && (
+                        <h5 className="font-semibold text-lg mb-2">
+                          {item.outputHeading}
+                        </h5>
+                      )}
+                      {item.type === "code" && item.output && (
+                        <SyntaxHighlighter language="c" style={oneDark}>
+                          {item.output}
+                        </SyntaxHighlighter>
+                      )}
                     </div>
                   );
                 default:
