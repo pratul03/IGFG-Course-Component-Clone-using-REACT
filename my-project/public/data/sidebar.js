@@ -8,6 +8,7 @@ export const topics = [
       "Array in C Language",
       "Array in Java",
       "List in Python",
+      "Array in Csharp",
       "Basic Problems on Array",
       "Array Operations",
     ],

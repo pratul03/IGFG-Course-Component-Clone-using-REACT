@@ -13,6 +13,7 @@ import { allCoursesData } from "../../public/data/dsaCard.js";
 import ArrayInCLang from "../arrays/array-in-c-language.jsx";
 import ArrayInPythonLang from "../arrays/list-in-python.jsx";
 import ArrayInjavaLang from "../arrays/array-in-java.jsx";
+import ArrayInCsharpLang from "../arrays/array-in-csharp.jsx";
 
 const MainComponent = () => {
   const { courseId, topicId, subTopicId } = useParams();
@@ -35,6 +36,8 @@ const MainComponent = () => {
       return <ArrayInPythonLang />;
     } else if (topicId === "array" && subTopicId === "array-in-java") {
       return <ArrayInjavaLang />;
+    } else if (topicId === "array" && subTopicId === "array-in-csharp") {
+      return <ArrayInCsharpLang />;
     }
 
     switch (topicId) {

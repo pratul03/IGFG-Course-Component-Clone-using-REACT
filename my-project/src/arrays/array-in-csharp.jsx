@@ -4,11 +4,11 @@ import { arrayInJava } from "../../public/arraydata/arrayInJava";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, FilePenLine, Play } from "lucide-react";
-import { FaJava } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CardContainer from "../CardContainer";
+import { PiFileCSharp } from "react-icons/pi";
 
-const ArrayInjavaLang = () => {
+const ArrayInCsharpLang = () => {
   const [updateTime, setUpdateTime] = useState("");
 
   const formatUpdateTime = () => {
@@ -115,7 +115,7 @@ const ArrayInjavaLang = () => {
                   return (
                     <div key={contentIndex} className="my-4">
                       <p className="font-semibold mb-2">{item.description}</p>
-                      <SyntaxHighlighter language="java" style={oneDark}>
+                      <SyntaxHighlighter language="csharp" style={oneDark}>
                         {item.code}
                       </SyntaxHighlighter>
                     </div>
@@ -128,7 +128,7 @@ const ArrayInjavaLang = () => {
                       </h5>
                       <span>
                         {item.type === "example" && item.code && (
-                          <SyntaxHighlighter language="java" style={oneDark}>
+                          <SyntaxHighlighter language="csharp" style={oneDark}>
                             {item.code}
                           </SyntaxHighlighter>
                         )}
@@ -148,7 +148,10 @@ const ArrayInjavaLang = () => {
                           </p>
                           <p className="font-normal">{listItem.description}</p>
                           {listItem.code && (
-                            <SyntaxHighlighter language="java" style={oneDark}>
+                            <SyntaxHighlighter
+                              language="csharp"
+                              style={oneDark}
+                            >
                               {listItem.code}
                             </SyntaxHighlighter>
                           )}
@@ -183,7 +186,7 @@ const ArrayInjavaLang = () => {
                         <div className="flex items-start gap-4">
                           <div className="flex flex-col items-center gap-4">
                             {/* Icons only for "code" type */}
-                            <FaJava size={24} color="#fff" />
+                            <PiFileCSharp size={24} color="#fff" />
                             <Copy
                               size={20}
                               className="cursor-pointer"
@@ -215,7 +218,7 @@ const ArrayInjavaLang = () => {
                               />
                             ) : (
                               <SyntaxHighlighter
-                                language="java"
+                                language="csharp"
                                 style={oneDark}
                                 showLineNumbers
                               >
@@ -231,7 +234,7 @@ const ArrayInjavaLang = () => {
                         </h5>
                       )}
                       {item.type === "code" && item.output && (
-                        <SyntaxHighlighter language="java" style={oneDark}>
+                        <SyntaxHighlighter language="csharp" style={oneDark}>
                           {item.output}
                         </SyntaxHighlighter>
                       )}
@@ -253,4 +256,4 @@ const ArrayInjavaLang = () => {
   );
 };
 
-export default ArrayInjavaLang;
+export default ArrayInCsharpLang;
