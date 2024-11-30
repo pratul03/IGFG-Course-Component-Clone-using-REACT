@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
 import { arrayInC } from "../../public/arraydata/arrayInC";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, FilePenLine, Play } from "lucide-react";
 import { FaCuttlefish } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import CardContainer from "../CardContainer";
 
 const ArrayInCLang = () => {
+  const [updateTime, setUpdateTime] = useState("");
+
+  const formatUpdateTime = () => {
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.toLocaleString("en-US", { month: "short" });
+    const year = now.getFullYear();
+    return `${day} ${month}, ${year}`; // Format it as "14 Sep, 2024"
+  };
+
+  useEffect(() => {
+    setUpdateTime(`Last Updated: ${formatUpdateTime()}`);
+  }, []);
   const [editableCode, setEditableCode] = useState({}); // Track editable code blocks
 
   const handleCopy = (code) => {
@@ -33,8 +49,30 @@ const ArrayInCLang = () => {
         {arrayInC[0]?.topics?.map((topic, topicIndex) => (
           <div key={topicIndex} className="flex flex-col mb-8">
             <h3 className="text-2xl font-semibold mb-4">{topic.title}</h3>
-            <p className="text-sm text-gray-400">
-              Last Updated: {topic.lastUpdated}
+            <p className="mt-2 text-sm text-gray-200 flex items-center">
+              {updateTime}
+              <div className="flex ml-[450px] gap-3 text-white relative">
+                {/* MessageCircle Icon */}
+                <div className="relative group">
+                  <MessageCircle className="h-5 cursor-pointer hover:text-gray-500" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                    comments
+                  </div>
+                </div>
+
+                {/* Pencil Icon */}
+                <div className="relative group">
+                  <Pencil className="h-5 cursor-pointer hover:text-gray-500" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                    improve
+                  </div>
+                </div>
+
+                {/* Ellipsis Icon */}
+                <div className="relative group">
+                  <Ellipsis className="rotate-[90deg] h-5 cursor-pointer hover:text-gray-500" />
+                </div>
+              </div>
             </p>
             <hr className="border-t border-gray-200/30 my-4" />
 
@@ -131,7 +169,7 @@ const ArrayInCLang = () => {
                   return (
                     <div className="px-10 ml-[-20px]">
                       {item.type === "code" && item.heading && (
-                        <h5 className="font-semibold text-lg mb-2">
+                        <h5 className="font-semibold text-2xl mb-4">
                           {item.heading}
                         </h5>
                       )}
@@ -206,6 +244,11 @@ const ArrayInCLang = () => {
           </div>
         ))}
       </div>
+      <span className="ml-[-100px]">
+        <Link to={"/"}>
+          <CardContainer />
+        </Link>
+      </span>
     </div>
   );
 };
