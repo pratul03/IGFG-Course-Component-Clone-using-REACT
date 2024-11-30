@@ -22,17 +22,17 @@ const DataStructure = () => {
 
   return (
     <div className="flex w-full mt-[-20px] flex-col">
-      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
+      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-[#0e0e0e] shadow-lg">
         {dataStructures.topic?.map((item, index) => (
           <div key={index}>
             <h1 className="text-2xl font-semibold mb-3">{item.heading}</h1>
-            <p className="mt-2 text-sm text-gray-200 flex items-center">
+            <p className="mt-2 text-sm text-[#0e0e0e] flex items-center">
               {updateTime}
-              <div className="flex ml-[450px] gap-3 text-white relative">
+              <div className="flex ml-[450px] gap-3 text-[#0e0e0e] relative">
                 {/* MessageCircle Icon */}
                 <div className="relative group">
                   <MessageCircle className="h-5 cursor-pointer hover:text-gray-500" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-[#0e0e0e] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
                     comments
                   </div>
                 </div>
@@ -40,7 +40,7 @@ const DataStructure = () => {
                 {/* Pencil Icon */}
                 <div className="relative group">
                   <Pencil className="h-5 cursor-pointer hover:text-gray-500" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-[#0e0e0e] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
                     improve
                   </div>
                 </div>
@@ -51,14 +51,14 @@ const DataStructure = () => {
                 </div>
               </div>
             </p>
-            <hr className="border-t border-gray-200/30 my-2" />
-            <span className="text-lg text-slate-200 tracking-normal">
+            <hr className="border-t border-gray-900 my-2" />
+            <span className="text-lg text-[#0e0e0e] tracking-normal">
               {item.boldText && (
                 <span className="font-bold mr-2">{item.boldText}</span>
               )}
               {item.description}
             </span>
-            <span className="flex flex-col justify-center content-center items-center">
+            <span className="flex flex-col justify-center content-center items-center bg-slate-300 rounded-lg">
               {item.image && (
                 <img
                   src={item.image}
@@ -67,7 +67,7 @@ const DataStructure = () => {
                 />
               )}
               {item.imgDescription && (
-                <p className="text-stone-500/70 italic text-xs font-normal mt-[0.5px] ">
+                <p className="text-stone-800 italic text-xs font-normal mt-[0.5px] ">
                   {item.imgDescription}
                 </p>
               )}
@@ -163,14 +163,14 @@ const DataStructure = () => {
                       )}
                     </span>
                     {section.sectionImg && (
-                      <span className="flex flex-col justify-center content-center items-center">
+                      <span className="flex flex-col justify-center content-center items-center bg-slate-400">
                         <img
                           src={section.sectionImg}
                           alt={section.sectionImgAlt || "Section image"}
-                          className="mt-4 rounded-lg w-[850px] h-[30vh] ml-[-40px]"
+                          className="mt-4 rounded-lg w-[750px] h-[30vh] ml-[-40px]"
                         />
                         {section.sectionImgAlt && (
-                          <p className="text-stone-500/70 italic text-xs font-normal">
+                          <p className="text-stone-500 italic text-xs font-normal">
                             {section.sectionImgAlt}
                           </p>
                         )}
@@ -225,7 +225,7 @@ const DataStructure = () => {
           </div>
         ))}
 
-        <div className="flex flex-col w-full p-6 text-white shadow-lg mt-[-20px] ml-[-20px]">
+        <div className="flex flex-col w-full p-6 text-[#0e0e0e] shadow-lg mt-[-20px] ml-[-20px]">
           {/* Topics List */}
           {Array.isArray(dataStructures.topics) && (
             <ol className="list-decimal ml-2 font-bold text-2xl">
@@ -238,9 +238,9 @@ const DataStructure = () => {
                     {topic.heading}
                   </Link>
                   {topic.topicsFr && (
-                    <div className="text-lg font-normal text-gray-100">
+                    <div className="text-lg font-normal text-[#0e0e0e]">
                       {/* Wrap the topic headings in a single <ol> */}
-                      <ol className="list-decimal pl-5 text-xl font-normal text-white">
+                      <ol className="list-decimal pl-5 text-xl font-normal text-[#0e0e0e]">
                         {topic.topicsFr.map((topicItem, index) => (
                           <div key={index} className="mb-6">
                             {/* Render the topic heading inside the <li> */}
@@ -261,13 +261,13 @@ const DataStructure = () => {
                             {/**Topic table */}
                             {topicItem.AlgoMathData && (
                               <div className="overflow-x-auto my-6">
-                                <table className="min-w-full border border-gray-800 text-white">
+                                <table className="min-w-full border border-gray-800 text-[#0e0e0e]">
                                   <thead>
                                     <tr>
-                                      <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-700/50">
+                                      <th className="px-6 py-3 border-2 text-[#0e0e0e] border-[#0e0e0e] text-center text-xl font-bold bg-stone-700/50">
                                         {topicItem.algoHeading1}
                                       </th>
-                                      <th className="px-6 py-3 border border-gray-400 text-xl font-bold bg-stone-700/50 text-center">
+                                      <th className="px-6 py-3 border-2 text-[#0e0e0e] border-[#0e0e0e] text-xl font-bold bg-stone-700/50 text-center">
                                         {topicItem.algoHeading2}
                                       </th>
                                     </tr>
@@ -276,12 +276,12 @@ const DataStructure = () => {
                                     {topicItem.AlgoMathData.map(
                                       (data, index) => (
                                         <tr key={index}>
-                                          <td className="px-6 py-4 border border-gray-400 font-medium text-base text-greenGFG underline">
+                                          <td className="px-6 py-4 border-2 border-[#0e0e0e] font-medium text-base text-greenGFG underline">
                                             <Link to={data.link}>
                                               {data.algo}
                                             </Link>
                                           </td>
-                                          <td className="px-6 py-4 border border-gray-400 font-medium text-base text-center">
+                                          <td className="px-6 py-4 border-2 border-[#0e0e0e] font-medium text-base text-center">
                                             {data.description}
                                           </td>
                                         </tr>
@@ -321,7 +321,7 @@ const DataStructure = () => {
 
                   {/* Topic Description */}
                   {topic.description && (
-                    <p className="mt-2 text-lg font-medium text-gray-100">
+                    <p className="mt-2 text-lg font-medium text-[#0e0e0e]">
                       {topic.description}
                       <ol className="list-decimal mt-1 mb-4 font-normal">
                         {topic.topicList &&
@@ -365,7 +365,7 @@ const DataStructure = () => {
                       <span>
                         {topic.sections1?.map((section, index) => (
                           <div key={index}>
-                            <span className="text-lg font-normal text-gray-100">
+                            <span className="text-lg font-normal text-[#0e0e0e]">
                               <p className="font-semibold">{section.heading}</p>
                               {section.answerLists && (
                                 <ul className="list-disc ml-5 space-y-2 font-normal text-lg">
@@ -417,7 +417,7 @@ const DataStructure = () => {
                   )}
                   {topic.desc1 && (
                     <span>
-                      <p className="text-lg font-normal text-gray-100">
+                      <p className="text-lg font-normal text-[#0e0e0e]">
                         {topic.desc1}
                       </p>
                     </span>
@@ -432,20 +432,20 @@ const DataStructure = () => {
                     </Link>
                   )}
                   {topic.notationDescription && (
-                    <p className="ml-[-10px] text-lg font-normal text-gray-100 mt-6">
+                    <p className="ml-[-10px] text-lg font-normal text-[#0e0e0e]k mt-6">
                       {topic.notationDescription}
                     </p>
                   )}
 
                   {topic.table && (
                     <div className="overflow-x-auto my-6">
-                      <table className="min-w-full border border-gray-800 text-white">
+                      <table className="min-w-full border border-gray-800 text-[#0e0e0e]">
                         <thead>
                           <tr>
-                            <th className="px-6 py-3 border border-gray-400 text-left text-xl font-bold bg-stone-700/50">
+                            <th className="px-6 py-3 border border-[#0e0e0e]text-left text-xl font-bold bg-stone-700/50">
                               {topic.table[0].tableHeading1}
                             </th>
-                            <th className="px-6 py-3 border border-gray-400 text-center text-xl font-bold bg-stone-700/50">
+                            <th className="px-6 py-3 border border-[#0e0e0e] text-center text-xl font-bold bg-stone-700/50">
                               {topic.table[0].tableHeading2}
                             </th>
                           </tr>
@@ -453,7 +453,7 @@ const DataStructure = () => {
                         <tbody>
                           {topic.table[0].tableData.map((item, index) => (
                             <tr key={index}>
-                              <td className="px-8 py-4 border border-gray-400 font-medium text-base">
+                              <td className="px-8 py-4 border border-[#0e0e0e] font-medium text-base">
                                 <Link
                                   to={item.link}
                                   className="text-greenGFG underline"
@@ -461,7 +461,7 @@ const DataStructure = () => {
                                   {item.problem}
                                 </Link>
                               </td>
-                              <td className="px-6 py-4 border border-gray-400 font-normal text-base text-center">
+                              <td className="px-6 py-4 border border-[#0e0e0e]font-normal text-base text-center">
                                 {item.description}
                               </td>
                             </tr>
@@ -472,7 +472,7 @@ const DataStructure = () => {
                   )}
 
                   {topic.afterDescription && (
-                    <p className="mt-6 text-lg font-normal text-gray-100">
+                    <p className="mt-6 text-lg font-normal text-[#0e0e0e]">
                       {topic.afterDescription}
                     </p>
                   )}
@@ -572,12 +572,12 @@ const DataStructure = () => {
                           {section.classification && (
                             <div className="my-4">
                               <li>
-                                <p className="text-xl font-semibold">
+                                <p className="text-xl font-semibold text-[#5a5959]">
                                   {section.classification}
                                 </p>
                                 <span>
                                   {section.classificationData && (
-                                    <li className="list-[circle] ml-10 text-lg font-normal">
+                                    <li className="list-[circle] ml-10 text-lg font-normal text-[#0e0e0e]">
                                       {section.classificationData}
                                     </li>
                                   )}
