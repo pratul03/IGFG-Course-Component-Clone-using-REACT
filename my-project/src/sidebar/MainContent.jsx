@@ -11,6 +11,7 @@ import TreeComponent from "../components/TreeComponent.jsx";
 import GraphComponent from "../components/GraphComponent.jsx";
 import { allCoursesData } from "../../public/data/dsaCard.js";
 import ArrayInCLang from "../arrays/array-in-c-language.jsx";
+import ArrayInPythonLang from "../arrays/list-in-python.jsx";
 import ArrayInjavaLang from "../arrays/array-in-java.jsx";
 
 const MainComponent = () => {
@@ -30,6 +31,8 @@ const MainComponent = () => {
     // Check if topicId is "array" and subTopicId is "array-in-different-language"
     if (topicId === "array" && subTopicId === "array-in-c-language") {
       return <ArrayInCLang />;
+    } else if (topicId === "array" && subTopicId === "list-in-python") {
+      return <ArrayInPythonLang />;
     } else if (topicId === "array" && subTopicId === "array-in-java") {
       return <ArrayInjavaLang />;
     }
