@@ -44,14 +44,14 @@ const ArrayInCLang = () => {
   };
 
   return (
-    <div className="flex w-full flex-col p-6 text-white">
-      <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-white shadow-lg">
+    <div className="flex w-full flex-col p-6 text-[#0e0e0e]">
+      <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-[#0e0e0e] shadow-lg">
         {arrayInC[0]?.topics?.map((topic, topicIndex) => (
           <div key={topicIndex} className="flex flex-col mb-8">
             <h3 className="text-2xl font-semibold mb-4">{topic.title}</h3>
-            <p className="mt-2 text-sm text-gray-200 flex items-center">
+            <p className="mt-2 text-sm text-[#0e0e0e] flex items-center">
               {updateTime}
-              <div className="flex ml-[450px] gap-3 text-white relative">
+              <div className="flex ml-[450px] gap-3 text-[#0e0e0e] relative">
                 {/* MessageCircle Icon */}
                 <div className="relative group">
                   <MessageCircle className="h-5 cursor-pointer hover:text-gray-500" />
@@ -97,7 +97,7 @@ const ArrayInCLang = () => {
                   return (
                     <div
                       key={contentIndex}
-                      className="flex flex-col justify-center content-center items-center"
+                      className="flex flex-col justify-center content-center items-center bg-stone-200"
                     >
                       <img
                         src={item.url}
@@ -105,7 +105,7 @@ const ArrayInCLang = () => {
                         className="mt-4 rounded-lg w-[450px] h-[35vh] ml-[-40px]"
                       />
                       {item.description && (
-                        <p className="text-gray-400 italic text-sm mt-2">
+                        <p className="text-[#0e0e0e] italic text-sm mt-2">
                           {item.description}
                         </p>
                       )}
@@ -153,7 +153,7 @@ const ArrayInCLang = () => {
                             </SyntaxHighlighter>
                           )}
                           {listItem.image?.url && (
-                            <div className="flex flex-col justify-center content-center items-center">
+                            <div className="flex flex-col justify-center content-center items-center bg-stone-200">
                               <img
                                 src={listItem.image.url}
                                 alt={listItem.image.description || "Image"}
@@ -181,7 +181,7 @@ const ArrayInCLang = () => {
                         className="bg-oneDark p-4 rounded-lg my-6"
                       >
                         <div className="flex items-start gap-4">
-                          <div className="flex flex-col items-center gap-4">
+                          <div className="flex flex-col items-center gap-4 text-white">
                             {/* Icons only for "code" type */}
                             <FaCuttlefish size={24} color="#fff" />
                             <Copy
@@ -210,7 +210,7 @@ const ArrayInCLang = () => {
                                 onChange={(e) =>
                                   handleCodeChange(contentIndex, e.target.value)
                                 }
-                                className="w-full bg-gray-900 text-white p-4 rounded-lg"
+                                className="w-full bg-gray-900 text-[#0e0e0e] p-4 rounded-lg"
                                 rows="8"
                               />
                             ) : (
