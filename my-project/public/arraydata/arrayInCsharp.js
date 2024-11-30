@@ -19,7 +19,7 @@ export const arrayInCSharp = [
           },
           {
             type: "image",
-            url: "https://docs.microsoft.com/en-us/dotnet/standard/collections/arrays-in-csharp.jpg",
+            url: "https://cdn.educba.com/academy/wp-content/uploads/2019/10/array-in-C.png",
             description: "C# Array Representation",
           },
           {
@@ -37,7 +37,7 @@ export const arrayInCSharp = [
           },
           {
             type: "image",
-            url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/arrays#array-declaration",
+            url: "https://media.geeksforgeeks.org/wp-content/uploads/C-Arrays.jpg",
             description: "Array Declaration in C#",
           },
           {
@@ -90,7 +90,7 @@ for (int i = 0; i < arr2.Length; i++) {
                   "Array elements can be accessed using their index.",
                 code: "arr[index];",
                 image: {
-                  url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/arrays#accessing-elements",
+                  url: "https://i0.wp.com/blog.submain.com/wp-content/uploads/2018/04/accessing_array_elements.png?resize=860%2C579",
                   description: null,
                 },
               },
@@ -125,7 +125,7 @@ Console.WriteLine(arr[2]);  // Accessing element at index 2`,
                   "You can use loops to traverse and access all elements in an array.",
                 code: `for (int i = 0; i < arr.Length; i++) {\n    Console.WriteLine(arr[i]);\n}`,
                 image: {
-                  url: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/arrays#traversing-an-array",
+                  url: "https://www.guru99.com/images/c-sharp-net/052616_1018_CFundamenta29.png",
                   description: null,
                 },
               },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Ellipsis, MessageCircle, Pencil } from "lucide-react";
-import { arrayInJava } from "../../public/arraydata/arrayInJava";
+import { arrayInCSharp } from "../../public/arraydata/arrayInCsharp";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, FilePenLine, Play } from "lucide-react";
@@ -37,7 +37,7 @@ const ArrayInCsharpLang = () => {
   };
 
   const handleCodeChange = (key, value) => {
-    arrayInJava[0].topics[0].content = arrayInJava[0].topics[0].content.map(
+    arrayInCSharp[0].topics[0].content = arrayInCSharp[0].topics[0].content.map(
       (item, idx) =>
         idx === key && item.type === "code" ? { ...item, code: value } : item
     );
@@ -46,7 +46,7 @@ const ArrayInCsharpLang = () => {
   return (
     <div className="flex w-full flex-col p-6 text-white">
       <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-white shadow-lg">
-        {arrayInJava[0]?.topics?.map((topic, topicIndex) => (
+        {arrayInCSharp[0]?.topics?.map((topic, topicIndex) => (
           <div key={topicIndex} className="flex flex-col mb-8">
             <h3 className="text-2xl font-semibold mb-4">{topic.title}</h3>
             <p className="mt-2 text-sm text-gray-200 flex items-center">
