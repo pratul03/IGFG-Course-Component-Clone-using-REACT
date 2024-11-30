@@ -14,6 +14,8 @@ import ArrayInCLang from "../arrays/array-in-c-language.jsx";
 import ArrayInPythonLang from "../arrays/list-in-python.jsx";
 import ArrayInjavaLang from "../arrays/array-in-java.jsx";
 import ArrayInCsharpLang from "../arrays/array-in-csharp.jsx";
+import ArrayListInjavaLang from "../arrays/arraylist-in-java.jsx";
+import ArrayInjavaScriptLang from "../arrays/array-in-js.jsx";
 
 const MainComponent = () => {
   const { courseId, topicId, subTopicId } = useParams();
@@ -38,6 +40,10 @@ const MainComponent = () => {
       return <ArrayInjavaLang />;
     } else if (topicId === "array" && subTopicId === "array-in-csharp") {
       return <ArrayInCsharpLang />;
+    } else if (topicId === "array" && subTopicId === "arraylist-in-java") {
+      return <ArrayListInjavaLang />;
+    } else if (topicId === "array" && subTopicId === "array-in-javascript") {
+      return <ArrayInjavaScriptLang />;
     }
 
     switch (topicId) {

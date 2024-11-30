@@ -10,6 +10,7 @@ export const topics = [
       "ArrayList in Java",
       "List in Python",
       "Array in Csharp",
+      "Array in JavaScript",
       "Basic Problems on Array",
       "Array Operations",
     ],
