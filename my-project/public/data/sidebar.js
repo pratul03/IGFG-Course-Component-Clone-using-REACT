@@ -6,6 +6,7 @@ export const topics = [
     label: "Array",
     subTopics: [
       "Array in C Language",
+      "Array in Java",
       "Basic Problems on Array",
       "Array Operations",
     ],
