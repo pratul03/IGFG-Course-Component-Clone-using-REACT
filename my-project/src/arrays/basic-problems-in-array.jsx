@@ -6,7 +6,8 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, FilePenLine, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import CardContainer from "../CardContainer";
-import { FaSquareJs } from "react-icons/fa6";
+import { FaJava, FaPython } from "react-icons/fa6";
+import { FaCuttlefish, FaJsSquare } from "react-icons/fa";
 
 const ProblemsInArray = () => {
   const [updateTime, setUpdateTime] = useState("");
@@ -102,7 +103,19 @@ const ProblemsInArray = () => {
                         >
                           <div className="flex items-start gap-4">
                             <div className="flex flex-col items-center gap-4">
-                              <FaSquareJs size={24} color="#fff" />
+                              {solution.language === "c" && (
+                                <FaCuttlefish size={30} color="#A8B9CC" />
+                              )}
+                              {solution.language === "java" && (
+                                <FaJava size={30} color="#A8B9CC" />
+                              )}
+                              {solution.language === "python" && (
+                                <FaPython size={30} color="#A8B9CC" />
+                              )}
+                              {solution.language === "javascript" && (
+                                <FaJsSquare size={30} color="#A8B9CC" />
+                              )}
+
                               <Copy
                                 size={20}
                                 className="cursor-pointer"
