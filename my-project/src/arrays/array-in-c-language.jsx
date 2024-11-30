@@ -74,7 +74,7 @@ const ArrayInCLang = () => {
                 </div>
               </div>
             </p>
-            <hr className="border-t border-gray-200/30 my-4" />
+            <hr className="border-t border-gray-950 my-4" />
 
             {topic.content.map((item, contentIndex) => {
               switch (item.type) {
