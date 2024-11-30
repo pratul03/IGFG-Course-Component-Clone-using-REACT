@@ -439,13 +439,13 @@ const DataStructure = () => {
 
                   {topic.table && (
                     <div className="overflow-x-auto my-6">
-                      <table className="min-w-full border border-gray-800 text-[#0e0e0e]">
+                      <table className="min-w-full border-2 border-[#0e0e0e] text-[#0e0e0e]">
                         <thead>
                           <tr>
-                            <th className="px-6 py-3 border border-[#0e0e0e]text-left text-xl font-bold bg-stone-700/50">
+                            <th className="px-6 py-3 border-2 border-[#0e0e0e] text-left text-xl font-bold bg-stone-700/50">
                               {topic.table[0].tableHeading1}
                             </th>
-                            <th className="px-6 py-3 border border-[#0e0e0e] text-center text-xl font-bold bg-stone-700/50">
+                            <th className="px-6 py-3 border-2 border-[#0e0e0e] text-center text-xl font-bold bg-stone-700/50">
                               {topic.table[0].tableHeading2}
                             </th>
                           </tr>
@@ -453,7 +453,7 @@ const DataStructure = () => {
                         <tbody>
                           {topic.table[0].tableData.map((item, index) => (
                             <tr key={index}>
-                              <td className="px-8 py-4 border border-[#0e0e0e] font-medium text-base">
+                              <td className="px-8 py-4 border-2 border-[#0e0e0e] font-medium text-base">
                                 <Link
                                   to={item.link}
                                   className="text-greenGFG underline"
@@ -461,7 +461,7 @@ const DataStructure = () => {
                                   {item.problem}
                                 </Link>
                               </td>
-                              <td className="px-6 py-4 border border-[#0e0e0e]font-normal text-base text-center">
+                              <td className="px-6 py-4 border-2 border-[#0e0e0e] font-normal text-base text-center">
                                 {item.description}
                               </td>
                             </tr>
