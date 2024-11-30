@@ -16,6 +16,7 @@ import ArrayInjavaLang from "../arrays/array-in-java.jsx";
 import ArrayInCsharpLang from "../arrays/array-in-csharp.jsx";
 import ArrayListInjavaLang from "../arrays/arraylist-in-java.jsx";
 import ArrayInjavaScriptLang from "../arrays/array-in-js.jsx";
+import ProblemsInArray from "../arrays/basic-problems-in-array.jsx";
 
 const MainComponent = () => {
   const { courseId, topicId, subTopicId } = useParams();
@@ -31,7 +32,6 @@ const MainComponent = () => {
 
   // Function to render the appropriate component based on the topicId
   const renderComponent = () => {
-    // Check if topicId is "array" and subTopicId is "array-in-different-language"
     if (topicId === "array" && subTopicId === "array-in-c-language") {
       return <ArrayInCLang />;
     } else if (topicId === "array" && subTopicId === "list-in-python") {
@@ -44,8 +44,14 @@ const MainComponent = () => {
       return <ArrayListInjavaLang />;
     } else if (topicId === "array" && subTopicId === "array-in-javascript") {
       return <ArrayInjavaScriptLang />;
+    } else if (
+      topicId === "array" &&
+      subTopicId === "basic-problems-on-array"
+    ) {
+      return <ProblemsInArray />;
     }
 
+    // Handle other topics
     switch (topicId) {
       case "analysis-of-algorithms":
         return (
