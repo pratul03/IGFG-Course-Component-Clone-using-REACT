@@ -26,7 +26,7 @@ const CourseCard = ({ title, items, onViewAll, backgroundColor }) => {
         </h2>
         <button
           onClick={onViewAll}
-          className="text-sm hover:text-emerald-600 text-white focus:outline-none border-slate-300/65 border border-1 hover:border-emerald-600 px-3 rounded-2xl leading-8 w-20 h-8"
+          className="text-sm hover:text-emerald-600 text-[#0e0e0e] focus:outline-1 border-slate-900 border border-1 hover:border-emerald-600 px-3 rounded-2xl leading-8 w-20 h-8"
         >
           View All
         </button>

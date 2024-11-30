@@ -21,11 +21,11 @@ const LinkedListComponent = () => {
 
   return (
     <div className="flex w-full mt-[-20px] ml-[-20px] flex-col">
-      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
+      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-[#0e0e0e] shadow-lg">
         {LinkList[0]?.topics?.map((item, index) => (
           <div key={index} className="flex flex-col mb-4">
             <h3 className="text-3xl font-semibold mb-2">{item.title}</h3>
-            <p className="mt-2 text-sm font-semibold text-gray-200 flex items-center">
+            <p className="mt-2 text-sm font-semibold text-[#0e0e0e] flex items-center">
               {updateTime}
               <div className="flex ml-auto gap-3 text-white relative">
                 {/* MessageCircle Icon */}
@@ -50,7 +50,7 @@ const LinkedListComponent = () => {
                 </div>
               </div>
             </p>
-            <hr className="border-t border-gray-200/30 my-2" />
+            <hr className="border-t border-gray-900 my-2" />
             <p className="text-lg">{item.description}</p>
             <span>
               {item.heading && (
@@ -201,7 +201,7 @@ const LinkedListComponent = () => {
                         </ul>
                       )}
                     </span>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center bg-slate-400">
                       <span>
                         {section.image && (
                           <img
@@ -213,7 +213,7 @@ const LinkedListComponent = () => {
                       </span>
                       <span>
                         {section.imageDescription && (
-                          <p className="text-stone-500/70 italic text-xs font-normal mt-[0.5px] ">
+                          <p className="text-slate-700 italic text-xs font-normal mt-[0.5px] ">
                             {section.imageDescription}
                           </p>
                         )}
