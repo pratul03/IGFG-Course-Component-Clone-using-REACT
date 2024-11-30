@@ -4,7 +4,7 @@ import { arrayInPython } from "../../public/arraydata/arrayInPython";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, FilePenLine, Play } from "lucide-react";
-import { FaCuttlefish } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CardContainer from "../CardContainer";
 
@@ -115,7 +115,7 @@ const ArrayInPythonLang = () => {
                   return (
                     <div key={contentIndex} className="my-4">
                       <p className="font-semibold mb-2">{item.description}</p>
-                      <SyntaxHighlighter language="java" style={oneDark}>
+                      <SyntaxHighlighter language="python" style={oneDark}>
                         {item.code}
                       </SyntaxHighlighter>
                     </div>
@@ -128,7 +128,7 @@ const ArrayInPythonLang = () => {
                       </h5>
                       <span>
                         {item.type === "example" && item.code && (
-                          <SyntaxHighlighter language="java" style={oneDark}>
+                          <SyntaxHighlighter language="python" style={oneDark}>
                             {item.code}
                           </SyntaxHighlighter>
                         )}
@@ -148,7 +148,10 @@ const ArrayInPythonLang = () => {
                           </p>
                           <p className="font-normal">{listItem.description}</p>
                           {listItem.code && (
-                            <SyntaxHighlighter language="java" style={oneDark}>
+                            <SyntaxHighlighter
+                              language="python"
+                              style={oneDark}
+                            >
                               {listItem.code}
                             </SyntaxHighlighter>
                           )}
@@ -183,7 +186,7 @@ const ArrayInPythonLang = () => {
                         <div className="flex items-start gap-4">
                           <div className="flex flex-col items-center gap-4">
                             {/* Icons only for "code" type */}
-                            <FaCuttlefish size={24} color="#fff" />
+                            <FaPython size={24} color="#fff" />
                             <Copy
                               size={20}
                               className="cursor-pointer"
@@ -215,7 +218,7 @@ const ArrayInPythonLang = () => {
                               />
                             ) : (
                               <SyntaxHighlighter
-                                language="java"
+                                language="python"
                                 style={oneDark}
                                 showLineNumbers
                               >
@@ -231,7 +234,7 @@ const ArrayInPythonLang = () => {
                         </h5>
                       )}
                       {item.type === "code" && item.output && (
-                        <SyntaxHighlighter language="java" style={oneDark}>
+                        <SyntaxHighlighter language="python" style={oneDark}>
                           {item.output}
                         </SyntaxHighlighter>
                       )}

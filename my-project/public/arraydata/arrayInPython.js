@@ -19,7 +19,7 @@ export const arrayInPython = [
           },
           {
             type: "image",
-            url: "https://www.datacamp.com/community/blog/wp-content/uploads/2021/11/arrays-vs-lists-python.jpg",
+            url: "https://www.boardinfinity.com/blog/content/images/2022/12/Your-paragraph-text--65--1.jpg",
             description: "Python Lists (Arrays) Representation",
           },
           {
@@ -37,7 +37,7 @@ export const arrayInPython = [
           },
           {
             type: "image",
-            url: "https://media.geeksforgeeks.org/wp-content/uploads/20210721215941/python-list-declaration.jpg",
+            url: "https://www.tutorialspoint.com/python/images/python_array_representation.jpg",
             description: "Python List Declaration",
           },
           {
@@ -89,7 +89,7 @@ for i in range(5):
                   "You can access any element of a list using an index, starting from 0.",
                 code: "arr[index]",
                 image: {
-                  url: "https://media.geeksforgeeks.org/wp-content/uploads/20210803170002/python-list-access-element.jpg",
+                  url: "https://cdn.educba.com/academy/wp-content/uploads/2023/07/Arrays-in-Python.jpg",
                   description: null,
                 },
               },
@@ -124,7 +124,7 @@ print(arr[2])  # Accessing the element at index 2`,
                   "You can use loops to traverse through all elements of a list.",
                 code: `for element in arr: \n    print(element)`,
                 image: {
-                  url: "https://media.geeksforgeeks.org/wp-content/uploads/20210803170053/python-list-traversal.jpg",
+                  url: "https://cdn.educba.com/academy/wp-content/uploads/2019/09/string-array-in-python.png",
                   description: null,
                 },
               },

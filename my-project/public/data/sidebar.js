@@ -7,6 +7,7 @@ export const topics = [
     subTopics: [
       "Array in C Language",
       "Array in Java",
+      "List in Python",
       "Basic Problems on Array",
       "Array Operations",
     ],
