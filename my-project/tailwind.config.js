@@ -6,7 +6,8 @@ export default {
     extend: {
       colors: {
         // Define your custom color here
-        greenGFG: "#22a779", // Example color (dark blue)
+        greenGFG: "#22a779",
+        oneDark: "#282C34",
       },
     },
   },
