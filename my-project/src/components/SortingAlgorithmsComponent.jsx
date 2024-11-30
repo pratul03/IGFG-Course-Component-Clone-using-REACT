@@ -20,11 +20,11 @@ const SortingAlgorithmsComponent = () => {
   }, []);
   return (
     <div className="flex w-full mt-[-20px] ml-[-20px] flex-col">
-      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-white shadow-lg">
+      <div className="left-0 flex flex-col w-[75%] max-w-5xl mr-auto p-6 text-[#0e0e0e] shadow-lg">
         {sortingAlgorithm[0]?.topics?.map((item, index) => (
           <div key={index} className="flex flex-col mb-4">
             <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
-            <p className="mt-2 text-sm font-semibold text-gray-200 flex items-center">
+            <p className="mt-2 text-sm font-semibold text-[#0e0e0e] flex items-center">
               {updateTime}
               <div className="flex ml-auto gap-3 text-white relative">
                 {/* MessageCircle Icon */}
@@ -49,10 +49,10 @@ const SortingAlgorithmsComponent = () => {
                 </div>
               </div>
             </p>
-            <hr className="border-t border-gray-200/30 my-2" />
+            <hr className="border-t border-gray-900 my-2" />
             <p className="text-lg">{item.description}</p>
             {/**image */}
-            <span className="flex flex-col justify-center content-center items-center">
+            <span className="flex flex-col justify-center content-center items-center bg-slate-300 rounded-lg">
               {item.image && (
                 <img
                   src={item.image}
