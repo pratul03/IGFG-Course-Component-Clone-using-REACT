@@ -55,12 +55,12 @@ const ProblemsInArray = () => {
   };
 
   return (
-    <div className="flex w-full flex-col p-6 text-white">
-      <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-white shadow-lg">
+    <div className="flex w-full flex-col p-6 text-[#0e0e0e]">
+      <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-[#0e0e0e] shadow-lg">
         {basicArrayProblems[0]?.topics?.map((topic, topicIndex) => (
           <div key={topicIndex} className="flex flex-col mb-8">
             <h3 className="text-2xl font-semibold mb-4">{topic.title}</h3>
-            <p className="mt-2 text-sm text-gray-200 flex items-center">
+            <p className="mt-2 text-sm text-[#0e0e0e] flex items-center">
               {updateTime}
               <div className="flex ml-[450px] gap-3 text-white relative">
                 <div className="relative group">
@@ -80,7 +80,7 @@ const ProblemsInArray = () => {
                 </div>
               </div>
             </p>
-            <hr className="border-t border-gray-200/30 my-4" />
+            <hr className="border-t border-gray-900 my-4" />
             {topic.content.map((item, contentIndex) => {
               switch (item.type) {
                 case "description":
@@ -102,7 +102,7 @@ const ProblemsInArray = () => {
                           className="bg-oneDark p-4 rounded-lg my-6"
                         >
                           <div className="flex items-start gap-4">
-                            <div className="flex flex-col items-center gap-4">
+                            <div className="flex flex-col items-center gap-4 text-white">
                               {solution.language === "c" && (
                                 <FaCuttlefish size={30} color="#A8B9CC" />
                               )}

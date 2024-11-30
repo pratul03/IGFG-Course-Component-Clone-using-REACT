@@ -44,18 +44,18 @@ const ArrayInPythonLang = () => {
   };
 
   return (
-    <div className="flex w-full flex-col p-6 text-white">
-      <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-white shadow-lg">
+    <div className="flex w-full flex-col p-6 text-[#0e0e0e]">
+      <div className="left-0 ml-[-10px] flex flex-col w-full max-w-5xl mx-auto text-[#0e0e0e] shadow-lg">
         {arrayInPython[0]?.topics?.map((topic, topicIndex) => (
           <div key={topicIndex} className="flex flex-col mb-8">
             <h3 className="text-2xl font-semibold mb-4">{topic.title}</h3>
-            <p className="mt-2 text-sm text-gray-200 flex items-center">
+            <p className="mt-2 text-sm text-[#0e0e0e] flex items-center">
               {updateTime}
-              <div className="flex ml-[450px] gap-3 text-white relative">
+              <div className="flex ml-[450px] gap-3 text-[#0e0e0e] relative">
                 {/* MessageCircle Icon */}
                 <div className="relative group">
                   <MessageCircle className="h-5 cursor-pointer hover:text-gray-500" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-[#0e0e0e] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
                     comments
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const ArrayInPythonLang = () => {
                 {/* Pencil Icon */}
                 <div className="relative group">
                   <Pencil className="h-5 cursor-pointer hover:text-gray-500" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 w-max p-1 bg-gray-500 text-[#0e0e0e] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
                     improve
                   </div>
                 </div>
@@ -74,7 +74,7 @@ const ArrayInPythonLang = () => {
                 </div>
               </div>
             </p>
-            <hr className="border-t border-gray-200/30 my-4" />
+            <hr className="border-t border-gray-900 my-4" />
 
             {topic.content.map((item, contentIndex) => {
               switch (item.type) {
@@ -97,7 +97,7 @@ const ArrayInPythonLang = () => {
                   return (
                     <div
                       key={contentIndex}
-                      className="flex flex-col justify-center content-center items-center"
+                      className="flex flex-col justify-center content-center items-center bg-slate-300 rounded-lg"
                     >
                       <img
                         src={item.url}
@@ -184,7 +184,7 @@ const ArrayInPythonLang = () => {
                         className="bg-oneDark p-4 rounded-lg my-6"
                       >
                         <div className="flex items-start gap-4">
-                          <div className="flex flex-col items-center gap-4">
+                          <div className="flex flex-col items-center gap-4 text-white">
                             {/* Icons only for "code" type */}
                             <FaPython size={24} color="#fff" />
                             <Copy
