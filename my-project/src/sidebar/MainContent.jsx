@@ -87,7 +87,7 @@ const MainComponent = () => {
       {/* Sidebar to navigate between topics */}
       <Sidebar courseId={courseId} topics={course.topics} />
 
-      <div className="flex-grow p-6 text-white">{renderComponent()}</div>
+      <div className="flex-grow p-6 text-[#0e0e0e]">{renderComponent()}</div>
     </div>
   );
 };

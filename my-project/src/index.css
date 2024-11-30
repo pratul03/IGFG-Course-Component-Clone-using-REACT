@@ -3,48 +3,48 @@
 @tailwind utilities;
 
 body {
-    margin: 0px;
-    padding: 0px;
-    left: 0px;
-    background-color: #131417;
-    font-family: 'Inter', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  left: 0px;
+  color: #0e0e0e;
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
 
-    img:hover {
-        cursor: zoom-in;
-        /* or cursor: zoom-out; */
-    }
+  img:hover {
+    cursor: zoom-in;
+    /* or cursor: zoom-out; */
+  }
 }
 
 ::selection {
-    background-color: #2ab045;
-    /* Change to your desired color */
-    color: #ffffff;
-    /* Optional: Change text color */
+  background-color: #2ab045;
+  /* Change to your desired color */
+  color: #ffffff;
+  /* Optional: Change text color */
 }
 
-
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #efefef3e;
-    border-radius: 5px;
+  background-color: #efefef3e;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #19191b;
-    border-radius: 5px;
+  background-color: #19191b;
+  border-radius: 5px;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for Firefox */
 .scrollbar-hidden {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

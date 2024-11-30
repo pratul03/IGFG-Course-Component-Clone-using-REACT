@@ -32,7 +32,7 @@ const Sidebar = ({ courseId }) => {
     <div>
       {/* Menu Icon for Mobile */}
       <div className="lg:hidden p-4">
-        <button className="text-white text-3xl" onClick={toggleSidebar}>
+        <button className="text-[#0e0e0e] text-3xl" onClick={toggleSidebar}>
           <Menu />
         </button>
       </div>
@@ -58,7 +58,7 @@ const Sidebar = ({ courseId }) => {
                   className={`flex mt-3 items-center justify-between font-semibold text-lg h-[6vh] cursor-pointer ${
                     isActiveTopic
                       ? "text-green-600 bg-stone-800/50"
-                      : "text-neutral-300 hover:bg-black/20 transition-all ease-linear duration-75"
+                      : "text-[#0e0e0e] hover:bg-black/20 transition-all ease-linear duration-75"
                   }`}
                 >
                   {/* Topic Label - only navigates */}
@@ -78,7 +78,7 @@ const Sidebar = ({ courseId }) => {
                       }}
                     >
                       <ChevronDown
-                        className={`text-neutral-300 ease-linear transition-transform duration-200 ml-[-30px] ${
+                        className={`text-[#0e0e0e] ease-linear transition-transform duration-200 ml-[-30px] ${
                           isDropdownOpen ? "rotate-180" : ""
                         }`}
                       />
@@ -88,7 +88,7 @@ const Sidebar = ({ courseId }) => {
 
                 {/* Dropdown Menu */}
                 {topic.subTopics && isDropdownOpen && (
-                  <ul className="ml-6 mt-2 text-neutral-300">
+                  <ul className="ml-6 mt-2 text-[#0e0e0e]">
                     {topic.subTopics.map((subTopic, subIndex) => {
                       const subTopicPath = `${topicPath}/${subTopic
                         .toLowerCase()
@@ -102,7 +102,7 @@ const Sidebar = ({ courseId }) => {
                             className={`block py-1 px-2 font-semibold text-base rounded transition duration-150 ml-[-10px] ${
                               isSubActive
                                 ? "text-green-600 bg-stone-800/50"
-                                : "text-neutral-300 hover:text-green-600 hover:bg-black/20"
+                                : "text-[#0e0e0e] hover:text-green-600 hover:bg-black/20"
                             }`}
                             onClick={() => setIsSidebarOpen(false)}
                           >

@@ -52,7 +52,7 @@ function CardContainer() {
     <section className="py-10 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-left">
-          <h2 className="font-semibold leading-tight text-neutral-200 text-2xl lg:text-4xl mb-8 lg:mb-0 lg:ml-[110px]">
+          <h2 className="font-semibold leading-tight text-[#0e0e0e] text-2xl lg:text-4xl mb-8 lg:mb-0 lg:ml-[110px]">
             Explore
           </h2>
 

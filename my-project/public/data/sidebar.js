@@ -12,7 +12,6 @@ export const topics = [
       "Array in Csharp",
       "Array in JavaScript",
       "Basic Problems on Array",
-      "Array Operations",
     ],
   },
   {
