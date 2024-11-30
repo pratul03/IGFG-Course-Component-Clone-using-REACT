@@ -57,7 +57,7 @@ const Sidebar = ({ courseId }) => {
                 <div
                   className={`flex mt-3 items-center justify-between font-semibold text-lg h-[6vh] cursor-pointer ${
                     isActiveTopic
-                      ? "text-green-600 bg-stone-800/50"
+                      ? "text-green-500 bg-slate-300"
                       : "text-[#0e0e0e] hover:bg-black/20 transition-all ease-linear duration-75"
                   }`}
                 >
@@ -101,7 +101,7 @@ const Sidebar = ({ courseId }) => {
                             to={subTopicPath}
                             className={`block py-1 px-2 font-semibold text-base rounded transition duration-150 ml-[-10px] ${
                               isSubActive
-                                ? "text-green-600 bg-stone-800/50"
+                                ? "text-green-500 bg-slate-300"
                                 : "text-[#0e0e0e] hover:text-green-600 hover:bg-black/20"
                             }`}
                             onClick={() => setIsSidebarOpen(false)}
